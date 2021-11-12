@@ -1,5 +1,5 @@
 import NextHead from 'next/head'
-import { FC } from 'react'
+import { VFC } from 'react'
 
 type Props = {
   title?: string
@@ -8,7 +8,7 @@ type Props = {
 const BASE_TITLE = 'Sekiyan HP'
 const DESCRIPTION = 'せきやんのポートフォリオサイトです。'
 
-const Head: FC<Props> = (props) => {
+const Head: VFC<Props> = (props) => {
   const title = props.title ? `${props.title} | ${BASE_TITLE}` : BASE_TITLE
 
   return(
