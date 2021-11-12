@@ -4,10 +4,10 @@
 
 @layer base {
   h1 {
-    @apply text-5xl;
+    @apply text-9xl;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-7xl;
   }
 }
 

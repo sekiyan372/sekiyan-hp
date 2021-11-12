@@ -2,7 +2,7 @@ import { VFC } from 'react'
 
 const Footer: VFC = () => {
   return(
-    <footer>
+    <footer className="text-center">
       ©️ Suiki Sekiya 2021.
     </footer>
   )
