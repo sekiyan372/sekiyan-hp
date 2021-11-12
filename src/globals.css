@@ -10,3 +10,12 @@
     @apply text-2xl;
   }
 }
+
+@layer utilities {
+  .snap {
+    scroll-snap-type: y mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+}
