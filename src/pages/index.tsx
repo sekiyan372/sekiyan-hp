@@ -6,11 +6,9 @@ const Home: NextPage = () => {
     <div>
       <Head title="トップページ" />
 
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+      <h1>
+        Welcome to <a href="https://nextjs.org">Next.js!</a>
+      </h1>
     </div>
   )
 }
