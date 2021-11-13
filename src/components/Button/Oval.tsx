@@ -1,7 +1,7 @@
-import { VFC } from 'react'
+import { VFC, ReactNode } from 'react'
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const Oval: VFC<Props> = ({children}) => {
