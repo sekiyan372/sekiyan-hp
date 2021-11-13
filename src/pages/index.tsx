@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           />
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-100">
+        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
           <h2>Profile</h2>
           <div className="m-10">
             <div className="text-center">
@@ -55,7 +55,7 @@ const Home: NextPage = () => {
         </section>
 
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
-          <h2 className="text-white">History</h2>
+          <h2 className="text-white">Career</h2>
           <table className="m-10 text-white">
             <tr>
               <td>2015</td>
@@ -116,7 +116,7 @@ const Home: NextPage = () => {
           </table>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-100">
+        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
           <h2>Product</h2>
         </section>
 
@@ -124,7 +124,7 @@ const Home: NextPage = () => {
           <h2 className="text-white">Hobby</h2>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-100">
+        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
           <h2>Contact</h2>
           <div className="m-10">
             <Oval>Twitter</Oval>
