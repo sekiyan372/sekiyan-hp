@@ -3,16 +3,19 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from '~/components/Head'
-import Oval from '~/components/Button/Oval'
 import Down from '~/components/Button/Down'
 import Circle from '~/components/Circle'
+import LinkIcon from '~/components/Button/LinkIcon'
 import VerticalLine from '~/components/VerticalLine'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons'
+import { faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons'
 
 const ICON = require('../../public/my-icon.jpg') 
+const TWITTER_ICON = require('../../public/Twitter-social-icons-circle-blue.svg')
+const HATENA_ICON = require('../../public/hatenablog-logo.svg')
+const GITHUB_ICON = require('../../public/GitHub-Mark-Light-64px.png')
 
 const Home: NextPage = () => {
   const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
@@ -28,9 +31,27 @@ const Home: NextPage = () => {
           <h1 className="m-8 text-white">Welcome to</h1>
           <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
           <div className="m-5">
-            <Oval>Twitter</Oval>
-            <Oval>hatena blog</Oval>
-            <Oval>Github</Oval>
+            <LinkIcon
+              url="https://twitter.com/sekiyan372"
+              src={TWITTER_ICON}
+              alt="Twitter Button"
+              width={60}
+              height={60}
+            />
+            <LinkIcon
+              url="https://sekiyan372.hatenablog.jp/"
+              src={HATENA_ICON}
+              alt="Hatena Blog Button"
+              width={60}
+              height={60}
+            />
+            <LinkIcon
+              url="https://github.com/sekiyan372"
+              src={GITHUB_ICON}
+              alt="Github Button"
+              width={60}
+              height={60}
+            />
           </div>
           <p className="text-2xl text-white">Scroll</p>
           <Down className="text-white"/>
