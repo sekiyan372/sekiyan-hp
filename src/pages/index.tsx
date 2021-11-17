@@ -21,7 +21,7 @@ import { emailjsConfig } from '~/utils/Emailjs'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGuitar, faBuilding, faSchool, faWindowMinimize } from '@fortawesome/free-solid-svg-icons'
+import { faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons'
 
 const ICON = require('../../public/my-icon.jpg') 
 const TWITTER_ICON = require('../../public/Twitter-social-icons-circle-blue.svg')
@@ -277,7 +277,7 @@ const Home: NextPage = () => {
                   disabled={disableSend}
                   onClick={() => window.confirm('お問い合わせを送信してもよろしいですか？')}
                 >
-                  Submit
+                  送信
                 </button>
               </div>
             </form>
