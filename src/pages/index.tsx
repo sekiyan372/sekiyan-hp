@@ -9,11 +9,15 @@ import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 //自作コンポーネント
-import Head from '~/components/Head'
 import Down from '~/components/Button/Down'
-import Circle from '~/components/Circle'
 import LinkIcon from '~/components/Button/LinkIcon'
+import Submit from '~/components/Button/Submit'
+import Head from '~/components/Head'
+import Circle from '~/components/Circle'
 import VerticalLine from '~/components/VerticalLine'
+import Label from '~/components/Label'
+import Input from '~/components/input'
+import TextArea from '~/components/Textarea'
 
 // EmailJS
 import { send } from 'emailjs-com'
@@ -242,43 +246,36 @@ const Home: NextPage = () => {
           <div className="m-10 w-3/4">
             <form onSubmit={onSubmit}>
               <div className="m-5">
-                <label htmlFor="name" className="block">name</label>
-                <input
-                  type="text"
+                <Label htmlFor="name">name</Label>
+                <Input
                   id="name"
-                  className="border-solid border border-black rounded w-full p-2"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="m-5">
-                <label htmlFor="email" className="block">email</label>
-                <input
-                  type="text"
+                <Label htmlFor="email">email</Label>
+                <Input
                   id="email"
-                  className="border-solid border border-black rounded w-full p-2"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="m-5">
-                <label htmlFor="message" className="block">message</label>
-                <textarea
+                <Label htmlFor="message">message</Label>
+                <TextArea
                   id="message"
-                  className="border-solid border border-black rounded w-full p-2"
-                  rows={5}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
               <div className="text-center">
-                <button
-                  className="border-solid border rounded p-2 bg-green-500 text-white text-xl"
+                <Submit
                   disabled={disableSend}
-                  onClick={() => window.confirm('お問い合わせを送信してもよろしいですか？')}
+                  confirm='お問い合わせを送信してもよろしいですか？'
                 >
                   送信
-                </button>
+                </Submit>
               </div>
             </form>
           </div>
