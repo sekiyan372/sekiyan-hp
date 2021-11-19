@@ -1,14 +1,29 @@
-import {ChangeEvent} from 'react'
+// react/nextの機能
+import { ChangeEvent, useState } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from '~/components/Head'
-import Down from '~/components/Button/Down'
-import Circle from '~/components/Circle'
-import LinkIcon from '~/components/Button/LinkIcon'
-import VerticalLine from '~/components/VerticalLine'
+
+// カルーセル
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
+
+//自作コンポーネント
+import Down from '~/components/Button/Down'
+import LinkIcon from '~/components/Button/LinkIcon'
+import Submit from '~/components/Button/Submit'
+import Head from '~/components/Head'
+import Circle from '~/components/Circle'
+import VerticalLine from '~/components/VerticalLine'
+import Label from '~/components/Label'
+import Input from '~/components/input'
+import TextArea from '~/components/Textarea'
+
+// EmailJS
+import { send } from 'emailjs-com'
+import { emailjsConfig } from '~/utils/Emailjs'
+
+// FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,8 +33,38 @@ const HATENA_ICON = require('../../public/hatenablog-logo.svg')
 const GITHUB_ICON = require('../../public/GitHub-Mark-Light-64px.png')
 
 const Home: NextPage = () => {
-  const onSubmit = (e: ChangeEvent<HTMLFormElement>) => {
-    console.log(e)
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const disableSend = name === '' || email === '' || message === ''
+
+  const sendMail = () => {
+    if (
+      emailjsConfig.serviceId !== undefined &&
+      emailjsConfig.templateId !== undefined
+    ) {
+      const template_param = {
+        to_name: name,
+        from_email: email,
+        message: message,
+      }
+
+      send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        template_param
+      ).then(() => {
+        window.alert('お問い合わせを送信致しました。')
+        setName('')
+        setEmail('')
+        setMessage('')
+      })
+    }
+  }
+
+  const onSubmit = (event: ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    sendMail()
   }
 
   return (
@@ -199,31 +244,42 @@ const Home: NextPage = () => {
 
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
           <h2>Contact</h2>
+          <p className="mt-5">
+            お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
+          </p>
           <div className="m-10 w-3/4">
             <form onSubmit={onSubmit}>
               <div className="m-5">
-                <label htmlFor="" className="block">name</label>
-                <input
-                  type="text"
-                  className="border-solid border border-black rounded w-full p-2"
+                <Label htmlFor="name">name</Label>
+                <Input
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="m-5">
-                <label htmlFor="" className="block">email</label>
-                <input
-                  type="text"
-                  className="border-solid border border-black rounded w-full p-2"
+                <Label htmlFor="email">email</Label>
+                <Input
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="m-5">
-                <label htmlFor="" className="block">message</label>
-                <textarea
-                  rows={5}
-                  className="border-solid border border-black rounded w-full p-2"
+                <Label htmlFor="message">message</Label>
+                <TextArea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
               <div className="text-center">
-                <button className="border-solid border rounded p-2 bg-green-500 text-white text-xl">Submit</button>
+                <Submit
+                  disabled={disableSend}
+                  confirm='お問い合わせを送信してもよろしいですか？'
+                >
+                  送信
+                </Submit>
               </div>
             </form>
           </div>
