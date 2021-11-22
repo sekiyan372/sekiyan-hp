@@ -131,57 +131,59 @@ const Home: NextPage = () => {
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
           <h2 className="text-white">Career</h2>
           <table className="m-10 text-white">
-            <tr>
-              <td>2015</td>
-              <td className="px-3">
-                <Circle>
-                  <FontAwesomeIcon
-                    icon={faGuitar}
-                    className="text-black w-full"
-                  />
-                </Circle>
-              </td>
-              <td>中部楽器技術専門学校 弦楽器制作科ギタークラフトコース</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td className="text-center"><VerticalLine/></td>
-              <td>エレキギター、エレキベース、アコースティックギターなどの制作、リペアなどを学ぶ</td>
-            </tr>
-            <tr>
-              <td>2017</td>
-              <td className="px-3">
-                <Circle>
-                  <FontAwesomeIcon
-                    icon={faBuilding}
-                    className="text-black w-full"
-                  />
-                </Circle>
-              </td>
-              <td>楽器卸売会社</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td className="text-center"><VerticalLine/></td>
-              <td>社内で電話対応、梱包、発送、楽器修理の管理などを担当</td>
-            </tr>
-            <tr>
-              <td>2019</td>
-              <td className="px-3">
-                <Circle>
-                  <FontAwesomeIcon
-                    icon={faSchool}
-                    className="text-black w-full"
-                  />
-                </Circle>
-              </td>
-              <td>金沢工業大学 工学部情報工学科</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td>CirKit、Tourismなどのプロジェクト活動に参加し、Web開発を行う</td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className="p-0">2015</td>
+                <td className="px-3 py-0">
+                  <Circle>
+                    <FontAwesomeIcon
+                      icon={faGuitar}
+                      className="text-black w-3/4"
+                    />
+                  </Circle>
+                </td>
+                <td className="p-0">中部楽器技術専門学校 弦楽器制作科ギタークラフトコース</td>
+              </tr>
+              <tr>
+                <td className="p-0"></td>
+                <td className="text-center h-24"><VerticalLine/></td>
+                <td className="h-24">エレキギター、エレキベース、アコースティックギターなどの制作、リペアなどを学ぶ</td>
+              </tr>
+              <tr>
+                <td className="p-0">2017</td>
+                <td className="px-3 py-0">
+                  <Circle>
+                    <FontAwesomeIcon
+                      icon={faBuilding}
+                      className="text-black w-3/5"
+                    />
+                  </Circle>
+                </td>
+                <td className="p-0">楽器卸売会社</td>
+              </tr>
+              <tr>
+                <td className="p-0"></td>
+                <td className="text-center h-24"><VerticalLine/></td>
+                <td className="h-24">社内で電話対応、梱包、発送、楽器修理の管理などを担当</td>
+              </tr>
+              <tr>
+                <td className="p-0">2019</td>
+                <td className="px-3 py-0">
+                  <Circle>
+                    <FontAwesomeIcon
+                      icon={faSchool}
+                      className="text-black w-3/4"
+                    />
+                  </Circle>
+                </td>
+                <td className="p-0">金沢工業大学 工学部情報工学科</td>
+              </tr>
+              <tr>
+                <td className="p-0"></td>
+                <td className="p-0"></td>
+                <td className="p-0">CirKit、Tourismなどのプロジェクト活動に参加し、Web開発を行う</td>
+              </tr>
+            </tbody>
           </table>
           <Down className="text-white"/>
         </section>
@@ -198,42 +200,44 @@ const Home: NextPage = () => {
 
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
           <h2 className="text-white">Hobby</h2>
-          <div className="text-white">
-            <h3 className="border-b-2">Favorite</h3>
-            <div className="flex">
-              <dl className="my-6 mx-10 text-lg">
-                <dt className="float-left clear-left w-20">Instrument</dt>
-                <dd className="float-left ml-5">ベース</dd>
-                <dt className="float-left clear-left w-20">Band</dt>
-                <dd className="float-left ml-5">nano.RIPE</dd>
-                <dt className="float-left clear-left w-20">Idol</dt>
-                <dd className="float-left ml-5">日向坂46</dd>
-              </dl>
-              <dl className="my-6 mx-10 text-lg">
-                <dt className="float-left clear-left 28">Baseball Team</dt>
-                <dd className="float-left ml-5">東北楽天ゴールデンイーグルス</dd>
-                <dt className="float-left clear-left w-28">Anime</dt>
-                <dd className="float-left ml-5">花咲くいろは</dd>
-              </dl>
+          <div>
+            <div className="text-white">
+              <h3 className="border-b-2">Favorite</h3>
+              <div className="flex">
+                <dl className="my-6 mx-10 text-lg">
+                  <dt className="float-left clear-left w-20">Instrument</dt>
+                  <dd className="float-left ml-5">ベース</dd>
+                  <dt className="float-left clear-left w-20">Band</dt>
+                  <dd className="float-left ml-5">nano.RIPE</dd>
+                  <dt className="float-left clear-left w-20">Idol</dt>
+                  <dd className="float-left ml-5">日向坂46</dd>
+                </dl>
+                <dl className="my-6 mx-10 text-lg">
+                  <dt className="float-left clear-left w-32">Baseball Team</dt>
+                  <dd className="float-left ml-5">東北楽天ゴールデンイーグルス</dd>
+                  <dt className="float-left clear-left w-32">Anime</dt>
+                  <dd className="float-left ml-5">花咲くいろは</dd>
+                </dl>
+              </div>
             </div>
-          </div>
 
-          <div className="text-white">
-            <h3 className="border-b-2 mb-6">Gallery</h3>
-            <Carousel>
-              <div>
-                <Image src={ICON} alt="image1" width={200} height={200} />
-                <p className="legend">Legend 1</p>
-              </div>
-              <div>
-                <Image src={ICON} alt="image2" width={200} height={200} />
-                <p className="legend">Legend 2</p>
-              </div>
-              <div>
-                <Image src={ICON} alt="image3" width={200} height={200} />
-                <p className="legend">Legend 3</p>
-              </div>
-            </Carousel>
+            <div className="text-white">
+              <h3 className="border-b-2 mb-6">Gallery</h3>
+              <Carousel>
+                <div>
+                  <Image src={ICON} alt="image1" width={200} height={200} />
+                  <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                  <Image src={ICON} alt="image2" width={200} height={200} />
+                  <p className="legend">Legend 2</p>
+                </div>
+                <div>
+                  <Image src={ICON} alt="image3" width={200} height={200} />
+                  <p className="legend">Legend 3</p>
+                </div>
+              </Carousel>
+            </div>
           </div>
           <Down className="text-white"/>
         </section>
