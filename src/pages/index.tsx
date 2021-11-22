@@ -16,7 +16,7 @@ import Head from '~/components/Head'
 import Circle from '~/components/Circle'
 import VerticalLine from '~/components/VerticalLine'
 import Label from '~/components/Label'
-import Input from '~/components/input'
+import Input from '~/components/Input'
 import TextArea from '~/components/Textarea'
 
 // EmailJS
@@ -31,6 +31,7 @@ const ICON = require('../../public/my-icon.jpg')
 const TWITTER_ICON = require('../../public/Twitter-social-icons-circle-blue.svg')
 const HATENA_ICON = require('../../public/hatenablog-logo.svg')
 const GITHUB_ICON = require('../../public/GitHub-Mark-Light-64px.png')
+const PRODUCT = require('../../public/image/product-page.png')
 
 const Home: NextPage = () => {
   const [name, setName] = useState<string>('')
@@ -191,14 +192,26 @@ const Home: NextPage = () => {
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
           <h2>Product</h2>
           <Link href="/product" passHref>
-            <div className="border-solid border border-black rounded-3xl w-3/4 h-1/2 my-12 flex justify-center items-center">
-              <p className="text-3xl">Please click to move the page.</p>
+            <div className="relative flex justify-center items-center w-160 h-96 m-8 cursor-pointer">
+              <div className="absolute w-160 h-96 my-12 bg-black inline-block">
+                <Image
+                  src={PRODUCT}
+                  alt="product page"
+                  width={640}
+                  height={384}
+                  className="block opacity-40"
+                />
+              </div>
+              <p className="absolute text-3xl text-white">Please click to move the page.</p>
             </div>
           </Link>
           <Down/>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
+        <section className="
+          w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800
+
+        ">
           <h2 className="text-white">Hobby</h2>
           <div>
             <div className="text-white">
