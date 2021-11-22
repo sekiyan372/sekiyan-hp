@@ -32,6 +32,10 @@ const TWITTER_ICON = require('../../public/Twitter-social-icons-circle-blue.svg'
 const HATENA_ICON = require('../../public/hatenablog-logo.svg')
 const GITHUB_ICON = require('../../public/GitHub-Mark-Light-64px.png')
 const PRODUCT = require('../../public/image/product-page.png')
+const STRATOCASTER = require('../../public/image/stratocaster.JPG')
+const BASS = require('../../public/image/bass.JPG')
+const LESPAOL = require('../../public/image/lespaol.JPG')
+const ACCOSTIC = require('../../public/image/accostic.JPG')
 
 const Home: NextPage = () => {
   const [name, setName] = useState<string>('')
@@ -238,16 +242,20 @@ const Home: NextPage = () => {
               <h3 className="border-b-2 mb-6">Gallery</h3>
               <Carousel>
                 <div>
-                  <Image src={ICON} alt="image1" width={200} height={200} />
-                  <p className="legend">Legend 1</p>
+                  <Image src={STRATOCASTER} alt="image1" width={300} height={200} />
+                  <p className="legend">自作のストラトキャスター</p>
                 </div>
                 <div>
-                  <Image src={ICON} alt="image2" width={200} height={200} />
-                  <p className="legend">Legend 2</p>
+                  <Image src={BASS} alt="image2" width={300} height={200} />
+                  <p className="legend">自作のプレシジョンベース</p>
                 </div>
                 <div>
-                  <Image src={ICON} alt="image3" width={200} height={200} />
-                  <p className="legend">Legend 3</p>
+                  <Image src={LESPAOL} alt="image3" width={300} height={200} />
+                  <p className="legend">自作のレスポール</p>
+                </div>
+                <div>
+                  <Image src={ACCOSTIC} alt="image3" width={300} height={200} />
+                  <p className="legend">自作のアコースティックギター</p>
                 </div>
               </Carousel>
             </div>
