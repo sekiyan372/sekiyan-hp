@@ -16,7 +16,7 @@ import Head from '~/components/Head'
 import Circle from '~/components/Circle'
 import VerticalLine from '~/components/VerticalLine'
 import Label from '~/components/Label'
-import Input from '~/components/input'
+import Input from '~/components/Input'
 import TextArea from '~/components/Textarea'
 
 // EmailJS
