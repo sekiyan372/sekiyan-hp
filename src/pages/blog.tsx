@@ -1,12 +1,13 @@
 import type { NextPage } from 'next'
 import Head from '~/components/Head'
+import { Heading } from '~/components/Heading'
 
 const Product: NextPage = () => {
   return(
     <>
       <Head title="Blog" />
 
-      <h2>Blog Index</h2>
+      <Heading>Blog Index</Heading>
     </>
   )
 }
