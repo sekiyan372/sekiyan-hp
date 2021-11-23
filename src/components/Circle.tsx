@@ -1,5 +1,4 @@
-import { ReactNode } from 'react'
-import { VFC } from 'react'
+import { VFC, ReactNode } from 'react'
 
 type Props = {
   children?: ReactNode;

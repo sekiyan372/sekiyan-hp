@@ -8,23 +8,23 @@ import Link from 'next/link'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
-//自作コンポーネント
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-import Down from '~/components/Button/Down'
-import LinkIcon from '~/components/Button/LinkIcon'
-import Submit from '~/components/Button/Submit'
-import Head from '~/components/Head'
-import { Heading, SubHeading } from '~/components/Heading'
-import Circle from '~/components/Circle'
-import VerticalLine from '~/components/VerticalLine'
-import Label from '~/components/Label'
-import Input from '~/components/Input'
-import TextArea from '~/components/Textarea'
-
 // EmailJS
 import { send } from 'emailjs-com'
 import { emailjsConfig } from '~/utils/Emailjs'
+
+//自作コンポーネント
+import Down from '~/components/Button/Down'
+import LinkIcon from '~/components/Button/LinkIcon'
+import Submit from '~/components/Button/Submit'
+import Circle from '~/components/Circle'
+import Footer from '~/components/Footer'
+import Head from '~/components/Head'
+import Header from '~/components/Header'
+import { Heading, SubHeading } from '~/components/Heading'
+import Input from '~/components/Input'
+import Label from '~/components/Label'
+import TextArea from '~/components/Textarea'
+import VerticalLine from '~/components/VerticalLine'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

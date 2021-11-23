@@ -1,5 +1,5 @@
-import NextHead from 'next/head'
 import { VFC } from 'react'
+import NextHead from 'next/head'
 
 type Props = {
   title?: string

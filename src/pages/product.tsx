@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
+import Footer from '~/components/Footer'
 import Head from '~/components/Head'
 import Header from '~/components/Header'
-import Footer from '~/components/Footer'
 import { Heading, SubHeading } from '~/components/Heading'
 import { ProductCard, BigProductCard } from '~/components/ProductCard'
 
