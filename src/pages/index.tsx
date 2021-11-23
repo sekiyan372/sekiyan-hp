@@ -1,8 +1,14 @@
 // react/nextの機能
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+
+// classNames
+import ClassNames from 'classnames'
+
+// Intersection Observer
+import { useInView } from 'react-intersection-observer';
 
 // カルーセル
 import { Carousel } from 'react-responsive-carousel'
@@ -51,6 +57,42 @@ const Home: NextPage = () => {
   const [message, setMessage] = useState<string>('')
   const disableSend = name === '' || email === '' || message === ''
 
+  const [topRef, inTopView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [profileRef, inProfileView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [careerRef, inCareerView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [productRef, inProductView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [hobbyRef, inHobbyView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [contactRef, inContactView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  useEffect(() => {
+    if (inTopView) {
+
+    }
+  })
+
   const sendMail = () => {
     if (
       emailjsConfig.serviceId !== undefined &&
@@ -86,6 +128,7 @@ const Home: NextPage = () => {
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
         <section
+          ref={topRef}
           id="top"
           className="w-full h-screen snap-start bg-jade"
         >
@@ -122,6 +165,7 @@ const Home: NextPage = () => {
         </section>
 
         <section
+          ref={profileRef}
           id="profile"
           className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
         >
@@ -151,6 +195,7 @@ const Home: NextPage = () => {
         </section>
 
         <section
+          ref={careerRef}
           id="career"
           className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
         >
@@ -214,6 +259,7 @@ const Home: NextPage = () => {
         </section>
 
         <section
+          ref={productRef}
           id="product"
           className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
         >
@@ -236,6 +282,7 @@ const Home: NextPage = () => {
         </section>
 
         <section
+          ref={hobbyRef}
           id="hobby"
           className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
         >
@@ -287,6 +334,7 @@ const Home: NextPage = () => {
         </section>
 
         <section
+          ref={contactRef}
           id="contact"
           className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200"
         >
@@ -339,32 +387,50 @@ const Home: NextPage = () => {
       <nav id="pagination" className="fixed top-1/2 right-8 nav-transform">
         <a
           id="top-pagination"
-          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          className={ClassNames(
+            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+            inTopView ? 'pagination-active' : ''
+          )}
           href="#top"
         />
         <a
           id="profile-pagination"
-          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          className={ClassNames(
+            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+            inProfileView ? 'pagination-active' : ''
+          )}
           href="#profile"
         />
         <a
           id="career-pagination"
-          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          className={ClassNames(
+            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+            inCareerView ? 'pagination-active' : ''
+          )}
           href="#career"
         />
         <a
           id="product-pagination"
-          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          className={ClassNames(
+            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+            inProductView ? 'pagination-active' : ''
+          )}
           href="#product"
         />
         <a
           id="hobby-pagination"
-          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          className={ClassNames(
+            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+            inHobbyView ? 'pagination-active' : ''
+          )}
           href="#hobby"
         />
         <a
           id="contact-pagination"
-          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          className={ClassNames(
+            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+            inContactView ? 'pagination-active' : ''
+          )}
           href="#contact"
         />
       </nav>
