@@ -8,21 +8,16 @@ import { useInView } from 'react-intersection-observer'
 
 //自作コンポーネント
 import Down from '~/components/Button/Down'
-import Circle from '~/components/Circle'
 import Head from '~/components/Head'
 import { Heading } from '~/components/Heading'
 import NavLink from '~/components/NavLink'
-import VerticalLine from '~/components/VerticalLine'
 
 // section
 import Top from '~/sections/Top'
 import Profile from '~/sections/Profile'
+import Career from '~/sections/Career'
 import Hobby from '~/sections/Hobby'
 import Contact from '~/sections/Contact'
-
-// FontAwesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons'
 
 // ページ内画像
 const PRODUCT = require('../../public/image/product-page.png')
@@ -65,70 +60,7 @@ const Home: NextPage = () => {
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
         <Top ref={topRef} />
         <Profile ref={profileRef} />
-
-        <section
-          ref={careerRef}
-          id="career"
-          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
-        >
-          <Heading className="text-white">Career</Heading>
-          <table className="m-8 text-white">
-            <tbody>
-              <tr>
-                <td className="p-0">2015</td>
-                <td className="px-3 py-0">
-                  <Circle>
-                    <FontAwesomeIcon
-                      icon={faGuitar}
-                      className="text-black w-3/4"
-                    />
-                  </Circle>
-                </td>
-                <td className="p-0">中部楽器技術専門学校 弦楽器制作科ギタークラフトコース</td>
-              </tr>
-              <tr>
-                <td className="p-0"></td>
-                <td className="text-center h-24"><VerticalLine/></td>
-                <td className="h-24">エレキギター、エレキベース、アコースティックギターなどの制作、リペアなどを学ぶ</td>
-              </tr>
-              <tr>
-                <td className="p-0">2017</td>
-                <td className="px-3 py-0">
-                  <Circle>
-                    <FontAwesomeIcon
-                      icon={faBuilding}
-                      className="text-black w-3/5"
-                    />
-                  </Circle>
-                </td>
-                <td className="p-0">楽器卸売会社</td>
-              </tr>
-              <tr>
-                <td className="p-0"></td>
-                <td className="text-center h-24"><VerticalLine/></td>
-                <td className="h-24">社内で電話対応、梱包、発送、楽器修理の管理などを担当</td>
-              </tr>
-              <tr>
-                <td className="p-0">2019</td>
-                <td className="px-3 py-0">
-                  <Circle>
-                    <FontAwesomeIcon
-                      icon={faSchool}
-                      className="text-black w-3/4"
-                    />
-                  </Circle>
-                </td>
-                <td className="p-0">金沢工業大学 工学部情報工学科</td>
-              </tr>
-              <tr>
-                <td className="p-0"></td>
-                <td className="p-0"></td>
-                <td className="p-0">CirKit、Tourismなどのプロジェクト活動に参加し、Web開発を行う</td>
-              </tr>
-            </tbody>
-          </table>
-          <Down href="#product" className="text-white" />
-        </section>
+        <Career ref={careerRef} />
 
         <section
           ref={productRef}
