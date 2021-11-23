@@ -1,5 +1,4 @@
 // react/nextの機能
-import { useState, ChangeEvent } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -11,26 +10,18 @@ import { useInView } from 'react-intersection-observer'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
-// EmailJS
-import { send } from 'emailjs-com'
-import { emailjsConfig } from '~/utils/Emailjs'
-
 //自作コンポーネント
 import Down from '~/components/Button/Down'
-import Submit from '~/components/Button/Submit'
 import Circle from '~/components/Circle'
-import Footer from '~/components/Footer'
 import Head from '~/components/Head'
 import { Heading, SubHeading } from '~/components/Heading'
-import Input from '~/components/Input'
-import Label from '~/components/Label'
 import NavLink from '~/components/NavLink'
-import TextArea from '~/components/Textarea'
 import VerticalLine from '~/components/VerticalLine'
 
 // section
 import Top from '~/sections/Top'
 import Profile from '~/sections/Profile'
+import Contact from '~/sections/Contact'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -46,11 +37,6 @@ const LESPAOL = require('../../public/image/lespaol.JPG')
 const ACCOSTIC = require('../../public/image/accostic.JPG')
 
 const Home: NextPage = () => {
-  const [name, setName] = useState<string>('')
-  const [email, setEmail] = useState<string>('')
-  const [message, setMessage] = useState<string>('')
-  const disableSend = name === '' || email === '' || message === ''
-
   const [topRef, inTopView] = useInView({
     rootMargin: '-50% 0px',
     threshold: 0,
@@ -80,35 +66,6 @@ const Home: NextPage = () => {
     rootMargin: '-50% 0px',
     threshold: 0,
   })
-
-  const sendMail = () => {
-    if (
-      emailjsConfig.serviceId !== undefined &&
-      emailjsConfig.templateId !== undefined
-    ) {
-      const template_param = {
-        to_name: name,
-        from_email: email,
-        message: message,
-      }
-
-      send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        template_param
-      ).then(() => {
-        window.alert('お問い合わせを送信致しました。')
-        setName('')
-        setEmail('')
-        setMessage('')
-      })
-    }
-  }
-
-  const onSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    sendMail()
-  }
 
   return (
     <>
@@ -257,55 +214,7 @@ const Home: NextPage = () => {
           <Down href="#contact" className="text-white"/>
         </section>
 
-        <section
-          ref={contactRef}
-          id="contact"
-          className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200"
-        >
-          <div className="h-full flex justify-center items-center flex-col">
-            <Heading>Contact</Heading>
-            <p className="mt-5">
-              お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
-            </p>
-            <div className="m-10 w-3/4">
-              <form onSubmit={onSubmit}>
-                <div className="m-5">
-                  <Label htmlFor="name">name</Label>
-                  <Input
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-                <div className="m-5">
-                  <Label htmlFor="email">email</Label>
-                  <Input
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="m-5">
-                  <Label htmlFor="message">message</Label>
-                  <TextArea
-                    id="message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                </div>
-                <div className="text-center">
-                  <Submit
-                    disabled={disableSend}
-                    confirm='お問い合わせを送信してもよろしいですか？'
-                  >
-                    送信
-                  </Submit>
-                </div>
-              </form>
-            </div>
-          </div>
-          <Footer/>
-        </section>
+        <Contact ref={contactRef} />
       </div>
 
       <nav id="pagination" className="fixed top-1/2 right-8 nav-transform">
