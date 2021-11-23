@@ -4,9 +4,6 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// classNames
-import ClassNames from 'classnames'
-
 // Intersection Observer
 import { useInView } from 'react-intersection-observer'
 
@@ -29,6 +26,7 @@ import Header from '~/components/Header'
 import { Heading, SubHeading } from '~/components/Heading'
 import Input from '~/components/Input'
 import Label from '~/components/Label'
+import NavLink from '~/components/navLink'
 import TextArea from '~/components/Textarea'
 import VerticalLine from '~/components/VerticalLine'
 
@@ -86,16 +84,6 @@ const Home: NextPage = () => {
     rootMargin: '-50% 0px',
     threshold: 0,
   })
-
-  const smoothScroll = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    const eventTarget = event.target as HTMLAnchorElement
-    const eventTargetId = eventTarget.hash
-    const scrollTarget = document.querySelector(eventTargetId)
-    if (scrollTarget) {
-      scrollTarget.scrollIntoView({ behavior: "smooth" })
-    }
-  }
 
   const sendMail = () => {
     if (
@@ -389,60 +377,12 @@ const Home: NextPage = () => {
       </div>
 
       <nav id="pagination" className="fixed top-1/2 right-8 nav-transform">
-        <a
-          id="top-pagination"
-          className={ClassNames(
-            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
-            inTopView ? 'pagination-active' : ''
-          )}
-          href="#top"
-          onClick={e => smoothScroll(e)}
-        />
-        <a
-          id="profile-pagination"
-          className={ClassNames(
-            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
-            inProfileView ? 'pagination-active' : ''
-          )}
-          href="#profile"
-          onClick={e => smoothScroll(e)}
-        />
-        <a
-          id="career-pagination"
-          className={ClassNames(
-            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
-            inCareerView ? 'pagination-active' : ''
-          )}
-          href="#career"
-          onClick={e => smoothScroll(e)}
-        />
-        <a
-          id="product-pagination"
-          className={ClassNames(
-            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
-            inProductView ? 'pagination-active' : ''
-          )}
-          href="#product"
-          onClick={e => smoothScroll(e)}
-        />
-        <a
-          id="hobby-pagination"
-          className={ClassNames(
-            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
-            inHobbyView ? 'pagination-active' : ''
-          )}
-          href="#hobby"
-          onClick={e => smoothScroll(e)}
-        />
-        <a
-          id="contact-pagination"
-          className={ClassNames(
-            'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
-            inContactView ? 'pagination-active' : ''
-          )}
-          href="#contact"
-          onClick={e => smoothScroll(e)}
-        />
+        <NavLink inView={inTopView} href="#top" />
+        <NavLink inView={inProfileView} href="#profile" />
+        <NavLink inView={inCareerView} href="#career" />
+        <NavLink inView={inProductView} href="#product" />
+        <NavLink inView={inHobbyView} href="#hobby" />
+        <NavLink inView={inContactView} href="#contact" />
       </nav>
     </>
   )
