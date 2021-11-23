@@ -1,4 +1,4 @@
-import { VFC, LegacyRef } from "react"
+import { forwardRef, ForwardRefRenderFunction } from "react"
 import Image from 'next/image'
 import Link from 'next/link'
 import Down from '~/components/Button/Down'
@@ -7,11 +7,7 @@ import Section from '~/components/Section'
 
 const PRODUCT = require('../../public/image/product-page.png')
 
-type Props = {
-  ref: LegacyRef<HTMLElement>
-}
-
-const Product: VFC<Props> = ({ref}) => {
+const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (
     <Section
       ref={ref}
@@ -38,4 +34,4 @@ const Product: VFC<Props> = ({ref}) => {
   )
 }
 
-export default Product
+export default forwardRef(Product)

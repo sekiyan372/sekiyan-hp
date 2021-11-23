@@ -1,4 +1,4 @@
-import { VFC, LegacyRef } from "react"
+import { forwardRef, ForwardRefRenderFunction } from "react"
 import Down from '~/components/Button/Down'
 import LinkIcon from '~/components/Button/LinkIcon'
 import Header from '~/components/Header'
@@ -29,11 +29,7 @@ const links = [
   }
 ]
 
-type Props = {
-  ref: LegacyRef<HTMLElement>
-}
-
-const Top: VFC<Props> = ({ref}) => {
+const Top: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (
     <Section
       ref={ref}
@@ -63,4 +59,4 @@ const Top: VFC<Props> = ({ref}) => {
   )
 }
 
-export default Top
+export default forwardRef(Top)

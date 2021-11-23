@@ -1,13 +1,20 @@
-import { VFC, HTMLAttributes, ReactNode, LegacyRef } from "react"
+import {
+  HTMLAttributes,
+  ReactNode, 
+  forwardRef,
+  ForwardRefRenderFunction
+} from "react"
 import ClassNames from "classnames"
 
 type Props = {
-  ref?: LegacyRef<HTMLElement>
+  // ref?: LegacyRef<HTMLElement>
   id?: string
   children: ReactNode
 } & HTMLAttributes<HTMLElement>
 
-const Section: VFC<Props> = ({ref, id, children, className}) => {
+const Section: ForwardRefRenderFunction<HTMLElement, Props> = (
+  { id, children, className}, ref
+) => {
   return(
     <section
       ref={ref}
@@ -22,4 +29,4 @@ const Section: VFC<Props> = ({ref, id, children, className}) => {
   )
 }
 
-export default Section
+export default forwardRef(Section) 

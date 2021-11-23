@@ -1,4 +1,4 @@
-import { VFC, LegacyRef } from "react"
+import { forwardRef, ForwardRefRenderFunction } from "react"
 import Image from 'next/image'
 import Down from '~/components/Button/Down'
 import { Heading } from '~/components/Heading'
@@ -21,11 +21,7 @@ const profiles = [
   },
 ]
 
-type Props = {
-  ref: LegacyRef<HTMLElement>
-}
-
-const Profile: VFC<Props> = ({ref}) => {
+const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (
     <Section
       ref={ref}
@@ -47,10 +43,10 @@ const Profile: VFC<Props> = ({ref}) => {
         </div>
         <dl className="m-8 text-lg">
           {profiles.map(profile => (
-            <>
+            <span key={profile.label}>
               <dt className="float-left clear-left w-24">{profile.label}</dt>
               <dd className="float-left ml-5">{profile.content}</dd>
-            </>
+            </span>
           ))}
         </dl>
       </div>
@@ -59,4 +55,4 @@ const Profile: VFC<Props> = ({ref}) => {
   )
 }
 
-export default Profile
+export default forwardRef(Profile)

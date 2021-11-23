@@ -1,4 +1,9 @@
-import { VFC, useState, LegacyRef, ChangeEvent } from "react"
+import {
+  useState,
+  forwardRef,
+  ForwardRefRenderFunction,
+  ChangeEvent
+} from "react"
 import { send } from 'emailjs-com'
 import { emailjsConfig } from '~/utils/Emailjs'
 import Submit from '~/components/Button/Submit'
@@ -9,11 +14,7 @@ import Label from '~/components/Label'
 import Section from '~/components/Section'
 import TextArea from '~/components/Textarea'
 
-type Props = {
-  ref: LegacyRef<HTMLElement>
-}
-
-const Contact: VFC<Props> = ({ref}) => {
+const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
@@ -101,4 +102,4 @@ const Contact: VFC<Props> = ({ref}) => {
   )
 }
 
-export default Contact
+export default forwardRef(Contact)

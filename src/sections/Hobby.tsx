@@ -1,4 +1,4 @@
-import { VFC, LegacyRef } from "react"
+import { forwardRef, ForwardRefRenderFunction } from "react"
 import Image from 'next/image'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -65,11 +65,7 @@ const works = [
   },
 ]
 
-type Props = {
-  ref: LegacyRef<HTMLElement>
-}
-
-const Hobby: VFC<Props> = ({ref}) => {
+const Hobby: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (
     <Section
       ref={ref}
@@ -84,10 +80,10 @@ const Hobby: VFC<Props> = ({ref}) => {
             {favorites.map((itemLists, index) => (
               <dl className="my-6 mx-10 text-lg" key={index}>
                 {itemLists.map(favorite => (
-                  <>
+                  <span key={favorite.label}>
                     <dt className="float-left clear-left w-20">{favorite.label}</dt>
                     <dd className="float-left ml-5">{favorite.content}</dd>
-                  </>
+                  </span>
                 ))}
               </dl>
             ))}
@@ -96,7 +92,7 @@ const Hobby: VFC<Props> = ({ref}) => {
 
         <div className="text-white">
           <SubHeading className="border-b-2 mb-6">Gallery</SubHeading>
-          <Carousel>
+          <Carousel showThumbs={false}>
             {works.map(work => (
               <div key={work.name}>
                 <Image
@@ -116,4 +112,4 @@ const Hobby: VFC<Props> = ({ref}) => {
   )
 }
 
-export default Hobby
+export default forwardRef(Hobby)

@@ -1,4 +1,4 @@
-import { VFC, LegacyRef } from "react"
+import { forwardRef, ForwardRefRenderFunction } from "react"
 import Down from '~/components/Button/Down'
 import Circle from '~/components/Circle'
 import { Heading } from '~/components/Heading'
@@ -61,11 +61,7 @@ const careers = [
   }
 ]
 
-type Props = {
-  ref: LegacyRef<HTMLElement>
-}
-
-const Career: VFC<Props> = ({ref}) => {
+const Career: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (
     <Section
       ref={ref}
@@ -94,4 +90,4 @@ const Career: VFC<Props> = ({ref}) => {
   )
 }
 
-export default Career
+export default forwardRef(Career)
