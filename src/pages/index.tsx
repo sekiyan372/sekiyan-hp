@@ -6,21 +6,18 @@ import Link from 'next/link'
 // Intersection Observer
 import { useInView } from 'react-intersection-observer'
 
-// カルーセル
-import { Carousel } from 'react-responsive-carousel'
-import "react-responsive-carousel/lib/styles/carousel.min.css"
-
 //自作コンポーネント
 import Down from '~/components/Button/Down'
 import Circle from '~/components/Circle'
 import Head from '~/components/Head'
-import { Heading, SubHeading } from '~/components/Heading'
+import { Heading } from '~/components/Heading'
 import NavLink from '~/components/NavLink'
 import VerticalLine from '~/components/VerticalLine'
 
 // section
 import Top from '~/sections/Top'
 import Profile from '~/sections/Profile'
+import Hobby from '~/sections/Hobby'
 import Contact from '~/sections/Contact'
 
 // FontAwesome
@@ -29,12 +26,6 @@ import { faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icon
 
 // ページ内画像
 const PRODUCT = require('../../public/image/product-page.png')
-
-// ギャラリー画像
-const STRATOCASTER = require('../../public/image/stratocaster.JPG')
-const BASS = require('../../public/image/bass.JPG')
-const LESPAOL = require('../../public/image/lespaol.JPG')
-const ACCOSTIC = require('../../public/image/accostic.JPG')
 
 const Home: NextPage = () => {
   const [topRef, inTopView] = useInView({
@@ -162,58 +153,7 @@ const Home: NextPage = () => {
           <Down href="#hobby" />
         </section>
 
-        <section
-          ref={hobbyRef}
-          id="hobby"
-          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
-        >
-          <Heading className="text-white">Hobby</Heading>
-          <div>
-            <div className="text-white">
-              <SubHeading className="border-b-2">Favorite</SubHeading>
-              <div className="flex justify-center">
-                <dl className="my-6 mx-10 text-lg">
-                  <dt className="float-left clear-left w-20">Instrument</dt>
-                  <dd className="float-left ml-5">ベース</dd>
-                  <dt className="float-left clear-left w-20">Band</dt>
-                  <dd className="float-left ml-5">nano.RIPE</dd>
-                  <dt className="float-left clear-left w-20">Idol</dt>
-                  <dd className="float-left ml-5">日向坂46</dd>
-                </dl>
-                <dl className="my-6 mx-10 text-lg">
-                  <dt className="float-left clear-left w-32">Baseball Team</dt>
-                  <dd className="float-left ml-5">東北楽天ゴールデンイーグルス</dd>
-                  <dt className="float-left clear-left w-32">Anime</dt>
-                  <dd className="float-left ml-5">花咲くいろは</dd>
-                </dl>
-              </div>
-            </div>
-
-            <div className="text-white">
-              <SubHeading className="border-b-2 mb-6">Gallery</SubHeading>
-              <Carousel>
-                <div>
-                  <Image src={STRATOCASTER} alt="image1" width={300} height={200} />
-                  <p className="legend">自作のストラトキャスター</p>
-                </div>
-                <div>
-                  <Image src={BASS} alt="image2" width={300} height={200} />
-                  <p className="legend">自作のプレシジョンベース</p>
-                </div>
-                <div>
-                  <Image src={LESPAOL} alt="image3" width={300} height={200} />
-                  <p className="legend">自作のレスポール</p>
-                </div>
-                <div>
-                  <Image src={ACCOSTIC} alt="image3" width={300} height={200} />
-                  <p className="legend">自作のアコースティックギター</p>
-                </div>
-              </Carousel>
-            </div>
-          </div>
-          <Down href="#contact" className="text-white"/>
-        </section>
-
+        <Hobby ref={hobbyRef} />
         <Contact ref={contactRef} />
       </div>
 
