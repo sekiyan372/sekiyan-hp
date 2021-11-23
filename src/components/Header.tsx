@@ -9,13 +9,13 @@ const Header: VFC = () => {
       </Link>
       <div className="flex">
         <Link href="/product" passHref>
-          <div className="mx-5 text-2xl cursor-pointer">Product</div>
+          <div className="mx-8 text-2xl cursor-pointer">Product</div>
         </Link>
-        <Link href="/blog" passHref>
-          <div className="mx-5 text-2xl cursor-pointer">Blog</div>
-        </Link>
-        <Link href="/" passHref>
-          <div className="mx-5 text-2xl cursor-pointer">Contact</div>
+        {/* <Link href="/blog" passHref>
+          <div className="mx-8 text-2xl cursor-pointer">Blog</div>
+        </Link> */}
+        <Link href="/#contact" passHref>
+          <div className="mx-8 text-2xl cursor-pointer">Contact</div>
         </Link>
       </div>
     </header>

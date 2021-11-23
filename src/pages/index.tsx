@@ -85,7 +85,10 @@ const Home: NextPage = () => {
       <Head />
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
-        <section className="w-full h-screen snap-start bg-jade">
+        <section
+          id="top"
+          className="w-full h-screen snap-start bg-jade"
+        >
           <Header/>
           <div className="h-full flex justify-center items-center flex-col">
             <h1 className="m-8 text-white">Welcome to</h1>
@@ -114,11 +117,14 @@ const Home: NextPage = () => {
               />
             </div>
             <p className="text-2xl text-white">Scroll</p>
-            <Down className="text-white"/>
+            <Down href="#profile" className="text-white" />
           </div>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
+        <section
+          id="profile"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
+        >
           <Heading>Profile</Heading>
           <div>
             <div className="text-center">
@@ -141,10 +147,13 @@ const Home: NextPage = () => {
               <dd className="float-left ml-5">金沢工業大学 在籍</dd>
             </dl>
           </div>
-          <Down className="m-8" />
+          <Down href="#career" className="m-8" />
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
+        <section
+          id="career"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
+        >
           <Heading className="text-white">Career</Heading>
           <table className="m-8 text-white">
             <tbody>
@@ -201,10 +210,13 @@ const Home: NextPage = () => {
               </tr>
             </tbody>
           </table>
-          <Down className="text-white"/>
+          <Down href="#product" className="text-white" />
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
+        <section
+          id="product"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
+        >
           <Heading>Product</Heading>
           <Link href="/product" passHref>
             <div className="relative flex justify-center items-center w-160 h-96 m-8 cursor-pointer">
@@ -220,12 +232,13 @@ const Home: NextPage = () => {
               <p className="absolute text-3xl text-white">Please click to move the page.</p>
             </div>
           </Link>
-          <Down/>
+          <Down href="#hobby" />
         </section>
 
-        <section className="
-          w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800
-        ">
+        <section
+          id="hobby"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
+        >
           <Heading className="text-white">Hobby</Heading>
           <div>
             <div className="text-white">
@@ -270,10 +283,13 @@ const Home: NextPage = () => {
               </Carousel>
             </div>
           </div>
-          <Down className="text-white"/>
+          <Down href="#contact" className="text-white"/>
         </section>
 
-        <section className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200">
+        <section
+          id="contact"
+          className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200"
+        >
           <div className="h-full flex justify-center items-center flex-col">
             <Heading>Contact</Heading>
             <p className="mt-5">
@@ -319,6 +335,39 @@ const Home: NextPage = () => {
           <Footer/>
         </section>
       </div>
+
+      <nav id="pagination" className="fixed top-1/2 right-8 nav-transform">
+        <a
+          id="top-pagination"
+          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          href="#top"
+        />
+        <a
+          id="profile-pagination"
+          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          href="#profile"
+        />
+        <a
+          id="career-pagination"
+          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          href="#career"
+        />
+        <a
+          id="product-pagination"
+          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          href="#product"
+        />
+        <a
+          id="hobby-pagination"
+          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          href="#hobby"
+        />
+        <a
+          id="contact-pagination"
+          className="block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition active:pagination-active"
+          href="#contact"
+        />
+      </nav>
     </>
   )
 }

@@ -1,7 +1,9 @@
-import { VFC } from 'react'
+import { VFC, HTMLAttributes } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ClassNames from 'classnames'
+
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 type Props = {
   url: string
@@ -9,8 +11,7 @@ type Props = {
   alt: string
   width: number
   height: number
-  className?: string | undefined
-}
+} & DivProps
 
 const LinkIcon: VFC<Props> = ({url, src, alt, width, height, className}) => {
   return(
