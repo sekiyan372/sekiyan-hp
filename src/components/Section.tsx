@@ -13,7 +13,7 @@ const Section: VFC<Props> = ({ref, id, children, className}) => {
       ref={ref}
       id={id}
       className={ClassNames(
-        "w-full h-screen snap-start bg-jade",
+        "w-full h-screen snap-start",
         className
       )}
     >

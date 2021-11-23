@@ -17,12 +17,10 @@ import { emailjsConfig } from '~/utils/Emailjs'
 
 //自作コンポーネント
 import Down from '~/components/Button/Down'
-import LinkIcon from '~/components/Button/LinkIcon'
 import Submit from '~/components/Button/Submit'
 import Circle from '~/components/Circle'
 import Footer from '~/components/Footer'
 import Head from '~/components/Head'
-import Header from '~/components/Header'
 import { Heading, SubHeading } from '~/components/Heading'
 import Input from '~/components/Input'
 import Label from '~/components/Label'
@@ -32,18 +30,13 @@ import VerticalLine from '~/components/VerticalLine'
 
 // section
 import Top from '~/sections/Top'
+import Profile from '~/sections/Profile'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGuitar, faBuilding, faSchool } from '@fortawesome/free-solid-svg-icons'
 
-// アイコン
-const TWITTER_ICON = require('../../public/Twitter-social-icons-circle-blue.svg')
-const HATENA_ICON = require('../../public/hatenablog-logo.svg')
-const GITHUB_ICON = require('../../public/GitHub-Mark-Light-64px.png')
-
 // ページ内画像
-const ICON = require('../../public/my-icon.jpg')
 const PRODUCT = require('../../public/image/product-page.png')
 
 // ギャラリー画像
@@ -123,36 +116,7 @@ const Home: NextPage = () => {
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
         <Top ref={topRef} />
-
-        <section
-          ref={profileRef}
-          id="profile"
-          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
-        >
-          <Heading>Profile</Heading>
-          <div>
-            <div className="text-center">
-              <Image
-                src={ICON}
-                alt="my icon"
-                width={200}
-                height={200}
-                className="rounded-full"
-              />
-              <p className="text-3xl">せきやん</p>
-              <p className="text-xl">Sekiyan</p>
-            </div>
-            <dl className="m-8 text-lg">
-              <dt className="float-left clear-left w-24">Name</dt>
-              <dd className="float-left ml-5">関谷 翠帰（Sekiya Suiki）</dd>
-              <dt className="float-left clear-left w-24">From</dt>
-              <dd className="float-left ml-5">愛知県名古屋市</dd>
-              <dt className="float-left clear-left w-24">University</dt>
-              <dd className="float-left ml-5">金沢工業大学 在籍</dd>
-            </dl>
-          </div>
-          <Down href="#career" className="m-8" />
-        </section>
+        <Profile ref={profileRef} />
 
         <section
           ref={careerRef}
