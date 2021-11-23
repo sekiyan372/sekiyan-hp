@@ -87,7 +87,7 @@ const Home: NextPage = () => {
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
         <section className="w-full h-screen snap-start bg-jade">
           <Header/>
-          <div className="flex items-center flex-col pt-10">
+          <div className="h-full flex justify-center items-center flex-col">
             <h1 className="m-8 text-white">Welcome to</h1>
             <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
             <div className="m-5">
@@ -274,7 +274,7 @@ const Home: NextPage = () => {
         </section>
 
         <section className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200">
-          <div className="flex items-center flex-col">
+          <div className="h-full flex justify-center items-center flex-col">
             <Heading>Contact</Heading>
             <p className="mt-5">
               お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
