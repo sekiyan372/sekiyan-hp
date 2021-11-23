@@ -1,5 +1,4 @@
 import { VFC, LegacyRef } from "react"
-import ClassNames from "classnames"
 import Down from '~/components/Button/Down'
 import Circle from '~/components/Circle'
 import { Heading } from '~/components/Heading'
