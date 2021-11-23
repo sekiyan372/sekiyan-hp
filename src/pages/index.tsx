@@ -1,5 +1,5 @@
 // react/nextの機能
-import { useState, ChangeEvent, MouseEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -26,9 +26,12 @@ import Header from '~/components/Header'
 import { Heading, SubHeading } from '~/components/Heading'
 import Input from '~/components/Input'
 import Label from '~/components/Label'
-import NavLink from '~/components/navLink'
+import NavLink from '~/components/NavLink'
 import TextArea from '~/components/Textarea'
 import VerticalLine from '~/components/VerticalLine'
+
+// section
+import Top from '~/sections/Top'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -119,42 +122,7 @@ const Home: NextPage = () => {
       <Head />
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
-        <section
-          ref={topRef}
-          id="top"
-          className="w-full h-screen snap-start bg-jade"
-        >
-          <Header/>
-          <div className="h-full flex justify-center items-center flex-col">
-            <h1 className="m-8 text-white">Welcome to</h1>
-            <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
-            <div className="m-5">
-              <LinkIcon
-                url="https://twitter.com/sekiyan372"
-                src={TWITTER_ICON}
-                alt="Twitter Button"
-                width={60}
-                height={60}
-              />
-              <LinkIcon
-                url="https://sekiyan372.hatenablog.jp/"
-                src={HATENA_ICON}
-                alt="Hatena Blog Button"
-                width={60}
-                height={60}
-              />
-              <LinkIcon
-                url="https://github.com/sekiyan372"
-                src={GITHUB_ICON}
-                alt="Github Button"
-                width={60}
-                height={60}
-              />
-            </div>
-            <p className="text-2xl text-white">Scroll</p>
-            <Down href="#profile" className="text-white" />
-          </div>
-        </section>
+        <Top ref={topRef} />
 
         <section
           ref={profileRef}
