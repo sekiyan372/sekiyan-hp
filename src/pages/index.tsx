@@ -9,10 +9,13 @@ import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 //自作コンポーネント
+import Header from '~/components/Header'
+import Footer from '~/components/Footer'
 import Down from '~/components/Button/Down'
 import LinkIcon from '~/components/Button/LinkIcon'
 import Submit from '~/components/Button/Submit'
 import Head from '~/components/Head'
+import { Heading, SubHeading } from '~/components/Heading'
 import Circle from '~/components/Circle'
 import VerticalLine from '~/components/VerticalLine'
 import Label from '~/components/Label'
@@ -82,39 +85,42 @@ const Home: NextPage = () => {
       <Head />
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-jade">
-          <h1 className="m-8 text-white">Welcome to</h1>
-          <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
-          <div className="m-5">
-            <LinkIcon
-              url="https://twitter.com/sekiyan372"
-              src={TWITTER_ICON}
-              alt="Twitter Button"
-              width={60}
-              height={60}
-            />
-            <LinkIcon
-              url="https://sekiyan372.hatenablog.jp/"
-              src={HATENA_ICON}
-              alt="Hatena Blog Button"
-              width={60}
-              height={60}
-            />
-            <LinkIcon
-              url="https://github.com/sekiyan372"
-              src={GITHUB_ICON}
-              alt="Github Button"
-              width={60}
-              height={60}
-            />
+        <section className="w-full h-screen snap-start bg-jade">
+          <Header/>
+          <div className="flex items-center flex-col pt-10">
+            <h1 className="m-8 text-white">Welcome to</h1>
+            <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
+            <div className="m-5">
+              <LinkIcon
+                url="https://twitter.com/sekiyan372"
+                src={TWITTER_ICON}
+                alt="Twitter Button"
+                width={60}
+                height={60}
+              />
+              <LinkIcon
+                url="https://sekiyan372.hatenablog.jp/"
+                src={HATENA_ICON}
+                alt="Hatena Blog Button"
+                width={60}
+                height={60}
+              />
+              <LinkIcon
+                url="https://github.com/sekiyan372"
+                src={GITHUB_ICON}
+                alt="Github Button"
+                width={60}
+                height={60}
+              />
+            </div>
+            <p className="text-2xl text-white">Scroll</p>
+            <Down className="text-white"/>
           </div>
-          <p className="text-2xl text-white">Scroll</p>
-          <Down className="text-white"/>
         </section>
 
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
-          <h2>Profile</h2>
-          <div className="m-10">
+          <Heading>Profile</Heading>
+          <div>
             <div className="text-center">
               <Image
                 src={ICON}
@@ -135,12 +141,12 @@ const Home: NextPage = () => {
               <dd className="float-left ml-5">金沢工業大学 在籍</dd>
             </dl>
           </div>
-          <Down/>
+          <Down className="m-8" />
         </section>
 
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
-          <h2 className="text-white">Career</h2>
-          <table className="m-10 text-white">
+          <Heading className="text-white">Career</Heading>
+          <table className="m-8 text-white">
             <tbody>
               <tr>
                 <td className="p-0">2015</td>
@@ -199,7 +205,7 @@ const Home: NextPage = () => {
         </section>
 
         <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
-          <h2>Product</h2>
+          <Heading>Product</Heading>
           <Link href="/product" passHref>
             <div className="relative flex justify-center items-center w-160 h-96 m-8 cursor-pointer">
               <div className="absolute w-160 h-96 my-12 bg-black inline-block">
@@ -219,12 +225,11 @@ const Home: NextPage = () => {
 
         <section className="
           w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800
-
         ">
-          <h2 className="text-white">Hobby</h2>
+          <Heading className="text-white">Hobby</Heading>
           <div>
             <div className="text-white">
-              <h3 className="border-b-2">Favorite</h3>
+              <SubHeading className="border-b-2">Favorite</SubHeading>
               <div className="flex justify-center">
                 <dl className="my-6 mx-10 text-lg">
                   <dt className="float-left clear-left w-20">Instrument</dt>
@@ -244,7 +249,7 @@ const Home: NextPage = () => {
             </div>
 
             <div className="text-white">
-              <h3 className="border-b-2 mb-6">Gallery</h3>
+              <SubHeading className="border-b-2 mb-6">Gallery</SubHeading>
               <Carousel>
                 <div>
                   <Image src={STRATOCASTER} alt="image1" width={300} height={200} />
@@ -268,47 +273,50 @@ const Home: NextPage = () => {
           <Down className="text-white"/>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
-          <h2>Contact</h2>
-          <p className="mt-5">
-            お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
-          </p>
-          <div className="m-10 w-3/4">
-            <form onSubmit={onSubmit}>
-              <div className="m-5">
-                <Label htmlFor="name">name</Label>
-                <Input
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="m-5">
-                <Label htmlFor="email">email</Label>
-                <Input
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="m-5">
-                <Label htmlFor="message">message</Label>
-                <TextArea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-              </div>
-              <div className="text-center">
-                <Submit
-                  disabled={disableSend}
-                  confirm='お問い合わせを送信してもよろしいですか？'
-                >
-                  送信
-                </Submit>
-              </div>
-            </form>
+        <section className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200">
+          <div className="flex items-center flex-col">
+            <Heading>Contact</Heading>
+            <p className="mt-5">
+              お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
+            </p>
+            <div className="m-10 w-3/4">
+              <form onSubmit={onSubmit}>
+                <div className="m-5">
+                  <Label htmlFor="name">name</Label>
+                  <Input
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="m-5">
+                  <Label htmlFor="email">email</Label>
+                  <Input
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="m-5">
+                  <Label htmlFor="message">message</Label>
+                  <TextArea
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </div>
+                <div className="text-center">
+                  <Submit
+                    disabled={disableSend}
+                    confirm='お問い合わせを送信してもよろしいですか？'
+                  >
+                    送信
+                  </Submit>
+                </div>
+              </form>
+            </div>
           </div>
+          <Footer/>
         </section>
       </div>
     </>

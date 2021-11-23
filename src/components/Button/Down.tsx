@@ -1,9 +1,9 @@
-import { VFC, DetailedHTMLProps, HTMLAttributes } from 'react'
+import { VFC, HTMLAttributes } from 'react'
 import ClassNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type Props = HTMLAttributes<HTMLDivElement>
 
 const Down: VFC<Props> = ({className}) => {
   return(

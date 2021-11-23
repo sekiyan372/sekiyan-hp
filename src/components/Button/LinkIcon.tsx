@@ -1,4 +1,4 @@
-import { VFC, HTMLAttributes } from 'react'
+import { VFC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ClassNames from 'classnames'
