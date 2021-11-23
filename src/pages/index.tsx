@@ -1,5 +1,5 @@
 // react/nextの機能
-import { ChangeEvent, useState, useEffect } from 'react'
+import { useState, ChangeEvent, MouseEvent } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import ClassNames from 'classnames'
 
 // Intersection Observer
-import { useInView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer'
 
 // カルーセル
 import { Carousel } from 'react-responsive-carousel'
@@ -87,11 +87,15 @@ const Home: NextPage = () => {
     threshold: 0,
   })
 
-  useEffect(() => {
-    if (inTopView) {
-
+  const smoothScroll = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    const eventTarget = event.target as HTMLAnchorElement
+    const eventTargetId = eventTarget.hash
+    const scrollTarget = document.querySelector(eventTargetId)
+    if (scrollTarget) {
+      scrollTarget.scrollIntoView({ behavior: "smooth" })
     }
-  })
+  }
 
   const sendMail = () => {
     if (
@@ -392,6 +396,7 @@ const Home: NextPage = () => {
             inTopView ? 'pagination-active' : ''
           )}
           href="#top"
+          onClick={e => smoothScroll(e)}
         />
         <a
           id="profile-pagination"
@@ -400,6 +405,7 @@ const Home: NextPage = () => {
             inProfileView ? 'pagination-active' : ''
           )}
           href="#profile"
+          onClick={e => smoothScroll(e)}
         />
         <a
           id="career-pagination"
@@ -408,6 +414,7 @@ const Home: NextPage = () => {
             inCareerView ? 'pagination-active' : ''
           )}
           href="#career"
+          onClick={e => smoothScroll(e)}
         />
         <a
           id="product-pagination"
@@ -416,6 +423,7 @@ const Home: NextPage = () => {
             inProductView ? 'pagination-active' : ''
           )}
           href="#product"
+          onClick={e => smoothScroll(e)}
         />
         <a
           id="hobby-pagination"
@@ -424,6 +432,7 @@ const Home: NextPage = () => {
             inHobbyView ? 'pagination-active' : ''
           )}
           href="#hobby"
+          onClick={e => smoothScroll(e)}
         />
         <a
           id="contact-pagination"
@@ -432,6 +441,7 @@ const Home: NextPage = () => {
             inContactView ? 'pagination-active' : ''
           )}
           href="#contact"
+          onClick={e => smoothScroll(e)}
         />
       </nav>
     </>
