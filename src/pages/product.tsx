@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
+import Footer from '~/components/Footer'
 import Head from '~/components/Head'
+import Header from '~/components/Header'
 import { Heading, SubHeading } from '~/components/Heading'
 import { ProductCard, BigProductCard } from '~/components/ProductCard'
 
@@ -16,6 +18,7 @@ const Product: NextPage = () => {
     <>
       <Head title="Product" />
 
+      <Header />
       <div className="bg-jade text-white">
         <Heading>Product</Heading>
         <div className="p-10">
@@ -85,6 +88,7 @@ const Product: NextPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   )
 }

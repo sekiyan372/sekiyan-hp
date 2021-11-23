@@ -1,27 +1,34 @@
 // react/nextの機能
-import { ChangeEvent, useState } from 'react'
+import { useState, ChangeEvent, MouseEvent } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+
+// Intersection Observer
+import { useInView } from 'react-intersection-observer'
 
 // カルーセル
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
+// EmailJS
+import { send } from 'emailjs-com'
+import { emailjsConfig } from '~/utils/Emailjs'
+
 //自作コンポーネント
 import Down from '~/components/Button/Down'
 import LinkIcon from '~/components/Button/LinkIcon'
 import Submit from '~/components/Button/Submit'
-import Head from '~/components/Head'
 import Circle from '~/components/Circle'
-import VerticalLine from '~/components/VerticalLine'
-import Label from '~/components/Label'
+import Footer from '~/components/Footer'
+import Head from '~/components/Head'
+import Header from '~/components/Header'
+import { Heading, SubHeading } from '~/components/Heading'
 import Input from '~/components/Input'
+import Label from '~/components/Label'
+import NavLink from '~/components/navLink'
 import TextArea from '~/components/Textarea'
-
-// EmailJS
-import { send } from 'emailjs-com'
-import { emailjsConfig } from '~/utils/Emailjs'
+import VerticalLine from '~/components/VerticalLine'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -47,6 +54,36 @@ const Home: NextPage = () => {
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
   const disableSend = name === '' || email === '' || message === ''
+
+  const [topRef, inTopView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [profileRef, inProfileView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [careerRef, inCareerView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [productRef, inProductView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [hobbyRef, inHobbyView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
+
+  const [contactRef, inContactView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
 
   const sendMail = () => {
     if (
@@ -82,39 +119,50 @@ const Home: NextPage = () => {
       <Head />
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-jade">
-          <h1 className="m-8 text-white">Welcome to</h1>
-          <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
-          <div className="m-5">
-            <LinkIcon
-              url="https://twitter.com/sekiyan372"
-              src={TWITTER_ICON}
-              alt="Twitter Button"
-              width={60}
-              height={60}
-            />
-            <LinkIcon
-              url="https://sekiyan372.hatenablog.jp/"
-              src={HATENA_ICON}
-              alt="Hatena Blog Button"
-              width={60}
-              height={60}
-            />
-            <LinkIcon
-              url="https://github.com/sekiyan372"
-              src={GITHUB_ICON}
-              alt="Github Button"
-              width={60}
-              height={60}
-            />
+        <section
+          ref={topRef}
+          id="top"
+          className="w-full h-screen snap-start bg-jade"
+        >
+          <Header/>
+          <div className="h-full flex justify-center items-center flex-col">
+            <h1 className="m-8 text-white">Welcome to</h1>
+            <h1 className="m-8 text-white">Sekiyan&#039;s website.</h1>
+            <div className="m-5">
+              <LinkIcon
+                url="https://twitter.com/sekiyan372"
+                src={TWITTER_ICON}
+                alt="Twitter Button"
+                width={60}
+                height={60}
+              />
+              <LinkIcon
+                url="https://sekiyan372.hatenablog.jp/"
+                src={HATENA_ICON}
+                alt="Hatena Blog Button"
+                width={60}
+                height={60}
+              />
+              <LinkIcon
+                url="https://github.com/sekiyan372"
+                src={GITHUB_ICON}
+                alt="Github Button"
+                width={60}
+                height={60}
+              />
+            </div>
+            <p className="text-2xl text-white">Scroll</p>
+            <Down href="#profile" className="text-white" />
           </div>
-          <p className="text-2xl text-white">Scroll</p>
-          <Down className="text-white"/>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
-          <h2>Profile</h2>
-          <div className="m-10">
+        <section
+          ref={profileRef}
+          id="profile"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
+        >
+          <Heading>Profile</Heading>
+          <div>
             <div className="text-center">
               <Image
                 src={ICON}
@@ -135,12 +183,16 @@ const Home: NextPage = () => {
               <dd className="float-left ml-5">金沢工業大学 在籍</dd>
             </dl>
           </div>
-          <Down/>
+          <Down href="#career" className="m-8" />
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800">
-          <h2 className="text-white">Career</h2>
-          <table className="m-10 text-white">
+        <section
+          ref={careerRef}
+          id="career"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
+        >
+          <Heading className="text-white">Career</Heading>
+          <table className="m-8 text-white">
             <tbody>
               <tr>
                 <td className="p-0">2015</td>
@@ -195,11 +247,15 @@ const Home: NextPage = () => {
               </tr>
             </tbody>
           </table>
-          <Down className="text-white"/>
+          <Down href="#product" className="text-white" />
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
-          <h2>Product</h2>
+        <section
+          ref={productRef}
+          id="product"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
+        >
+          <Heading>Product</Heading>
           <Link href="/product" passHref>
             <div className="relative flex justify-center items-center w-160 h-96 m-8 cursor-pointer">
               <div className="absolute w-160 h-96 my-12 bg-black inline-block">
@@ -214,17 +270,18 @@ const Home: NextPage = () => {
               <p className="absolute text-3xl text-white">Please click to move the page.</p>
             </div>
           </Link>
-          <Down/>
+          <Down href="#hobby" />
         </section>
 
-        <section className="
-          w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800
-
-        ">
-          <h2 className="text-white">Hobby</h2>
+        <section
+          ref={hobbyRef}
+          id="hobby"
+          className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
+        >
+          <Heading className="text-white">Hobby</Heading>
           <div>
             <div className="text-white">
-              <h3 className="border-b-2">Favorite</h3>
+              <SubHeading className="border-b-2">Favorite</SubHeading>
               <div className="flex justify-center">
                 <dl className="my-6 mx-10 text-lg">
                   <dt className="float-left clear-left w-20">Instrument</dt>
@@ -244,7 +301,7 @@ const Home: NextPage = () => {
             </div>
 
             <div className="text-white">
-              <h3 className="border-b-2 mb-6">Gallery</h3>
+              <SubHeading className="border-b-2 mb-6">Gallery</SubHeading>
               <Carousel>
                 <div>
                   <Image src={STRATOCASTER} alt="image1" width={300} height={200} />
@@ -265,52 +322,68 @@ const Home: NextPage = () => {
               </Carousel>
             </div>
           </div>
-          <Down className="text-white"/>
+          <Down href="#contact" className="text-white"/>
         </section>
 
-        <section className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200">
-          <h2>Contact</h2>
-          <p className="mt-5">
-            お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
-          </p>
-          <div className="m-10 w-3/4">
-            <form onSubmit={onSubmit}>
-              <div className="m-5">
-                <Label htmlFor="name">name</Label>
-                <Input
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="m-5">
-                <Label htmlFor="email">email</Label>
-                <Input
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className="m-5">
-                <Label htmlFor="message">message</Label>
-                <TextArea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-              </div>
-              <div className="text-center">
-                <Submit
-                  disabled={disableSend}
-                  confirm='お問い合わせを送信してもよろしいですか？'
-                >
-                  送信
-                </Submit>
-              </div>
-            </form>
+        <section
+          ref={contactRef}
+          id="contact"
+          className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200"
+        >
+          <div className="h-full flex justify-center items-center flex-col">
+            <Heading>Contact</Heading>
+            <p className="mt-5">
+              お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
+            </p>
+            <div className="m-10 w-3/4">
+              <form onSubmit={onSubmit}>
+                <div className="m-5">
+                  <Label htmlFor="name">name</Label>
+                  <Input
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="m-5">
+                  <Label htmlFor="email">email</Label>
+                  <Input
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className="m-5">
+                  <Label htmlFor="message">message</Label>
+                  <TextArea
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </div>
+                <div className="text-center">
+                  <Submit
+                    disabled={disableSend}
+                    confirm='お問い合わせを送信してもよろしいですか？'
+                  >
+                    送信
+                  </Submit>
+                </div>
+              </form>
+            </div>
           </div>
+          <Footer/>
         </section>
       </div>
+
+      <nav id="pagination" className="fixed top-1/2 right-8 nav-transform">
+        <NavLink inView={inTopView} href="#top" />
+        <NavLink inView={inProfileView} href="#profile" />
+        <NavLink inView={inCareerView} href="#career" />
+        <NavLink inView={inProductView} href="#product" />
+        <NavLink inView={inHobbyView} href="#hobby" />
+        <NavLink inView={inContactView} href="#contact" />
+      </nav>
     </>
   )
 }

@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         'jade': '#3F9877',
+        'pagination-white': '#fcfcfc',
       },
       width: {
         '1/7': '14.2857143%',
