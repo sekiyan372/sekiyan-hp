@@ -57,10 +57,10 @@ const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
     >
       <div className="h-full flex justify-center items-center flex-col">
         <Heading>Contact</Heading>
-        <p className="mt-5">
+        <p className="mt-5 mx-5">
           お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
         </p>
-        <div className="m-10 w-3/4">
+        <div className="md:m-10 md:w-3/4 w-11/12">
           <form onSubmit={onSubmit}>
             <div className="m-5">
               <Label htmlFor="name">name</Label>
