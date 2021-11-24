@@ -6,7 +6,7 @@ type Props = HTMLAttributes<HTMLHeadingElement>
 export const Heading: VFC<Props> = ({children, className}) => {
   return(
     <h2 className={ClassNames(
-      "text-center py-10",
+      "text-center md:py-8 py-4",
       className
     )}>
       {children}

@@ -69,7 +69,7 @@ const Career: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
     >
       <Heading className="text-white">Career</Heading>
-      <table className="m-8 text-white">
+      <table className="m-5 text-white">
         <tbody>
           {careers.map((career, index) => (
             <tr key={index}>
@@ -80,7 +80,7 @@ const Career: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
               {career.line && (
                 <td className="text-center h-24">{career.line}</td>
               )}
-              <td className="p-0">{career.desc}</td>
+              <td className="p-0 md:text-base text-sm">{career.desc}</td>
             </tr>
           ))}
         </tbody>
