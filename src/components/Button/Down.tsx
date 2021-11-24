@@ -2,17 +2,16 @@ import { VFC, HTMLAttributes } from 'react'
 import ClassNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
-
-type DivProps = HTMLAttributes<HTMLDivElement>
+import { smoothScroll } from '~/utils/Scroll'
 
 type Props = {
   href: string
-} & DivProps
+} & HTMLAttributes<HTMLDivElement>
 
 const Down: VFC<Props> = ({href, className}) => {
   return(
     <div className={ClassNames(className)}>
-      <a href={href}>
+      <a href={href} onClick={e => smoothScroll(e)}>
         <FontAwesomeIcon
           icon={faChevronDown}
           className="w-8"
