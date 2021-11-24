@@ -55,7 +55,7 @@ const Home: NextPage = () => {
         <Contact ref={contactRef} />
       </div>
 
-      <nav id="pagination" className="fixed top-1/2 right-8 nav-transform">
+      <nav id="pagination" className="fixed top-1/2 md:right-8 right-4 nav-transform">
         <NavLink inView={inTopView} href="#top" />
         <NavLink inView={inProfileView} href="#profile" />
         <NavLink inView={inCareerView} href="#career" />
