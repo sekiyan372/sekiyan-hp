@@ -17,7 +17,7 @@ const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       <Heading>Product</Heading>
       <Link href="/product" passHref>
         <div className="relative flex justify-center items-center w-160 h-96 m-8 cursor-pointer">
-          <div className="absolute w-160 h-96 my-12 bg-black inline-block">
+          <div className="absolute md:w-160 w-72 md:h-96 h-42 md:my-12 my-6 bg-black inline-block">
             <Image
               src={PRODUCT}
               alt="product page"
@@ -26,7 +26,7 @@ const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
               className="block opacity-40"
             />
           </div>
-          <p className="absolute text-3xl text-white">Please click to move the page.</p>
+          <p className="absolute md:text-3xl text-xl text-white">Please click to move the page.</p>
         </div>
       </Link>
       <Down href="#hobby" />

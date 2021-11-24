@@ -86,8 +86,8 @@ const Product: NextPage = () => {
             <SubHeading>Individual</SubHeading>
             {individualProducts.map((productList, index) => (
               <div className="flex flex-wrap justify-center" key={index}>
-                {productList.map(product => (
-                  <span key={product.title}>
+                {productList.map((product, subIndex) => (
+                  <span key={subIndex}>
                     {index === 0 && (
                       <BigProductCard
                         url={product.url}
@@ -115,8 +115,8 @@ const Product: NextPage = () => {
           <div>
             <SubHeading>Join</SubHeading>
             <div className="flex flex-wrap justify-center">
-              {joinProduct.map(product => (
-                <span key={product.title}>
+              {joinProduct.map((product, index) => (
+                <span key={index}>
                   <ProductCard
                     url={product.url}
                     imagePath={product.imagePath}

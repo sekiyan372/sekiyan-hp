@@ -75,13 +75,13 @@ const Hobby: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       <Heading className="text-white">Hobby</Heading>
       <div>
         <div className="text-white">
-          <SubHeading className="border-b-2">Favorite</SubHeading>
-          <div className="flex justify-center">
+          <SubHeading className="mb-3 border-b-2">Favorite</SubHeading>
+          <div className="flex justify-center flex-wrap">
             {favorites.map((itemLists, index) => (
-              <dl className="my-6 mx-10 text-lg" key={index}>
+              <dl className="md:my-6 mb-3 lg:mx-10 mx-3 md:text-lg" key={index}>
                 {itemLists.map(favorite => (
                   <span key={favorite.label}>
-                    <dt className="float-left clear-left w-20">{favorite.label}</dt>
+                    <dt className="float-left clear-left md:w-32">{favorite.label}</dt>
                     <dd className="float-left ml-5">{favorite.content}</dd>
                   </span>
                 ))}

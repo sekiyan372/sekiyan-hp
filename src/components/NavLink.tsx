@@ -11,7 +11,7 @@ const NavLink: VFC<Props> = ({inView, href}) => {
   return (
     <a
       className={ClassNames(
-        'block w-3 h-3 my-6 rounded-full bg-pagination-white pagination-transition',
+        'block md:w-3 w-2 md:h-3 h-2 my-6 rounded-full bg-pagination-white pagination-transition',
         inView ? 'pagination-active' : ''
       )}
       href={href}

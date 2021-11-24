@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Header: VFC = () => {
   return(
-    <header className="w-full px-10 py-3 flex justify-between bg-white">
+    <header className="w-full px-3 md:px-10 py-3 flex justify-between flex-wrap bg-white">
       <Link href="/" passHref>
         <div className="text-3xl cursor-pointer">Sekiyan372</div>
       </Link>
