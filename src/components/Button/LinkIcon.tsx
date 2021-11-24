@@ -15,7 +15,7 @@ type Props = {
 
 const LinkIcon: VFC<Props> = ({url, src, alt, width, height, className}) => {
   return(
-    <div className={ClassNames('inline-block mx-5', className)}>
+    <div className={ClassNames('inline-block md:mx-5 mx-3', className)}>
       <Link href={url} passHref>
         <a target="_blank">
           <Image
