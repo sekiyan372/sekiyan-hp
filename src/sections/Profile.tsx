@@ -41,7 +41,7 @@ const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
           <p className="text-3xl">せきやん</p>
           <p className="text-xl">Sekiyan</p>
         </div>
-        <dl className="m-8 text-lg">
+        <dl className="md:m-8 m-4 md:text-lg text-sm">
           {profiles.map(profile => (
             <span key={profile.label}>
               <dt className="float-left clear-left w-24">{profile.label}</dt>

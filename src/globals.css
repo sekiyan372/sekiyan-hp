@@ -7,7 +7,7 @@
     @apply xl:text-9xl md:text-7xl text-3xl;
   }
   h2 {
-    @apply text-7xl;
+    @apply md:text-7xl text-5xl;
   }
   h3 {
     @apply text-5xl;
