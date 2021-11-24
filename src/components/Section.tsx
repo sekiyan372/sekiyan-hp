@@ -7,7 +7,6 @@ import {
 import ClassNames from "classnames"
 
 type Props = {
-  // ref?: LegacyRef<HTMLElement>
   id?: string
   children: ReactNode
 } & HTMLAttributes<HTMLElement>

@@ -1,5 +1,6 @@
-import { VFC, MouseEvent } from "react"
+import { VFC } from "react"
 import ClassNames from "classnames"
+import { smoothScroll } from '~/utils/Scroll'
 
 type Props = {
   inView: boolean
@@ -7,16 +8,6 @@ type Props = {
 }
 
 const NavLink: VFC<Props> = ({inView, href}) => {
-  const smoothScroll = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    const eventTarget = event.target as HTMLAnchorElement
-    const eventTargetId = eventTarget.hash
-    const scrollTarget = document.querySelector(eventTargetId)
-    if (scrollTarget) {
-      scrollTarget.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <a
       className={ClassNames(
