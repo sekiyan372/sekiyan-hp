@@ -1,5 +1,5 @@
 # Sekiyan's portfolio for Next.js
-**Next.js + Tailwind CSS**
+**Next.js + Tailwind CSS + Vercel**
 
 ## このサイトについて
 このサイトは Sekiyan のポートフォリオサイト兼おもちゃです。
