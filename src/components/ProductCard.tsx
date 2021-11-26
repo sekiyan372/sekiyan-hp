@@ -2,7 +2,7 @@ import { VFC } from 'react'
 import Image from 'next/image'
 
 type Props = {
-  url: string
+  url?: string
   imagePath: string
   alt: string
   title?: string
@@ -19,14 +19,14 @@ export const ProductCard: VFC<Props> = ({
   desc,
 }) => {
   return(
-    <div className="md:w-104 m-3 border-4 rounded-lg p-3 hover:opacity-80">
+    <div className="md:w-104 m-3 border-4 rounded-lg p-3 hover:opacity-80 text-center">
       <a href={url} target="blank">
         <Image src={imagePath} alt={alt} />
-        <div className="text-center text-2xl">{title}</div>
+        <div className="text-2xl">{title}</div>
         {organization && (
-          <div className="text-center">{organization}</div>
+          <div>{organization}</div>
         )}
-        <div className="text-center mt-3">{desc}</div>
+        <div className="mt-3">{desc}</div>
       </a>
     </div>
   )

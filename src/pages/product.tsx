@@ -11,6 +11,7 @@ const CALCULATOR = require('../../public/image/calculator.png')
 const RANDOM_APP = require('../../public/image/random-app.png')
 const OLYMPIC_APP = require('../../public/image/olympic-app.png')
 const CIRKIT_HP = require('../../public/image/cirkit-hp.png')
+const MAIL = require('../../public/image/mail.jpeg')
 const TOTTEKU = require('../../public/image/totteku.png')
 
 const individualProducts = [
@@ -60,8 +61,16 @@ const joinProduct = [
     url: "https://www.cirkit.jp/",
     imagePath: CIRKIT_HP,
     alt: "CirKit HP",
+    title: "CirKitホームページ",
     organization: "株式会社CirKit",
     desc: "学生ベンチャー企業のコーポレートサイト",
+  },
+  {
+    imagePath: MAIL,
+    alt: "atren",
+    title: "@連絡網",
+    organization: "株式会社CirKit",
+    desc: "受託開発のメーリングサービス",
   },
   {
     url: "https://totteku.netlify.app/",
