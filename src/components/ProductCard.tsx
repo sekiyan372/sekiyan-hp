@@ -27,9 +27,9 @@ export const ProductCard: VFC<Props> = ({
         <Image src={imagePath} alt={alt} />
         <div className="text-2xl">{title}</div>
         {organization && (
-          <div>{organization}</div>
+          <div>({organization})</div>
         )}
-        <div className="mt-3">{desc}</div>
+        <div className="my-3">{desc}</div>
         {technologies && technologies.map(tech => (
           <TechLavel key={tech}>{tech}</TechLavel>
         ))}
