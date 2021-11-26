@@ -22,6 +22,7 @@ const individualProducts = [
       alt: "Sekiyan's website",
       title: 'ポートフォリオサイト',
       desc: "自分のポートフォリオサイト",
+      tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
     },
     {
       url: 'https://effector-geek.vercel.app/',
@@ -29,6 +30,7 @@ const individualProducts = [
       alt: "Effector Geek",
       title: 'Effector Geek',
       desc: "エフェクター情報共有サイト",
+      tech: ['TypeScript', 'React', 'Redux', 'Next.js', 'Firebase', 'Tailwind CSS', 'Vercel'],
     },
   ],
   [
@@ -38,6 +40,7 @@ const individualProducts = [
       alt: "calculator",
       title: 'calculator',
       desc: "単純な電卓",
+      tech: ['TypeScript', 'React', 'Styled Components', 'Netrify'],
     },
     {
       url: "https://random-app.vercel.app/",
@@ -45,6 +48,7 @@ const individualProducts = [
       alt: "Random App",
       title: "ランダムアプリ",
       desc: "ランダムに何かを決めるサイト",
+      tech: ['TypeScript', 'React', 'Styled Components', 'Vercel'],
     },
     {
       url: "https://saikyo-japan.netlify.app/",
@@ -52,6 +56,7 @@ const individualProducts = [
       alt: "Olympic App",
       title: "ぼくのかんがえたさいきょうのさむらいじゃぱん",
       desc: "個人の考えた侍ジャパンを作って遊ぶサイト",
+      tech: ['JavaScript', 'Vue', 'Nuxt.js', 'Netrify'],
     },
   ],
 ]
@@ -64,6 +69,7 @@ const joinProduct = [
     title: "CirKitホームページ",
     organization: "株式会社CirKit",
     desc: "学生ベンチャー企業のコーポレートサイト",
+    tech: ['TypeScript', 'React'],
   },
   {
     imagePath: MAIL,
@@ -71,6 +77,7 @@ const joinProduct = [
     title: "@連絡網",
     organization: "株式会社CirKit",
     desc: "受託開発のメーリングサービス",
+    tech: ['Ruby on Rails', 'JavaScript', 'Sass', 'Bulma', 'EC2', 'S3']
   },
   {
     url: "https://totteku.netlify.app/",
@@ -79,6 +86,7 @@ const joinProduct = [
     title: "撮っテク！",
     organization: "Tourism プロジェクト",
     desc: "湯涌町でのイベントのためのサイト",
+    tech: [' TypeScript', 'Vue', 'Nuxt.js', 'Netrify'],
   },
 ]
 
@@ -104,6 +112,7 @@ const Product: NextPage = () => {
                         alt={product.alt}
                         title={product.title}
                         desc={product.desc}
+                        technologies={product.tech}
                       />
                     )}
                     {index === 1 && (
@@ -113,6 +122,7 @@ const Product: NextPage = () => {
                       alt={product.alt}
                       title={product.title}
                       desc={product.desc}
+                      technologies={product.tech}
                     />
                     )}
                   </span>
@@ -133,6 +143,7 @@ const Product: NextPage = () => {
                     title={product.title}
                     organization={product.organization}
                     desc={product.desc}
+                    technologies={product.tech}
                   />
                 </span>
               ))}
