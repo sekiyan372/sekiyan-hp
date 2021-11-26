@@ -9,7 +9,7 @@ type Props = {
 const Submit: VFC<Props> = ({disabled, confirm, children}) => {
   return(
     <button
-      className="border-solid border rounded p-2 bg-green-500 text-white text-xl"
+      className="border-solid border rounded p-2 bg-green-500 text-white text-xl hover:opacity-70"
       disabled={disabled}
       onClick={() => window.confirm(confirm)}
     >

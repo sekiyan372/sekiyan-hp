@@ -23,7 +23,7 @@ const LinkIcon: VFC<Props> = ({url, src, alt, width, height, className}) => {
             alt={alt}
             width={width}
             height={height}
-            className="cursor-pointer"
+            className="cursor-pointer hover:opacity-50"
           />
         </a>
       </Link>

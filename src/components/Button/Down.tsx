@@ -14,7 +14,7 @@ const Down: VFC<Props> = ({href, className}) => {
       <a href={href} onClick={e => smoothScroll(e)}>
         <FontAwesomeIcon
           icon={faChevronDown}
-          className="w-8"
+          className="w-8 hover:opacity-50"
         />
       </a>
     </div>
