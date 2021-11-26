@@ -6,6 +6,7 @@ import Down from '~/components/Button/Down'
 import { Heading, SubHeading } from '~/components/Heading'
 import Section from '~/components/Section'
 
+const FULLERTONE = require('../../public/image/fullertone.JPG')
 const STRATOCASTER = require('../../public/image/stratocaster.JPG')
 const BASS = require('../../public/image/bass.JPG')
 const LESPAOL = require('../../public/image/lespaol.JPG')
@@ -39,6 +40,12 @@ const favorites = [
 ]
 
 const works = [
+  {
+    name: "Fullertone JazzBass",
+    src: FULLERTONE,
+    alt: "Fullertone JazzBass",
+    legend: "愛機のベース（アイコンにしてるやつ）",
+  },
   {
     name: "Stratocaster",
     src: STRATOCASTER,
@@ -98,8 +105,8 @@ const Hobby: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
                 <Image
                   src={work.src}
                   alt={work.alt}
-                  width={300}
-                  height={200}
+                  width={400}
+                  height={225}
                 />
                 <p className="legend">{work.legend}</p>
               </div>
