@@ -5,7 +5,7 @@ import Down from '~/components/Button/Down'
 import { Heading } from '~/components/Heading'
 import Section from '~/components/Section'
 
-const PRODUCT = require('../../public/image/product-page.png')
+const PRODUCT = require('../../public/image/product-page.jpg')
 
 const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (

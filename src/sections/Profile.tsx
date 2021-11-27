@@ -4,7 +4,7 @@ import Down from '~/components/Button/Down'
 import { Heading } from '~/components/Heading'
 import Section from '~/components/Section'
 
-const ICON = require('../../public/my-icon.jpg')
+const ICON = require('../../public/image/my-icon.jpg')
 
 const profiles = [
   {

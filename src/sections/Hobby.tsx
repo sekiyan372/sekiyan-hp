@@ -10,7 +10,7 @@ const FULLERTONE = require('../../public/image/fullertone.JPG')
 const STRATOCASTER = require('../../public/image/stratocaster.JPG')
 const BASS = require('../../public/image/bass.JPG')
 const LESPAOL = require('../../public/image/lespaol.JPG')
-const ACCOSTIC = require('../../public/image/accostic.JPG')
+const ACCOSTIC = require('../../public/image/accostic-guitar.JPG')
 
 const favorites = [
   [
