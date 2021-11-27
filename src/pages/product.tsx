@@ -5,14 +5,14 @@ import Header from '~/components/Header'
 import { Heading, SubHeading } from '~/components/Heading'
 import { ProductCard, BigProductCard } from '~/components/ProductCard'
 
-const SEKIYAN_HP = require('../../public/image/sekiyan-hp.png')
-const EFFECTOR_GEEK = require('../../public/image/effector-geek.png')
-const CALCULATOR = require('../../public/image/calculator.png')
-const RANDOM_APP = require('../../public/image/random-app.png')
-const OLYMPIC_APP = require('../../public/image/olympic-app.png')
-const CIRKIT_HP = require('../../public/image/cirkit-hp.png')
+const SEKIYAN_HP = require('../../public/image/sekiyan-hp.jpg')
+const EFFECTOR_GEEK = require('../../public/image/effector-geek.jpg')
+const CALCULATOR = require('../../public/image/calculator.jpg')
+const RANDOM_APP = require('../../public/image/random-app.jpg')
+const OLYMPIC_APP = require('../../public/image/olympic-app.jpg')
+const CIRKIT_HP = require('../../public/image/cirkit-hp.jpg')
 const MAIL = require('../../public/image/mail.jpeg')
-const TOTTEKU = require('../../public/image/totteku.png')
+const TOTTEKU = require('../../public/image/totteku.jpg')
 
 const individualProducts = [
   [
