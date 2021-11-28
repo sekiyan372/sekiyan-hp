@@ -43,7 +43,7 @@ const careers = [
     desc: "社内で電話対応、梱包、発送、楽器修理の管理などを担当"
   },
   {
-    year: "",
+    year: "2019",
     icon: (
       <Circle>
         <FontAwesomeIcon
