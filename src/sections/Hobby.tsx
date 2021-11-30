@@ -80,7 +80,7 @@ const Hobby: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       className="flex justify-center items-center flex-col bg-gray-800"
     >
       <Heading className="text-white">Hobby</Heading>
-      <div>
+      <div className="md:mx-16 mx-4">
         <div className="text-white">
           <SubHeading className="mb-3 border-b-2">Favorite</SubHeading>
           <div className="flex justify-center flex-wrap">
