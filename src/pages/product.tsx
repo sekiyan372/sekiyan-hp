@@ -12,6 +12,7 @@ const RANDOM_APP = require('../../public/image/random-app.jpg')
 const OLYMPIC_APP = require('../../public/image/olympic-app.jpg')
 const CIRKIT_HP = require('../../public/image/cirkit-hp.jpg')
 const MAIL = require('../../public/image/mail.jpeg')
+const TOURISM_HP = require('../../public/image/tourism-hp.jpg')
 const TOTTEKU = require('../../public/image/totteku.jpg')
 
 const individualProducts = [
@@ -80,13 +81,22 @@ const joinProduct = [
     tech: ['Ruby on Rails', 'JavaScript', 'Sass', 'Bulma', 'EC2', 'S3']
   },
   {
-    url: "https://totteku.netlify.app/",
+    url: "https://tourism-project.com/",
+    imagePath: TOURISM_HP,
+    alt: "Tourism HP",
+    title: "Tourismプロジェクトホームページ",
+    organization: "Tourism プロジェクト",
+    desc: "プロジェクトのホームページ",
+    tech: [' TypeScript', 'React', 'GatsbyJS', 'Netrify'],
+  },
+  {
+    url: "https://totteku.tourism-project.com/",
     imagePath: TOTTEKU,
     alt: "TOTTEKU",
     title: "撮っテク！",
     organization: "Tourism プロジェクト",
     desc: "湯涌町でのイベントのためのサイト",
-    tech: [' TypeScript', 'Vue', 'Nuxt.js', 'Netrify'],
+    tech: [' TypeScript', 'Vue', 'NuxtJS', 'Netrify'],
   },
 ]
 
