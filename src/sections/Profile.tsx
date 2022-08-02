@@ -8,10 +8,6 @@ const ICON = require('../../public/image/my-icon.jpg')
 
 const profiles = [
   {
-    label: "Name",
-    content: "関谷 翠帰（Sekiya Suiki）",
-  },
-  {
     label: "From",
     content: "愛知県名古屋市",
   },
