@@ -1,17 +1,17 @@
-import { VFC } from 'react'
-import NextHead from 'next/head'
+import { FC } from "react";
+import NextHead from "next/head";
 
 type Props = {
-  title?: string
-}
+  title?: string;
+};
 
-const BASE_TITLE = 'Sekiyan HP'
-const DESCRIPTION = 'せきやんのポートフォリオサイトです。'
+const BASE_TITLE = "Sekiyan HP";
+const DESCRIPTION = "せきやんのポートフォリオサイトです。";
 
-const Head: VFC<Props> = (props) => {
-  const title = props.title ? `${props.title} | ${BASE_TITLE}` : BASE_TITLE
+const Head: FC<Props> = (props) => {
+  const title = props.title ? `${props.title} | ${BASE_TITLE}` : BASE_TITLE;
 
-  return(
+  return (
     <NextHead>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -25,7 +25,7 @@ const Head: VFC<Props> = (props) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/favicon.ico" />
     </NextHead>
-  )
-}
+  );
+};
 
-export default Head
+export default Head;

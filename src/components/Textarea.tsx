@@ -1,13 +1,13 @@
-import { VFC, ChangeEventHandler } from 'react'
+import { FC, ChangeEventHandler } from "react";
 
 type Props = {
-  id: string
-  value: string
-  onChange?: ChangeEventHandler<HTMLTextAreaElement>
-}
+  id: string;
+  value: string;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
+};
 
-const Textarea: VFC<Props> = ({id, value, onChange}) => {
-  return(
+const Textarea: FC<Props> = ({ id, value, onChange }) => {
+  return (
     <textarea
       id={id}
       className="border-solid border border-black rounded w-full p-2"
@@ -15,7 +15,7 @@ const Textarea: VFC<Props> = ({id, value, onChange}) => {
       value={value}
       onChange={onChange}
     />
-  )
-}
+  );
+};
 
-export default Textarea
+export default Textarea;

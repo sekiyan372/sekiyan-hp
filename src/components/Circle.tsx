@@ -1,17 +1,15 @@
-import { VFC, ReactNode } from 'react'
+import { FC, ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
-}
+};
 
-const Circle: VFC<Props> = ({children}) => {
+const Circle: FC<Props> = ({ children }) => {
   return (
-    <div
-      className="md:w-16 w-12 md:h-16 h-12 rounded-full bg-gray-100 flex justify-center items-center"
-    >
+    <div className="md:w-16 w-12 md:h-16 h-12 rounded-full bg-gray-100 flex justify-center items-center">
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default Circle
+export default Circle;

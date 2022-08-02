@@ -1,13 +1,13 @@
-import { VFC, ReactNode } from 'react'
+import { FC, ReactNode } from "react";
 
 type Props = {
-  disabled: boolean
-  confirm: string
-  children: ReactNode
-}
+  disabled: boolean;
+  confirm: string;
+  children: ReactNode;
+};
 
-const Submit: VFC<Props> = ({disabled, confirm, children}) => {
-  return(
+const Submit: FC<Props> = ({ disabled, confirm, children }) => {
+  return (
     <button
       className="border-solid border rounded p-2 bg-green-500 text-white text-xl hover:opacity-70"
       disabled={disabled}
@@ -15,7 +15,7 @@ const Submit: VFC<Props> = ({disabled, confirm, children}) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Submit
+export default Submit;
