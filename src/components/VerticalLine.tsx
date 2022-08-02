@@ -1,9 +1,7 @@
-import { VFC } from 'react'
+import { FC } from "react";
 
-const VerticalLine: VFC = () => {
-  return (
-    <div className="inline-block w-1 h-full bg-white text-center"/>
-  )
-}
+const VerticalLine: FC = () => {
+  return <div className="inline-block w-1 h-full bg-white text-center" />;
+};
 
-export default VerticalLine
+export default VerticalLine;

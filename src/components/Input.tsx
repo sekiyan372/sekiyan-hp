@@ -1,13 +1,13 @@
-import { VFC, ChangeEventHandler } from 'react'
+import { FC, ChangeEventHandler } from "react";
 
 type Props = {
-  id: string
-  value: string
-  onChange?: ChangeEventHandler<HTMLInputElement>
-}
+  id: string;
+  value: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+};
 
-const Input: VFC<Props> = ({id, value, onChange}) => {
-  return(
+const Input: FC<Props> = ({ id, value, onChange }) => {
+  return (
     <input
       type="text"
       id={id}
@@ -15,7 +15,7 @@ const Input: VFC<Props> = ({id, value, onChange}) => {
       value={value}
       onChange={onChange}
     />
-  )
-}
+  );
+};
 
-export default Input
+export default Input;
