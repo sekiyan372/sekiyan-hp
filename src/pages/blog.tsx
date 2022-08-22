@@ -1,11 +1,9 @@
-import type { NextPage } from 'next'
-import Footer from '~/components/Footer'
-import Head from '~/components/Head'
-import Header from '~/components/Header'
-import { Heading } from '~/components/Heading'
+import type { NextPage } from "next";
+import { Footer, Head, Header } from "~/components/Layout";
+import { Heading } from "~/components/Text";
 
 const Product: NextPage = () => {
-  return(
+  return (
     <>
       <Head title="Blog" />
 
@@ -13,7 +11,7 @@ const Product: NextPage = () => {
       <Heading>Blog Index</Heading>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;

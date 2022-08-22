@@ -1,11 +1,12 @@
-import { forwardRef, ForwardRefRenderFunction } from "react"
-import Image from 'next/image'
-import Link from 'next/link'
-import Down from '~/components/Button/Down'
-import { Heading } from '~/components/Heading'
-import Section from '~/components/Section'
+import type { ForwardRefRenderFunction } from "react";
+import { forwardRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { DownButton } from "~/components/Button";
+import { Heading } from "~/components/Text";
+import { Section } from "~/components/Layout";
 
-const PRODUCT = require('../../public/image/product-page.jpg')
+const PRODUCT = require("../../public/image/product-page.jpg");
 
 const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
   return (
@@ -26,12 +27,14 @@ const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
               className="block opacity-40"
             />
           </div>
-          <p className="absolute md:text-3xl text-xl text-white">Please click to move the page.</p>
+          <p className="absolute md:text-3xl text-xl text-white">
+            Please click to move the page.
+          </p>
         </div>
       </Link>
-      <Down href="#hobby" />
+      <DownButton href="#hobby" />
     </Section>
-  )
-}
+  );
+};
 
-export default forwardRef(Product)
+export default forwardRef(Product);

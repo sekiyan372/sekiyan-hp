@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react";
+import type { FC, HTMLAttributes } from "react";
 import ClassNames from "classnames";
 
 type Props = HTMLAttributes<HTMLHeadingElement>;

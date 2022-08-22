@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react";
+import type { FC, HTMLAttributes } from "react";
 import ClassNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +8,7 @@ type Props = {
   href: string;
 } & HTMLAttributes<HTMLDivElement>;
 
-const Down: FC<Props> = ({ href, className }) => {
+export const DownButton: FC<Props> = ({ href, className }) => {
   return (
     <div className={ClassNames(className)}>
       <a href={href} onClick={(e) => smoothScroll(e)}>
@@ -20,5 +20,3 @@ const Down: FC<Props> = ({ href, className }) => {
     </div>
   );
 };
-
-export default Down;

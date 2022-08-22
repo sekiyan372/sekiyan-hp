@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes } from "react";
+import type { FC, HTMLAttributes } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ClassNames from "classnames";
@@ -13,7 +13,7 @@ type Props = {
   height: number;
 } & DivProps;
 
-const LinkIcon: FC<Props> = ({ url, src, alt, width, height, className }) => {
+export const LinkIcon: FC<Props> = ({ url, src, alt, width, height, className }) => {
   return (
     <div className={ClassNames("inline-block md:mx-5 mx-3", className)}>
       <Link href={url} passHref>
@@ -30,5 +30,3 @@ const LinkIcon: FC<Props> = ({ url, src, alt, width, height, className }) => {
     </div>
   );
 };
-
-export default LinkIcon;

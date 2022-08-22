@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import NextHead from "next/head";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 const BASE_TITLE = "Sekiyan HP";
 const DESCRIPTION = "せきやんのポートフォリオサイトです。";
 
-const Head: FC<Props> = (props) => {
+export const Head: FC<Props> = (props) => {
   const title = props.title ? `${props.title} | ${BASE_TITLE}` : BASE_TITLE;
 
   return (
@@ -27,5 +27,3 @@ const Head: FC<Props> = (props) => {
     </NextHead>
   );
 };
-
-export default Head;

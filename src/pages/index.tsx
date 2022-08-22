@@ -1,46 +1,46 @@
-import type { NextPage } from 'next'
-import { useInView } from 'react-intersection-observer'
-import Head from '~/components/Head'
-import NavLink from '~/components/NavLink'
+import type { NextPage } from "next";
+import { useInView } from "react-intersection-observer";
+import { Head } from "~/components/Layout";
+import { NavLink } from "~/components/Link";
 
 // section
-import Top from '~/sections/Top'
-import Profile from '~/sections/Profile'
-import Career from '~/sections/Career'
-import Product from '~/sections/Product'
-import Hobby from '~/sections/Hobby'
-import Contact from '~/sections/Contact'
+import Top from "~/sections/Top";
+import Profile from "~/sections/Profile";
+import Career from "~/sections/Career";
+import Product from "~/sections/Product";
+import Hobby from "~/sections/Hobby";
+import Contact from "~/sections/Contact";
 
 const Home: NextPage = () => {
   const [topRef, inTopView] = useInView({
-    rootMargin: '-50% 0px',
+    rootMargin: "-50% 0px",
     threshold: 0,
-  })
+  });
 
   const [profileRef, inProfileView] = useInView({
-    rootMargin: '-50% 0px',
+    rootMargin: "-50% 0px",
     threshold: 0,
-  })
+  });
 
   const [careerRef, inCareerView] = useInView({
-    rootMargin: '-50% 0px',
+    rootMargin: "-50% 0px",
     threshold: 0,
-  })
+  });
 
   const [productRef, inProductView] = useInView({
-    rootMargin: '-50% 0px',
+    rootMargin: "-50% 0px",
     threshold: 0,
-  })
+  });
 
   const [hobbyRef, inHobbyView] = useInView({
-    rootMargin: '-50% 0px',
+    rootMargin: "-50% 0px",
     threshold: 0,
-  })
+  });
 
   const [contactRef, inContactView] = useInView({
-    rootMargin: '-50% 0px',
+    rootMargin: "-50% 0px",
     threshold: 0,
-  })
+  });
 
   return (
     <>
@@ -55,7 +55,10 @@ const Home: NextPage = () => {
         <Contact ref={contactRef} />
       </div>
 
-      <nav id="pagination" className="fixed top-1/2 md:right-8 right-4 nav-transform">
+      <nav
+        id="pagination"
+        className="fixed top-1/2 md:right-8 right-4 nav-transform"
+      >
         <NavLink inView={inTopView} href="#top" />
         <NavLink inView={inProfileView} href="#profile" />
         <NavLink inView={inCareerView} href="#career" />
@@ -64,7 +67,7 @@ const Home: NextPage = () => {
         <NavLink inView={inContactView} href="#contact" />
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,6 +1,6 @@
-import { FC } from "react";
+import type { FC } from "react";
 import Image from "next/image";
-import TechLabel from "~/components/TechLabel";
+import { TechTag } from "~/components/Tag";
 
 type Props = {
   url?: string;
@@ -29,7 +29,7 @@ export const ProductCard: FC<Props> = ({
         {organization && <div>({organization})</div>}
         <div className="my-3">{desc}</div>
         {technologies &&
-          technologies.map((tech) => <TechLabel key={tech}>{tech}</TechLabel>)}
+          technologies.map((tech) => <TechTag key={tech}>{tech}</TechTag>)}
       </a>
     </div>
   );
@@ -52,7 +52,7 @@ export const BigProductCard: FC<Props> = ({
         {organization && <div>({organization})</div>}
         <div className="my-3">{desc}</div>
         {technologies &&
-          technologies.map((tech) => <TechLabel key={tech}>{tech}</TechLabel>)}
+          technologies.map((tech) => <TechTag key={tech}>{tech}</TechTag>)}
       </a>
     </div>
   );

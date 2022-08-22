@@ -1,4 +1,4 @@
-import { FC, ChangeEventHandler } from "react";
+import type { FC, ChangeEventHandler } from "react";
 
 type Props = {
   id: string;
@@ -6,7 +6,7 @@ type Props = {
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
 };
 
-const Textarea: FC<Props> = ({ id, value, onChange }) => {
+export const Textarea: FC<Props> = ({ id, value, onChange }) => {
   return (
     <textarea
       id={id}
@@ -17,5 +17,3 @@ const Textarea: FC<Props> = ({ id, value, onChange }) => {
     />
   );
 };
-
-export default Textarea;

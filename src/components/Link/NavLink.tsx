@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import ClassNames from "classnames";
 import { smoothScroll } from "~/utils/Scroll";
 
@@ -7,7 +7,7 @@ type Props = {
   href: string;
 };
 
-const NavLink: FC<Props> = ({ inView, href }) => {
+export const NavLink: FC<Props> = ({ inView, href }) => {
   return (
     <a
       className={ClassNames(
@@ -19,5 +19,3 @@ const NavLink: FC<Props> = ({ inView, href }) => {
     />
   );
 };
-
-export default NavLink;

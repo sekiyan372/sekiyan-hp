@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 
 type Props = {
   disabled: boolean;
@@ -6,7 +6,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Submit: FC<Props> = ({ disabled, confirm, children }) => {
+export const SubmitButton: FC<Props> = ({ disabled, confirm, children }) => {
   return (
     <button
       className="border-solid border rounded p-2 bg-green-500 text-white text-xl hover:opacity-70"
@@ -17,5 +17,3 @@ const Submit: FC<Props> = ({ disabled, confirm, children }) => {
     </button>
   );
 };
-
-export default Submit;
