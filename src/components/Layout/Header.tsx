@@ -1,7 +1,7 @@
-import { FC } from "react";
-import Link from "next/link";
+import Link from 'next/link'
+import type { FC } from 'react'
 
-const Header: FC = () => {
+export const Header: FC = () => {
   return (
     <header className="w-full px-3 md:px-10 py-3 flex justify-between flex-wrap bg-white">
       <Link href="/" passHref>
@@ -25,7 +25,5 @@ const Header: FC = () => {
         </Link>
       </div>
     </header>
-  );
-};
-
-export default Header;
+  )
+}

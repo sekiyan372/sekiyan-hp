@@ -1,20 +1,14 @@
-import {
-  useState,
-  forwardRef,
-  ForwardRefRenderFunction,
-  ChangeEvent
-} from "react"
 import { send } from 'emailjs-com'
-import { emailjsConfig } from '~/utils/Emailjs'
-import Submit from '~/components/Button/Submit'
-import Footer from '~/components/Footer'
-import { Heading } from '~/components/Heading'
-import Input from '~/components/Input'
-import Label from '~/components/Label'
-import Section from '~/components/Section'
-import TextArea from '~/components/Textarea'
+import type { ChangeEvent } from 'react'
+import { forwardRef, useState } from 'react'
 
-const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
+import { SubmitButton } from '~/components/Button'
+import { Input, Label, Textarea } from '~/components/Input'
+import { Footer, Section } from '~/components/Layout'
+import { Heading } from '~/components/Text/Heading'
+import { emailjsConfig } from '~/utils/Emailjs'
+
+export const Contact = forwardRef<HTMLElement>((_, ref) => {
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
@@ -80,26 +74,24 @@ const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
             </div>
             <div className="m-5">
               <Label htmlFor="message">message</Label>
-              <TextArea
+              <Textarea
                 id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
             </div>
             <div className="text-center">
-              <Submit
+              <SubmitButton
                 disabled={disableSend}
-                confirm='お問い合わせを送信してもよろしいですか？'
+                confirm="お問い合わせを送信してもよろしいですか？"
               >
                 送信
-              </Submit>
+              </SubmitButton>
             </div>
           </form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </Section>
   )
-}
-
-export default forwardRef(Contact)
+})

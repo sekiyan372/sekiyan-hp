@@ -1,13 +1,12 @@
-import { forwardRef, ForwardRefRenderFunction } from "react"
 import Image from 'next/image'
 import Link from 'next/link'
-import Down from '~/components/Button/Down'
-import { Heading } from '~/components/Heading'
-import Section from '~/components/Section'
+import { forwardRef } from 'react'
 
-const PRODUCT = require('../../public/image/product-page.jpg')
+import { DownButton } from '~/components/Button'
+import { Section } from '~/components/Layout'
+import { Heading } from '~/components/Text'
 
-const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
+export const Product = forwardRef<HTMLElement>((_, ref) => {
   return (
     <Section
       ref={ref}
@@ -19,19 +18,19 @@ const Product: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
         <div className="relative flex justify-center items-center w-160 h-96 m-8 cursor-pointer hover:opacity-80">
           <div className="absolute md:w-160 w-72 md:h-90 h-42 md:my-12 my-6 bg-black inline-block">
             <Image
-              src={PRODUCT}
+              src="/images/product-page.jpg"
               alt="product page"
               width={640}
               height={360}
               className="block opacity-40"
             />
           </div>
-          <p className="absolute md:text-3xl text-xl text-white">Please click to move the page.</p>
+          <p className="absolute md:text-3xl text-xl text-white">
+            Please click to move the page.
+          </p>
         </div>
       </Link>
-      <Down href="#hobby" />
+      <DownButton href="#hobby" />
     </Section>
   )
-}
-
-export default forwardRef(Product)
+})

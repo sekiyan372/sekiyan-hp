@@ -1,15 +1,9 @@
 import type { NextPage } from 'next'
 import { useInView } from 'react-intersection-observer'
-import Head from '~/components/Head'
-import NavLink from '~/components/NavLink'
 
-// section
-import Top from '~/sections/Top'
-import Profile from '~/sections/Profile'
-import Career from '~/sections/Career'
-import Product from '~/sections/Product'
-import Hobby from '~/sections/Hobby'
-import Contact from '~/sections/Contact'
+import { Head } from '~/components/Layout'
+import { NavLink } from '~/components/Link'
+import { Career, Contact, Hobby, Product, Profile, Top } from '~/sections'
 
 const Home: NextPage = () => {
   const [topRef, inTopView] = useInView({
@@ -55,7 +49,10 @@ const Home: NextPage = () => {
         <Contact ref={contactRef} />
       </div>
 
-      <nav id="pagination" className="fixed top-1/2 md:right-8 right-4 nav-transform">
+      <nav
+        id="pagination"
+        className="fixed top-1/2 md:right-8 right-4 nav-transform"
+      >
         <NavLink inView={inTopView} href="#top" />
         <NavLink inView={inProfileView} href="#profile" />
         <NavLink inView={inCareerView} href="#career" />

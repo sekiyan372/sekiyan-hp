@@ -1,23 +1,22 @@
-import { forwardRef, ForwardRefRenderFunction } from "react"
 import Image from 'next/image'
-import Down from '~/components/Button/Down'
-import { Heading } from '~/components/Heading'
-import Section from '~/components/Section'
+import { forwardRef } from 'react'
 
-const ICON = require('../../public/image/my-icon.jpg')
+import { DownButton } from '~/components/Button'
+import { Section } from '~/components/Layout'
+import { Heading } from '~/components/Text/Heading'
 
 const profiles = [
   {
-    label: "From",
-    content: "愛知県名古屋市",
+    label: 'From',
+    content: '愛知県名古屋市',
   },
   {
-    label: "University",
-    content: "金沢工業大学（23卒）",
+    label: 'University',
+    content: '金沢工業大学（23卒）',
   },
 ]
 
-const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
+export const Profile = forwardRef<HTMLElement>((_, ref) => {
   return (
     <Section
       ref={ref}
@@ -28,7 +27,7 @@ const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       <div>
         <div className="text-center">
           <Image
-            src={ICON}
+            src="/images/my-icon.jpg"
             alt="my icon"
             width={200}
             height={200}
@@ -38,7 +37,7 @@ const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
           <p className="text-xl">Sekiyan</p>
         </div>
         <dl className="md:m-8 m-4 md:text-lg text-sm">
-          {profiles.map(profile => (
+          {profiles.map((profile) => (
             <span key={profile.label}>
               <dt className="float-left clear-left w-24">{profile.label}</dt>
               <dd className="float-left ml-5">{profile.content}</dd>
@@ -46,9 +45,7 @@ const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
           ))}
         </dl>
       </div>
-      <Down href="#career" className="m-8" />
+      <DownButton href="#career" className="m-8" />
     </Section>
   )
-}
-
-export default forwardRef(Profile)
+})

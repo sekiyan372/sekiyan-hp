@@ -2,24 +2,24 @@ module.exports = {
   purge: [
     './src/components/**/*.tsx',
     './src/pages/**/*.tsx',
-    './src/sections/**/*.tsx'
+    './src/sections/**/*.tsx',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       spacing: {
-        '90': '22.5rem',
-        '104': '26rem',
-        '120': '30rem',
-        '136': '34rem',
-        '152': '38rem',
-        '160': '40rem',
-        '168': '42rem',
-        '184': '46rem',
-        '200': '50rem',
+        90: '22.5rem',
+        104: '26rem',
+        120: '30rem',
+        136: '34rem',
+        152: '38rem',
+        160: '40rem',
+        168: '42rem',
+        184: '46rem',
+        200: '50rem',
       },
       colors: {
-        'jade': '#3F9877',
+        jade: '#3F9877',
         'pagination-white': '#fcfcfc',
       },
       width: {
