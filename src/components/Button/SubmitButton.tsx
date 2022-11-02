@@ -1,10 +1,10 @@
-import type { FC, ReactNode } from "react";
+import type { FC, ReactNode } from 'react'
 
 type Props = {
-  disabled: boolean;
-  confirm: string;
-  children: ReactNode;
-};
+  disabled: boolean
+  confirm: string
+  children: ReactNode
+}
 
 export const SubmitButton: FC<Props> = ({ disabled, confirm, children }) => {
   return (
@@ -15,5 +15,5 @@ export const SubmitButton: FC<Props> = ({ disabled, confirm, children }) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}

@@ -1,17 +1,18 @@
-import type { ChangeEvent, ForwardRefRenderFunction } from "react";
-import { useState, forwardRef } from "react";
-import { send } from "emailjs-com";
-import { emailjsConfig } from "~/utils/Emailjs";
-import { SubmitButton } from "~/components/Button";
-import { Footer, Section } from "~/components/Layout";
-import { Heading } from "~/components/Text/Heading";
-import { Input, Label, Textarea } from "~/components/Input";
+import { send } from 'emailjs-com'
+import type { ChangeEvent } from 'react'
+import { forwardRef, useState } from 'react'
 
-const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
-  const disableSend = name === "" || email === "" || message === "";
+import { SubmitButton } from '~/components/Button'
+import { Input, Label, Textarea } from '~/components/Input'
+import { Footer, Section } from '~/components/Layout'
+import { Heading } from '~/components/Text/Heading'
+import { emailjsConfig } from '~/utils/Emailjs'
+
+export const Contact = forwardRef<HTMLElement>((_, ref) => {
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const disableSend = name === '' || email === '' || message === ''
 
   const sendMail = () => {
     if (
@@ -22,25 +23,25 @@ const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
         to_name: name,
         from_email: email,
         message: message,
-      };
+      }
 
       send(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
         template_param
       ).then(() => {
-        window.alert("お問い合わせを送信致しました。");
-        setName("");
-        setEmail("");
-        setMessage("");
-      });
+        window.alert('お問い合わせを送信致しました。')
+        setName('')
+        setEmail('')
+        setMessage('')
+      })
     }
-  };
+  }
 
   const onSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    sendMail();
-  };
+    event.preventDefault()
+    sendMail()
+  }
 
   return (
     <Section
@@ -92,7 +93,5 @@ const Contact: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       </div>
       <Footer />
     </Section>
-  );
-};
-
-export default forwardRef(Contact);
+  )
+})

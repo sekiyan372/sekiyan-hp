@@ -1,23 +1,22 @@
-import { forwardRef, ForwardRefRenderFunction } from "react";
-import Image from "next/image";
-import { DownButton } from "~/components/Button";
-import { Heading } from "~/components/Text/Heading";
-import { Section } from "~/components/Layout";
+import Image from 'next/image'
+import { forwardRef } from 'react'
 
-const ICON = require("../../public/image/my-icon.jpg");
+import { DownButton } from '~/components/Button'
+import { Section } from '~/components/Layout'
+import { Heading } from '~/components/Text/Heading'
 
 const profiles = [
   {
-    label: "From",
-    content: "愛知県名古屋市",
+    label: 'From',
+    content: '愛知県名古屋市',
   },
   {
-    label: "University",
-    content: "金沢工業大学（23卒）",
+    label: 'University',
+    content: '金沢工業大学（23卒）',
   },
-];
+]
 
-const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
+export const Profile = forwardRef<HTMLElement>((_, ref) => {
   return (
     <Section
       ref={ref}
@@ -28,7 +27,7 @@ const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       <div>
         <div className="text-center">
           <Image
-            src={ICON}
+            src="/images/my-icon.jpg"
             alt="my icon"
             width={200}
             height={200}
@@ -48,7 +47,5 @@ const Profile: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       </div>
       <DownButton href="#career" className="m-8" />
     </Section>
-  );
-};
-
-export default forwardRef(Profile);
+  )
+})

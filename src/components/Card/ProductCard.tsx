@@ -1,16 +1,17 @@
-import type { FC } from "react";
-import Image from "next/image";
-import { TechTag } from "~/components/Tag";
+import Image from 'next/image'
+import type { FC } from 'react'
+
+import { TechTag } from '~/components/Tag'
 
 type Props = {
-  url?: string;
-  imagePath: string;
-  alt: string;
-  title?: string;
-  organization?: string;
-  desc: string;
-  technologies?: string[];
-};
+  url?: string
+  imagePath: string
+  alt: string
+  title?: string
+  organization?: string
+  desc: string
+  technologies?: string[]
+}
 
 export const ProductCard: FC<Props> = ({
   url,
@@ -32,8 +33,8 @@ export const ProductCard: FC<Props> = ({
           technologies.map((tech) => <TechTag key={tech}>{tech}</TechTag>)}
       </a>
     </div>
-  );
-};
+  )
+}
 
 export const BigProductCard: FC<Props> = ({
   url,
@@ -55,5 +56,5 @@ export const BigProductCard: FC<Props> = ({
           technologies.map((tech) => <TechTag key={tech}>{tech}</TechTag>)}
       </a>
     </div>
-  );
-};
+  )
+}

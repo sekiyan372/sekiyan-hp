@@ -1,79 +1,74 @@
-import type { ForwardRefRenderFunction } from "react";
-import { forwardRef } from "react";
-import Image from "next/image";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { DownButton } from "~/components/Button";
-import { Heading, SubHeading } from "~/components/Text";
-import { Section } from "~/components/Layout";
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const FULLERTONE = require("../../public/image/fullertone.JPG");
-const STRATOCASTER = require("../../public/image/stratocaster.JPG");
-const BASS = require("../../public/image/bass.JPG");
-const LESPAOL = require("../../public/image/lespaol.JPG");
-const ACCOSTIC = require("../../public/image/accostic-guitar.JPG");
+import Image from 'next/image'
+import { forwardRef } from 'react'
+import { Carousel } from 'react-responsive-carousel'
+
+import { DownButton } from '~/components/Button'
+import { Section } from '~/components/Layout'
+import { Heading, SubHeading } from '~/components/Text'
 
 const favorites = [
   [
     {
-      label: "Instrument",
-      content: "ベース",
+      label: 'Instrument',
+      content: 'ベース',
     },
     {
-      label: "Band",
-      content: "nano.RIPE",
+      label: 'Band',
+      content: 'nano.RIPE',
     },
     {
-      label: "Idol",
-      content: "日向坂46",
+      label: 'Idol',
+      content: '日向坂46',
     },
   ],
   [
     {
-      label: "Baseball Team",
-      content: "東北楽天ゴールデンイーグルス",
+      label: 'Baseball Team',
+      content: '東北楽天ゴールデンイーグルス',
     },
     {
-      label: "Anime",
-      content: "花咲くいろは",
+      label: 'Anime',
+      content: '花咲くいろは',
     },
   ],
-];
+]
 
 const works = [
   {
-    name: "Fullertone JazzBass",
-    src: FULLERTONE,
-    alt: "Fullertone JazzBass",
-    legend: "愛機のベース（アイコンにしてるやつ）",
+    name: 'Fullertone JazzBass',
+    src: '/images/fullertone.JPG',
+    alt: 'Fullertone JazzBass',
+    legend: '愛機のベース（アイコンにしてるやつ）',
   },
   {
-    name: "Stratocaster",
-    src: STRATOCASTER,
-    alt: "ストラトキャスター",
-    legend: "自作のストラトキャスター",
+    name: 'Stratocaster',
+    src: '/images/stratocaster.JPG',
+    alt: 'ストラトキャスター',
+    legend: '自作のストラトキャスター',
   },
   {
-    name: "Precision Bass",
-    src: BASS,
-    alt: "プレシジョンベース",
-    legend: "自作のプレシジョンベース",
+    name: 'Precision Bass',
+    src: '/images/bass.JPG',
+    alt: 'プレシジョンベース',
+    legend: '自作のプレシジョンベース',
   },
   {
-    name: "Les Paol",
-    src: LESPAOL,
-    alt: "レスポール",
-    legend: "自作のレスポール",
+    name: 'Les Paol',
+    src: '/images/lespaol.JPG',
+    alt: 'レスポール',
+    legend: '自作のレスポール',
   },
   {
-    name: "Accostic Guitar",
-    src: ACCOSTIC,
-    alt: "アコースティックギター",
-    legend: "自作のアコースティックギター",
+    name: 'Accostic Guitar',
+    src: '/images/accostic-guitar.JPG',
+    alt: 'アコースティックギター',
+    legend: '自作のアコースティックギター',
   },
-];
+]
 
-const Hobby: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
+export const Hobby = forwardRef<HTMLElement>((_, ref) => {
   return (
     <Section
       ref={ref}
@@ -114,7 +109,5 @@ const Hobby: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
       </div>
       <DownButton href="#contact" className="text-white" />
     </Section>
-  );
-};
-
-export default forwardRef(Hobby);
+  )
+})

@@ -1,15 +1,15 @@
-import type { FC } from "react";
-import NextHead from "next/head";
+import NextHead from 'next/head'
+import type { FC } from 'react'
 
 type Props = {
-  title?: string;
-};
+  title?: string
+}
 
-const BASE_TITLE = "Sekiyan HP";
-const DESCRIPTION = "せきやんのポートフォリオサイトです。";
+const BASE_TITLE = 'Sekiyan HP'
+const DESCRIPTION = 'せきやんのポートフォリオサイトです。'
 
 export const Head: FC<Props> = (props) => {
-  const title = props.title ? `${props.title} | ${BASE_TITLE}` : BASE_TITLE;
+  const title = props.title ? `${props.title} | ${BASE_TITLE}` : BASE_TITLE
 
   return (
     <NextHead>
@@ -25,5 +25,5 @@ export const Head: FC<Props> = (props) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/favicon.ico" />
     </NextHead>
-  );
-};
+  )
+}

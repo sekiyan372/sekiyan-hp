@@ -1,6 +1,7 @@
-import type { NextPage } from "next";
-import { Footer, Head, Header } from "~/components/Layout";
-import { Heading } from "~/components/Text";
+import type { NextPage } from 'next'
+
+import { Footer, Head, Header } from '~/components/Layout'
+import { Heading } from '~/components/Text'
 
 const Product: NextPage = () => {
   return (
@@ -11,7 +12,7 @@ const Product: NextPage = () => {
       <Heading>Blog Index</Heading>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

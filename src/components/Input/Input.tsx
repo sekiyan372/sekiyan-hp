@@ -1,10 +1,10 @@
-import type { FC, ChangeEventHandler } from "react";
+import type { ChangeEventHandler, FC } from 'react'
 
 type Props = {
-  id: string;
-  value: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-};
+  id: string
+  value: string
+  onChange?: ChangeEventHandler<HTMLInputElement>
+}
 
 export const Input: FC<Props> = ({ id, value, onChange }) => {
   return (
@@ -15,5 +15,5 @@ export const Input: FC<Props> = ({ id, value, onChange }) => {
       value={value}
       onChange={onChange}
     />
-  );
-};
+  )
+}

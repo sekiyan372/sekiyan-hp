@@ -1,33 +1,30 @@
-import { forwardRef, ForwardRefRenderFunction } from "react";
-import { DownButton, LinkIcon } from "~/components/Button";
-import { Header, Section } from "~/components/Layout";
+import { forwardRef } from 'react'
 
-const TWITTER_ICON = require("../../public/Twitter-social-icons-circle-blue.svg");
-const HATENA_ICON = require("../../public/hatenablog-logo.svg");
-const GITHUB_ICON = require("../../public/GitHub-Mark-Light-64px.png");
+import { DownButton, LinkIcon } from '~/components/Button'
+import { Header, Section } from '~/components/Layout'
 
 const links = [
   {
-    name: "Twitter",
-    url: "https://twitter.com/sekiyan372",
-    src: TWITTER_ICON,
-    alt: "Twitter Button",
+    name: 'Twitter',
+    url: 'https://twitter.com/sekiyan372',
+    src: '/Twitter-social-icons-circle-blue.svg',
+    alt: 'Twitter Button',
   },
   {
-    name: "Hatena Blog",
-    url: "https://sekiyan372.hatenablog.jp/",
-    src: HATENA_ICON,
-    alt: "Hatena Blog Button",
+    name: 'Hatena Blog',
+    url: 'https://sekiyan372.hatenablog.jp/',
+    src: '/hatenablog-logo.svg',
+    alt: 'Hatena Blog Button',
   },
   {
-    name: "Github",
-    url: "https://github.com/sekiyan372",
-    src: GITHUB_ICON,
-    alt: "Github Button",
+    name: 'Github',
+    url: 'https://github.com/sekiyan372',
+    src: '/GitHub-Mark-Light-64px.png',
+    alt: 'Github Button',
   },
-];
+]
 
-const Top: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
+export const Top = forwardRef<HTMLElement>((_, ref) => {
   return (
     <Section ref={ref} id="top" className="bg-jade">
       <Header />
@@ -50,7 +47,5 @@ const Top: ForwardRefRenderFunction<HTMLElement> = ({}, ref) => {
         <DownButton href="#profile" className="text-white" />
       </div>
     </Section>
-  );
-};
-
-export default forwardRef(Top);
+  )
+})

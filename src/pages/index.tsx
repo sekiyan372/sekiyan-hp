@@ -1,46 +1,40 @@
-import type { NextPage } from "next";
-import { useInView } from "react-intersection-observer";
-import { Head } from "~/components/Layout";
-import { NavLink } from "~/components/Link";
+import type { NextPage } from 'next'
+import { useInView } from 'react-intersection-observer'
 
-// section
-import Top from "~/sections/Top";
-import Profile from "~/sections/Profile";
-import Career from "~/sections/Career";
-import Product from "~/sections/Product";
-import Hobby from "~/sections/Hobby";
-import Contact from "~/sections/Contact";
+import { Head } from '~/components/Layout'
+import { NavLink } from '~/components/Link'
+import { Career, Contact, Hobby, Product, Profile, Top } from '~/sections'
 
 const Home: NextPage = () => {
   const [topRef, inTopView] = useInView({
-    rootMargin: "-50% 0px",
+    rootMargin: '-50% 0px',
     threshold: 0,
-  });
+  })
 
   const [profileRef, inProfileView] = useInView({
-    rootMargin: "-50% 0px",
+    rootMargin: '-50% 0px',
     threshold: 0,
-  });
+  })
 
   const [careerRef, inCareerView] = useInView({
-    rootMargin: "-50% 0px",
+    rootMargin: '-50% 0px',
     threshold: 0,
-  });
+  })
 
   const [productRef, inProductView] = useInView({
-    rootMargin: "-50% 0px",
+    rootMargin: '-50% 0px',
     threshold: 0,
-  });
+  })
 
   const [hobbyRef, inHobbyView] = useInView({
-    rootMargin: "-50% 0px",
+    rootMargin: '-50% 0px',
     threshold: 0,
-  });
+  })
 
   const [contactRef, inContactView] = useInView({
-    rootMargin: "-50% 0px",
+    rootMargin: '-50% 0px',
     threshold: 0,
-  });
+  })
 
   return (
     <>
@@ -67,7 +61,7 @@ const Home: NextPage = () => {
         <NavLink inView={inContactView} href="#contact" />
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

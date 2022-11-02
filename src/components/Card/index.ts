@@ -1,1 +1,1 @@
-export { ProductCard, BigProductCard } from './ProductCard';
+export { ProductCard, BigProductCard } from './ProductCard'

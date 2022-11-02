@@ -1,1 +1,1 @@
-export { TechTag } from './TechTag';
+export { TechTag } from './TechTag'

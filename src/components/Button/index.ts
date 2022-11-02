@@ -1,3 +1,3 @@
-export { DownButton } from './DownButton';
-export { LinkIcon } from './LinkIcon';
-export { SubmitButton } from './SubmitButton';
+export { DownButton } from './DownButton'
+export { LinkIcon } from './LinkIcon'
+export { SubmitButton } from './SubmitButton'

@@ -1,21 +1,28 @@
-import type { FC, HTMLAttributes } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import ClassNames from "classnames";
+import ClassNames from 'classnames'
+import Image from 'next/image'
+import Link from 'next/link'
+import type { FC, HTMLAttributes } from 'react'
 
-type DivProps = HTMLAttributes<HTMLDivElement>;
+type DivProps = HTMLAttributes<HTMLDivElement>
 
 type Props = {
-  url: string;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-} & DivProps;
+  url: string
+  src: string
+  alt: string
+  width: number
+  height: number
+} & DivProps
 
-export const LinkIcon: FC<Props> = ({ url, src, alt, width, height, className }) => {
+export const LinkIcon: FC<Props> = ({
+  url,
+  src,
+  alt,
+  width,
+  height,
+  className,
+}) => {
   return (
-    <div className={ClassNames("inline-block md:mx-5 mx-3", className)}>
+    <div className={ClassNames('inline-block md:mx-5 mx-3', className)}>
       <Link href={url} passHref>
         <a target="_blank">
           <Image
@@ -28,5 +35,5 @@ export const LinkIcon: FC<Props> = ({ url, src, alt, width, height, className })
         </a>
       </Link>
     </div>
-  );
-};
+  )
+}
