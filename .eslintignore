@@ -3,4 +3,5 @@ dist
 /.next/
 /out/
 next.config.js
+tailwind.config.js
 yarn.lock
