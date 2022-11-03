@@ -1,10 +1,5 @@
-import {
-  faBuilding,
-  faGuitar,
-  faSchool,
-} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { forwardRef } from 'react'
+import { FaBuilding, FaGuitar, FaSchool } from 'react-icons/fa'
 
 import { DownButton } from '~/components/Button'
 import { Circle, VerticalLine } from '~/components/Figure'
@@ -16,7 +11,7 @@ const careers = [
     year: '2015',
     icon: (
       <Circle>
-        <FontAwesomeIcon icon={faGuitar} className="text-black w-3/4" />
+        <FaGuitar className="text-black w-3/4 h-3/4" />
       </Circle>
     ),
     desc: '中部楽器技術専門学校 弦楽器制作科ギタークラフトコース',
@@ -30,7 +25,7 @@ const careers = [
     year: '2017',
     icon: (
       <Circle>
-        <FontAwesomeIcon icon={faBuilding} className="text-black w-3/5" />
+        <FaBuilding className="text-black w-3/4 h-3/4" />
       </Circle>
     ),
     desc: '楽器卸売会社',
@@ -44,7 +39,7 @@ const careers = [
     year: '2019',
     icon: (
       <Circle>
-        <FontAwesomeIcon icon={faSchool} className="text-black w-3/4" />
+        <FaSchool className="text-black w-3/4 h-3/4" />
       </Circle>
     ),
     desc: '金沢工業大学 工学部情報工学科',
