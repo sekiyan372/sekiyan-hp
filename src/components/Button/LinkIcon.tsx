@@ -13,7 +13,7 @@ export const LinkIcon: FC<Props> = ({ url, children, className }) => {
       <a target="_blank">
         <div
           className={ClassNames(
-            'inline-block md:mx-5 mx-3 p-3 bg-stone-200 rounded-full',
+            'md:mx-5 m-3 p-3 bg-stone-200 rounded-full',
             className
           )}
         >
