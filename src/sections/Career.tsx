@@ -66,7 +66,7 @@ export const Career = forwardRef<HTMLElement>((_, ref) => {
               <td className="p-0">{career.year}</td>
               {career.icon && <td className="px-3 py-0">{career.icon}</td>}
               {career.line && (
-                <td className="text-center h-24">{career.line}</td>
+                <td className="text-center h-20 sm:h-24">{career.line}</td>
               )}
               <td className="p-0 md:text-base text-sm">{career.desc}</td>
             </tr>

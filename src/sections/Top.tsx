@@ -53,8 +53,8 @@ export const Top = forwardRef<HTMLElement>((_, ref) => {
     <Section ref={ref} id="top" className="bg-jade">
       <Header />
       <div className="h-full flex justify-center items-center flex-col">
-        <h1 className="m-4 text-white">Welcome to</h1>
-        <h1 className="m-4 text-white">Sekiyan&#039;s website.</h1>
+        <h1 className="m-2 sm:m-8 text-white">Welcome to</h1>
+        <h1 className="m-2 sm:m-8 text-white">Sekiyan&#039;s website.</h1>
 
         <div className="m-5 flex flex-wrap justify-center">
           {links.map((link) => (
