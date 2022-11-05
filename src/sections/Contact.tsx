@@ -56,7 +56,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
         </p>
         <div className="md:m-10 md:w-3/4 w-11/12">
           <form onSubmit={onSubmit}>
-            <div className="m-5">
+            <div className="m-2 sm:m-5">
               <Label htmlFor="name">name</Label>
               <Input
                 id="name"
@@ -64,7 +64,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="m-5">
+            <div className="m-2 sm:m-5">
               <Label htmlFor="email">email</Label>
               <Input
                 id="email"
@@ -72,7 +72,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="m-5">
+            <div className="m-2 sm:m-5">
               <Label htmlFor="message">message</Label>
               <Textarea
                 id="message"
