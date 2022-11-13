@@ -25,7 +25,7 @@ export const ProductCard: FC<Props> = ({
   return (
     <div className="md:w-104 m-3 border-4 rounded-lg p-3 hover:opacity-80 text-center">
       <a href={url} target="blank">
-        <Image src={imagePath} alt={alt} />
+        <Image src={imagePath} alt={alt} width="320" height="180" />
         <div className="text-2xl">{title}</div>
         {organization && <div>({organization})</div>}
         <div className="my-3">{desc}</div>
@@ -48,7 +48,7 @@ export const BigProductCard: FC<Props> = ({
   return (
     <div className="md:w-160 m-3 border-4 rounded-lg p-3 hover:opacity-80 text-center">
       <a href={url} target="blank">
-        <Image src={imagePath} alt={alt} />
+        <Image src={imagePath} alt={alt} width="320" height="180" />
         <div className="text-2xl">{title}</div>
         {organization && <div>({organization})</div>}
         <div className="my-3">{desc}</div>
