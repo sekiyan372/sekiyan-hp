@@ -13,8 +13,8 @@ export const HeaderDrawer: FC = () => {
   const externalLinks = useMemo(() => links('w-6 h-6 text-neutral-600'), [])
 
   return (
-    <div className="relative">
-      <button onClick={onOpen}>
+    <>
+      <button className="sm:hidden" onClick={onOpen}>
         <GiHamburgerMenu className="w-8 h-8 hover:opacity-50" />
       </button>
 
@@ -64,6 +64,6 @@ export const HeaderDrawer: FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 }

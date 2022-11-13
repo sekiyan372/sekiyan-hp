@@ -11,7 +11,8 @@ export const Header: FC = () => {
           Sekiyan372
         </div>
       </Link>
-      <div className="flex">
+
+      <div className="hidden sm:flex">
         <Link href="/product" passHref>
           <div className="mx-8 text-2xl cursor-pointer hover:opacity-50">
             Product
