@@ -16,7 +16,7 @@ export const HeaderDrawer: FC = () => {
   return (
     <>
       <button className="sm:hidden" onClick={onOpen}>
-        <GiHamburgerMenu className="w-8 h-8 hover:opacity-50" />
+        <GiHamburgerMenu className="w-8 h-8 text-stone-600 hover:opacity-50" />
       </button>
 
       {isOpen && (
@@ -43,19 +43,19 @@ export const HeaderDrawer: FC = () => {
               />
             </div>
 
-            <div className="pt-4" onClick={onClose}>
+            <div className="pt-4 text-xl" onClick={onClose}>
               <Link href="/product" passHref>
-                <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
+                <div className="mx-8 py-2 cursor-pointer hover:opacity-50">
                   プロダクト
                 </div>
               </Link>
               <Link href="/ohisama" passHref>
-                <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
+                <div className="mx-8 py-2 cursor-pointer hover:opacity-50">
                   おひさまhistory
                 </div>
               </Link>
               <Link href="/#contact" passHref>
-                <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
+                <div className="mx-8 py-2 cursor-pointer hover:opacity-50">
                   連絡先
                 </div>
               </Link>

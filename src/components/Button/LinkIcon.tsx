@@ -11,7 +11,7 @@ export const LinkIcon: FC<Props> = ({ url, children, className }) => {
     <a href={url} target="_blank" rel="noreferrer">
       <div
         className={ClassNames(
-          'inline-block md:mx-5 m-3 p-3 bg-stone-200 rounded-full cursor-pointer hover:opacity-70',
+          'inline-block m-1 md:mx-4 p-3 bg-stone-200 rounded-full cursor-pointer hover:opacity-70',
           className
         )}
       >

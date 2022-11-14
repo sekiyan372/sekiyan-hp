@@ -5,7 +5,7 @@ type Props = HTMLAttributes<HTMLHeadingElement>
 
 export const Heading: FC<Props> = ({ children, className }) => {
   return (
-    <h2 className={ClassNames('text-center md:py-8 py-4', className)}>
+    <h2 className={ClassNames('text-center md:py-4 py-2', className)}>
       {children}
     </h2>
   )

@@ -4,13 +4,13 @@
 
 @layer base {
   h1 {
-    @apply xl:text-9xl md:text-7xl text-3xl;
+    @apply md:text-7xl text-3xl;
   }
   h2 {
-    @apply md:text-7xl text-5xl;
+    @apply md:text-5xl text-3xl;
   }
   h3 {
-    @apply md:text-5xl text-3xl;
+    @apply md:text-3xl text-xl;
   }
 }
 

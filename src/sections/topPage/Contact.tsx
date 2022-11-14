@@ -50,13 +50,13 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
       className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200"
     >
       <div className="h-full flex justify-center items-center flex-col">
-        <Heading>Contact</Heading>
-        <p className="mt-5 mx-5">
+        <Heading className="mt-12">Contact</Heading>
+        <p className="mx-5 text-xs sm:text-base">
           お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
         </p>
-        <div className="md:m-10 md:w-3/4 w-11/12">
+        <div className="md:w-3/4 w-11/12">
           <form onSubmit={onSubmit}>
-            <div className="m-2 sm:m-5">
+            <div className="m-2">
               <Label htmlFor="name">name</Label>
               <Input
                 id="name"
@@ -64,7 +64,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div className="m-2 sm:m-5">
+            <div className="m-2">
               <Label htmlFor="email">email</Label>
               <Input
                 id="email"
@@ -72,7 +72,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="m-2 sm:m-5">
+            <div className="m-2">
               <Label htmlFor="message">message</Label>
               <Textarea
                 id="message"

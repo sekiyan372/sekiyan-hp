@@ -22,7 +22,7 @@ export const LiveLogLeft: FC<Props> = ({ imgSrc, name, day, date, venue }) => {
         width="160"
         height="160"
         objectFit="cover"
-        style={{ borderRadius: '50%' }}
+        className="rounded-full"
       />
       <div className="py-4 sm:py-0 sm:pl-10 text-center sm:text-left">
         <p className="text-3xl border-b-2">{name}</p>
