@@ -2,9 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useMemo } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { ImCross } from 'react-icons/im'
 
-import { LinkIcon } from '~/components/Button'
+import { CloseCross, LinkIcon } from '~/components/Button'
 import { externalLinks } from '~/components/Link'
 import { useDisclosure } from '~/hooks/useDisclosure'
 
@@ -27,13 +26,13 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
       </button>
 
       {isOpen && (
-        <div>
+        <>
           <div
-            className="fixed w-full h-screen z-10 bg-gray-800 top-0 left-0 opacity-50"
+            className="fixed w-full h-screen z-30 bg-gray-800 top-0 left-0 opacity-50"
             onClick={onClose}
           />
 
-          <div className="fixed z-20 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
+          <div className="fixed z-40 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
             <div className="flex justify-between p-2">
               <Link href="/" passHref>
                 <Image
@@ -44,10 +43,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
                   className="cursor-pointer"
                 />
               </Link>
-              <ImCross
-                className="w-6 h-6 text-stone-300 cursor-pointer hover:opacity-50"
-                onClick={onClose}
-              />
+              <CloseCross onClick={onClose} />
             </div>
 
             <div className="pt-4 text-xl text-jade" onClick={onClose}>
@@ -71,7 +67,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
               ))}
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   )

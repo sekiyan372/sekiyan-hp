@@ -18,12 +18,12 @@ const links = [
     title: '制作物',
   },
   {
-    href: '/#contact',
-    title: '連絡先',
-  },
-  {
     href: '/ohisama',
     title: 'おひさまhistory',
+  },
+  {
+    href: '/#contact',
+    title: '連絡先',
   },
 ]
 

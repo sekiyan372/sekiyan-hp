@@ -4,23 +4,24 @@ import { DownButton } from '~/components/Button'
 import { ProductCard } from '~/components/Card'
 import { Section } from '~/components/Layout'
 import { Heading, SubHeading } from '~/components/Text'
+import type { Product as ProductType } from '~/types'
 
-const products = [
+const products: ProductType[] = [
   {
-    url: '',
     imagePath: '/images/sekiyan-hp.jpg',
-    alt: "Sekiyan's website",
     title: 'ポートフォリオサイト',
-    desc: '自分のポートフォリオサイト',
-    tech: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
+    desc: 'このWebサイトです。ポートフォリオとして制作物などを載せる他、趣味の情報もまとめるなど自分が発信した情報をまとめています。',
+    url: '',
+    github: '',
+    techs: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
   },
   {
-    url: 'https://effector-geek.vercel.app/',
     imagePath: '/images/effector-geek.jpg',
-    alt: 'Effector Geek',
     title: 'Effector Geek',
-    desc: 'エフェクター情報共有サイト',
-    tech: [
+    desc: 'エフェクターの情報を共有できるサービスを開発しました（未完成）。登録しているエフェクターから選択して自分のエフェクターボードを投稿できるほか、登録がないエフェクターは自分で登録することが可能です。エフェクターボードを見るのが元々好きで、手軽に共有できるプラットフォームがあればいいなと思い制作しました。',
+    url: 'https://effector-geek.vercel.app/',
+    github: 'https://github.com/sekiyan372/effector-geek',
+    techs: [
       'TypeScript',
       'React',
       'Redux',
@@ -31,39 +32,35 @@ const products = [
     ],
   },
   {
-    url: 'https://sekiyan372-calculator.netlify.app/',
-    imagePath: '/images/calculator.jpg',
-    alt: 'calculator',
-    title: 'calculator',
-    desc: '単純な電卓',
-    tech: ['TypeScript', 'React', 'Styled Components', 'Netrify'],
+    imagePath: '/images/random-app.jpg',
+    title: 'ランダムアプリ',
+    desc: '空白区切りで文字を入力し、その中からランダムで1つを選択し表示されるブラウザ上だけで動くアプリケーションです。グループ内で適当に決めたい時など度々あり、自作でツール作るかと思いサクッと作りました。',
+    url: 'https://random-app.vercel.app/',
+    github: 'https://github.com/sekiyan372/random-app',
+    techs: ['TypeScript', 'React', 'Styled Components', 'Vercel'],
   },
   {
-    url: 'https://random-app.vercel.app/',
-    imagePath: '/images/random-app.jpg',
-    alt: 'Random App',
-    title: 'ランダムアプリ',
-    desc: 'ランダムに何かを決めるサイト',
-    tech: ['TypeScript', 'React', 'Styled Components', 'Vercel'],
+    imagePath: '/images/calculator.jpg',
+    title: 'calculator',
+    desc: '基本的な計算機能を持ったブラウザ上だけで動く単純な電卓です。ボタンの操作だけでなく、キーボード入力でも可能なのがこだわりポイントです。Reactの入門をしたときに勉強用で制作しました。',
+    url: 'https://sekiyan372-calculator.netlify.app/',
+    github: 'https://github.com/sekiyan372/calculator',
+    techs: ['TypeScript', 'React', 'Styled Components', 'Netrify'],
   },
 ]
 
 const joins = [
   {
-    url: 'https://tourism-project.com',
+    url: 'https://tourism-project.com/',
     title: 'Tourism Projectホームページ',
   },
   {
-    url: 'https://totteku.tourism-project.com',
+    url: 'https://totteku.tourism-project.com/',
     title: '撮っテク！',
   },
   {
-    url: 'https://www.cirkit.jp',
+    url: 'https://www.cirkit.jp/',
     title: 'CirKitコーポレートサイト',
-  },
-  {
-    url: 'https://www.cirkit.jp',
-    title: '@連絡網',
   },
 ]
 
@@ -77,7 +74,9 @@ export const Product = forwardRef<HTMLElement>((_, ref) => {
       <Heading className="text-gray-800">Product</Heading>
       <div className="flex flex-wrap justify-center">
         {products.map((product) => (
-          <ProductCard key={product.title} {...product} />
+          <>
+            <ProductCard key={product.title} product={product} />
+          </>
         ))}
       </div>
 
