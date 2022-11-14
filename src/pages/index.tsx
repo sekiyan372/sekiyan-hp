@@ -3,7 +3,14 @@ import { useInView } from 'react-intersection-observer'
 
 import { Head } from '~/components/Layout'
 import { NavLink } from '~/components/Link'
-import { Career, Contact, Hobby, Product, Profile, Top } from '~/sections'
+import {
+  Career,
+  Contact,
+  // Hobby,
+  Product,
+  Profile,
+  Top,
+} from '~/sections/topPage'
 
 const Home: NextPage = () => {
   const [topRef, inTopView] = useInView({
@@ -26,10 +33,10 @@ const Home: NextPage = () => {
     threshold: 0,
   })
 
-  const [hobbyRef, inHobbyView] = useInView({
-    rootMargin: '-50% 0px',
-    threshold: 0,
-  })
+  // const [hobbyRef, inHobbyView] = useInView({
+  //   rootMargin: '-50% 0px',
+  //   threshold: 0,
+  // })
 
   const [contactRef, inContactView] = useInView({
     rootMargin: '-50% 0px',
@@ -45,7 +52,7 @@ const Home: NextPage = () => {
         <Profile ref={profileRef} />
         <Career ref={careerRef} />
         <Product ref={productRef} />
-        <Hobby ref={hobbyRef} />
+        {/* <Hobby ref={hobbyRef} /> */}
         <Contact ref={contactRef} />
       </div>
 
@@ -57,7 +64,7 @@ const Home: NextPage = () => {
         <NavLink inView={inProfileView} href="#profile" />
         <NavLink inView={inCareerView} href="#career" />
         <NavLink inView={inProductView} href="#product" />
-        <NavLink inView={inHobbyView} href="#hobby" />
+        {/* <NavLink inView={inHobbyView} href="#hobby" /> */}
         <NavLink inView={inContactView} href="#contact" />
       </nav>
     </>

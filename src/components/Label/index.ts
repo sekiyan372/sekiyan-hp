@@ -1,0 +1,1 @@
+export { SubscribedTalk } from './SubscribedTalk'

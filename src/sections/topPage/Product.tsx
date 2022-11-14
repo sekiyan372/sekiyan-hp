@@ -15,8 +15,8 @@ export const Product = forwardRef<HTMLElement>((_, ref) => {
     >
       <Heading>Product</Heading>
       <Link href="/product" passHref>
-        <div className="relative flex justify-center items-center md:w-160 w-72 h-96 m-8 cursor-pointer hover:opacity-80">
-          <div className="absolute md:w-160 w-72 md:h-90 h-42 md:my-12 my-6 bg-black inline-block">
+        <div className="relative flex justify-center items-center md:w-160 w-72 h-40 md:h-90 cursor-pointer hover:opacity-80">
+          <div className="absolute md:w-160 w-72 md:h-90 md:my-12 my-6 bg-black inline-block">
             <Image
               src="/images/product-page.jpg"
               alt="product page"

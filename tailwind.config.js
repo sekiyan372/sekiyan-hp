@@ -21,6 +21,7 @@ module.exports = {
       colors: {
         jade: '#3F9877',
         'pagination-white': '#fcfcfc',
+        hinata: '#5BBEE5',
       },
       width: {
         '1/7': '14.2857143%',
@@ -29,6 +30,9 @@ module.exports = {
         '4/7': '57.1428571%',
         '5/7': '71.4285714%',
         '6/7': '85.7142857%',
+      },
+      fontFamily: {
+        overpass: ['Overpass', 'sans-serif'],
       },
     },
   },
