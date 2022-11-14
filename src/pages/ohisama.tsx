@@ -1,12 +1,46 @@
 import dayjs from 'dayjs'
+import ja from 'dayjs/locale/ja'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 
+import { LiveLogLeft, LiveLogRight } from '~/components/Card'
 import { SubscribedTalk } from '~/components/Label'
 import { Footer, Head, Header } from '~/components/Layout'
 import { Heading } from '~/components/Text'
 
+dayjs.locale(ja)
+
 const talks: string[] = ['#naotalk', '#hinatalk', '#mikutalk']
+const liveLog = [
+  {
+    imgSrc: '/images/ohisama/hinatan3.webp',
+    name: '3回目のひな誕祭',
+    day: 'day2',
+    date: '2022-03-31',
+    venue: '東京ドーム',
+  },
+  {
+    imgSrc: '/images/ohisama/w-keyaki2022.webp',
+    name: 'W-KEYAKI FES. 2022',
+    day: 'day1',
+    date: '2022-07-21',
+    venue: '富士急ハイランドコニファーフォレスト',
+  },
+  {
+    imgSrc: '/images/ohisama/tour2022_aichi.webp',
+    name: 'Happy Smile Tour 2022 愛知公演',
+    day: 'day1',
+    date: '2022-09-10',
+    venue: 'AICHI SKY EXPO',
+  },
+  {
+    imgSrc: '/images/ohisama/tour2022_kanagawa.webp',
+    name: 'Happy Smile Tour 2022 神奈川公演',
+    day: 'day1',
+    date: '2022-10-17',
+    venue: 'ぴあアリーナMM',
+  },
+]
 
 const OhisamaPage: NextPage = () => {
   return (
@@ -17,7 +51,7 @@ const OhisamaPage: NextPage = () => {
 
       <section className="text-gray-800">
         <Heading className="text-4xl">おひさまProfile</Heading>
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           <Image
             src="/images/ohisama/ohisama.webp"
             alt="オタクをするせきやん"
@@ -68,6 +102,15 @@ const OhisamaPage: NextPage = () => {
 
       <section className="bg-hinata text-white">
         <Heading className="text-4xl">ライブ参戦履歴</Heading>
+        <div className="p-10">
+          {liveLog.map((live, index) =>
+            index % 2 === 0 ? (
+              <LiveLogLeft key={index} {...live} />
+            ) : (
+              <LiveLogRight key={index} {...live} />
+            )
+          )}
+        </div>
       </section>
 
       <section className="text-gray-800">
