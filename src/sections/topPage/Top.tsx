@@ -11,12 +11,16 @@ export const Top = forwardRef<HTMLElement>((_, ref) => {
   )
 
   return (
-    <Section ref={ref} id="top" className="bg-jade">
+    <Section
+      ref={ref}
+      id="top"
+      className="bg-me bg-cover bg-no-repeat bg-center bg-blend-lighten bg-white/[.2]"
+    >
       <Header />
-      <div className="h-full flex justify-center items-center flex-col pt-12">
-        <h1 className="m-2 sm:m-4 text-white">Welcome to</h1>
-        <h1 className="m-2 sm:m-4 text-white">Sekiyan&#039;s website.</h1>
-        <div className="m-2 text-white text-center">
+      <div className="h-full flex justify-center items-center flex-col pt-12 text-white">
+        <h1 className="m-2 sm:m-4">Welcome to</h1>
+        <h1 className="m-2 sm:m-4">Sekiyan&#039;s website.</h1>
+        <div className="m-2 text-center">
           このサイトはせきやん個人のポートフォリオサイトです。
         </div>
 
@@ -28,7 +32,7 @@ export const Top = forwardRef<HTMLElement>((_, ref) => {
           ))}
         </div>
 
-        <p className="text-2xl text-white">Scroll</p>
+        <p className="text-2xl">Scroll</p>
         <DownButton href="#profile" className="text-white" />
       </div>
     </Section>
