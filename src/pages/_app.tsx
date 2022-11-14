@@ -7,7 +7,7 @@ import { AppProps } from 'next/app'
 const App: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
-      <main>
+      <main className="font-overpass">
         <Component {...pageProps} />
       </main>
     </>

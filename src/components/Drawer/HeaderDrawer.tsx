@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useMemo } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -28,9 +29,13 @@ export const HeaderDrawer: FC = () => {
           <div className="fixed z-20 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
             <div className="flex justify-between p-2">
               <Link href="/" passHref>
-                <div className="text-lg cursor-pointer hover:opacity-50">
-                  Sekiyan372
-                </div>
+                <Image
+                  src="/images/icon/sekiyan372.png"
+                  alt="トップアイコン"
+                  width="150"
+                  height="36"
+                  className="cursor-pointer"
+                />
               </Link>
               <ImCross
                 className="w-6 h-6 text-stone-300 cursor-pointer hover:opacity-50"
@@ -42,6 +47,11 @@ export const HeaderDrawer: FC = () => {
               <Link href="/product" passHref>
                 <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
                   Product
+                </div>
+              </Link>
+              <Link href="/ohisama" passHref>
+                <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
+                  おひさまhistory
                 </div>
               </Link>
               <Link href="/#contact" passHref>
