@@ -21,6 +21,7 @@ module.exports = {
       colors: {
         jade: '#3F9877',
         'pagination-white': '#fcfcfc',
+        hinata: '#5BBEE5',
       },
       width: {
         '1/7': '14.2857143%',

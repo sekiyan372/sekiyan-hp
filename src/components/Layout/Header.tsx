@@ -18,6 +18,11 @@ export const Header: FC = () => {
             Product
           </div>
         </Link>
+        <Link href="/ohisama" passHref>
+          <div className="mx-8 text-2xl cursor-pointer hover:opacity-50">
+            おひさまhistory
+          </div>
+        </Link>
         <Link href="/#contact" passHref>
           <div className="mx-8 text-2xl cursor-pointer hover:opacity-50">
             Contact
