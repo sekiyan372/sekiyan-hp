@@ -103,7 +103,7 @@ const Product: NextPage = () => {
       <Head title="Product" />
 
       <Header />
-      <div className="bg-jade text-white">
+      <div className="bg-jade text-white pt-12">
         <Heading>Product</Heading>
         <div className="p-10">
           <div className="mb-20">

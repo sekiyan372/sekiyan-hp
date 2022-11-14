@@ -46,7 +46,7 @@ export const HeaderDrawer: FC = () => {
             <div className="pt-4" onClick={onClose}>
               <Link href="/product" passHref>
                 <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
-                  Product
+                  プロダクト
                 </div>
               </Link>
               <Link href="/ohisama" passHref>
@@ -56,7 +56,7 @@ export const HeaderDrawer: FC = () => {
               </Link>
               <Link href="/#contact" passHref>
                 <div className="mx-8 py-2 text-2xl cursor-pointer hover:opacity-50">
-                  Contact
+                  連絡先
                 </div>
               </Link>
             </div>

@@ -11,7 +11,7 @@ export const OhisamaProfile: FC = () => {
   return (
     <section className="text-gray-800">
       <Heading className="text-4xl">おひさまProfile</Heading>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center flex-col sm:flex-row">
         <Image
           src="/images/ohisama/ohisama.webp"
           alt="オタクをするせきやん"
@@ -20,8 +20,8 @@ export const OhisamaProfile: FC = () => {
           objectFit="cover"
           style={{ borderRadius: '50%' }}
         />
-        <div className="pl-10">
-          <div className="py-4">
+        <div className="sm:pl-10">
+          <div className="py-4 text-center">
             <div>
               <span className="text-2xl pr-4">おひさま歴</span>
               <span className="text-4xl">
@@ -30,28 +30,28 @@ export const OhisamaProfile: FC = () => {
             </div>
             <p className="text-xs">※ファンクラブ入会日からカウントしています</p>
           </div>
-          <div className="py-1">
+          <div className="p-2">
             <span>購読中：</span>
             {talks.map((talk) => (
               <SubscribedTalk key={talk}>{talk}</SubscribedTalk>
             ))}
           </div>
-          <div className="py-1">プレイ中：ひなこい</div>
+          <div className="p-2">プレイ中：ひなこい</div>
         </div>
       </div>
 
-      <table className="text-left text-2xl mx-auto my-10">
+      <table className="text-left sm:text-2xl mx-auto my-4 sm:my-10">
         <tbody>
           <tr className="border-y-2">
-            <th className="w-32 p-2">最推し</th>
+            <th className="w-24 sm:w-32 p-2">最推し</th>
             <th className="p-2">小坂 菜緒</th>
           </tr>
           <tr className="border-y-2">
-            <th className="w-32 p-2">推し</th>
+            <th className="w-24 sm:w-32 p-2">推し</th>
             <th className="p-2">河田 陽菜・金村 美玖・森本 茉莉</th>
           </tr>
           <tr className="border-y-2">
-            <th className="w-32 p-2">気になる</th>
+            <th className="w-24 sm:w-32 p-2">気になる</th>
             <th className="p-2">岸 帆夏・竹内 希来里・渡辺 莉奈</th>
           </tr>
         </tbody>

@@ -31,7 +31,7 @@ export const Profile = forwardRef<HTMLElement>((_, ref) => {
             alt="my icon"
             width={200}
             height={200}
-            className="rounded-full"
+            className="rounded-full mx-auto pb-2"
           />
           <p className="text-3xl">せきやん</p>
           <p className="text-xl">Sekiyan</p>

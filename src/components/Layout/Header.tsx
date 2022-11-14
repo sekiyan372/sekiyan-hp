@@ -6,7 +6,7 @@ import { HeaderDrawer } from '~/components/Drawer'
 
 export const Header: FC = () => {
   return (
-    <header className="w-full px-3 md:px-10 py-3 flex justify-between flex-wrap bg-white">
+    <header className="fixed w-full h-12 p-2 md:px-10 flex justify-between flex-wrap bg-white drop-shadow">
       <Link href="/" passHref>
         <Image
           src="/images/icon/sekiyan372.png"
@@ -18,20 +18,16 @@ export const Header: FC = () => {
       </Link>
 
       <div className="hidden sm:flex text-jade">
-        <Link href="/product" passHref>
-          <div className="mx-8 my-auto cursor-pointer hover:opacity-50">
-            プロダクト
-          </div>
+        <Link href="/product" passHref className="my-auto">
+          <div className="mx-8 cursor-pointer hover:opacity-50">プロダクト</div>
         </Link>
-        <Link href="/ohisama" passHref>
-          <div className="mx-8 my-auto cursor-pointer hover:opacity-50">
+        <Link href="/ohisama" passHref className="my-auto">
+          <div className="mx-8 cursor-pointer hover:opacity-50">
             おひさまhistory
           </div>
         </Link>
-        <Link href="/#contact" passHref>
-          <div className="mx-8 my-auto cursor-pointer hover:opacity-50">
-            連絡先
-          </div>
+        <Link href="/#contact" passHref className="my-auto">
+          <div className="mx-8 cursor-pointer hover:opacity-50">連絡先</div>
         </Link>
       </div>
 

@@ -30,7 +30,7 @@ export const QAndA: FC = () => {
   return (
     <section className="text-gray-800">
       <Heading className="text-4xl">セルフQ&A</Heading>
-      <div className="p-10">
+      <div className="p-4 sm:p-10">
         {qAndAList.map((qAndA, index) => (
           <SelfQAndA key={index} {...qAndA} />
         ))}

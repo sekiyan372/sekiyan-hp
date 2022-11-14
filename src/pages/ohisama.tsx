@@ -10,9 +10,11 @@ const OhisamaPage: NextPage = () => {
 
       <Header />
 
-      <OhisamaProfile />
-      <LiveLog />
-      <QAndA />
+      <div className="pt-12">
+        <OhisamaProfile />
+        <LiveLog />
+        <QAndA />
+      </div>
 
       <Footer />
     </>
