@@ -34,6 +34,9 @@ module.exports = {
       fontFamily: {
         overpass: ['Overpass', 'sans-serif'],
       },
+      backgroundImage: {
+        me: "url('/images/me/me.webp')",
+      },
     },
   },
   variants: {

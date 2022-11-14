@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useInView } from 'react-intersection-observer'
 
-import { Head } from '~/components/Layout'
+import { Head, Header } from '~/components/Layout'
 import { NavLink } from '~/components/Link'
 import {
   Career,
@@ -46,6 +46,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Head />
+
+      <Header />
 
       <div className="w-full h-screen snap overflow-y-auto scrolling-touch">
         <Top ref={topRef} />

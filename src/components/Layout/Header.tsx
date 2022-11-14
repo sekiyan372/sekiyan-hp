@@ -4,9 +4,32 @@ import type { FC } from 'react'
 
 import { HeaderDrawer } from '~/components/Drawer'
 
+const links = [
+  {
+    href: '/#profile',
+    title: 'プロフィール',
+  },
+  {
+    href: '/#career',
+    title: '経歴',
+  },
+  {
+    href: '/#product',
+    title: '制作物',
+  },
+  {
+    href: '/ohisama',
+    title: 'おひさまhistory',
+  },
+  {
+    href: '/#contact',
+    title: '連絡先',
+  },
+]
+
 export const Header: FC = () => {
   return (
-    <header className="fixed w-full h-12 p-2 md:px-10 flex justify-between flex-wrap bg-white drop-shadow">
+    <header className="fixed w-full h-12 top-0 p-2 md:px-10 flex justify-between flex-wrap bg-white drop-shadow bg-white/[.7]">
       <Link href="/" passHref>
         <Image
           src="/images/icon/sekiyan372.png"
@@ -17,21 +40,17 @@ export const Header: FC = () => {
         />
       </Link>
 
-      <div className="hidden sm:flex text-jade">
-        <Link href="/product" passHref className="my-auto">
-          <div className="mx-8 cursor-pointer hover:opacity-50">プロダクト</div>
-        </Link>
-        <Link href="/ohisama" passHref className="my-auto">
-          <div className="mx-8 cursor-pointer hover:opacity-50">
-            おひさまhistory
-          </div>
-        </Link>
-        <Link href="/#contact" passHref className="my-auto">
-          <div className="mx-8 cursor-pointer hover:opacity-50">連絡先</div>
-        </Link>
+      <div className="hidden md:flex text-jade">
+        {links.map((link) => (
+          <Link key={link.title} href={link.href} passHref className="my-auto">
+            <div className="mx-4 cursor-pointer hover:opacity-50">
+              {link.title}
+            </div>
+          </Link>
+        ))}
       </div>
 
-      <HeaderDrawer />
+      <HeaderDrawer links={links} />
     </header>
   )
 }

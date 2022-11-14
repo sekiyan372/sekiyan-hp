@@ -6,7 +6,7 @@ import {
   BsYoutube,
 } from 'react-icons/bs'
 
-export const links = (className: string) => [
+export const externalLinks = (className: string) => [
   {
     name: 'Twitter',
     url: 'https://twitter.com/sekiyan372',

@@ -1,35 +1,96 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { forwardRef } from 'react'
 
 import { DownButton } from '~/components/Button'
+import { ProductCard } from '~/components/Card'
 import { Section } from '~/components/Layout'
-import { Heading } from '~/components/Text'
+import { Heading, SubHeading } from '~/components/Text'
+import type { Product as ProductType } from '~/types'
+
+const products: ProductType[] = [
+  {
+    imagePath: '/images/sekiyan-hp.jpg',
+    title: 'ポートフォリオサイト',
+    desc: 'このWebサイトです。ポートフォリオとして制作物などを載せる他、趣味の情報もまとめるなど自分が発信した情報をまとめています。',
+    url: '',
+    github: '',
+    techs: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
+  },
+  {
+    imagePath: '/images/effector-geek.jpg',
+    title: 'Effector Geek',
+    desc: 'エフェクターの情報を共有できるサービスを開発しました（未完成）。登録しているエフェクターから選択して自分のエフェクターボードを投稿できるほか、登録がないエフェクターは自分で登録することが可能です。エフェクターボードを見るのが元々好きで、手軽に共有できるプラットフォームがあればいいなと思い制作しました。',
+    url: 'https://effector-geek.vercel.app/',
+    github: 'https://github.com/sekiyan372/effector-geek',
+    techs: [
+      'TypeScript',
+      'React',
+      'Redux',
+      'Next.js',
+      'Firebase',
+      'Tailwind CSS',
+      'Vercel',
+    ],
+  },
+  {
+    imagePath: '/images/random-app.jpg',
+    title: 'ランダムアプリ',
+    desc: '空白区切りで文字を入力し、その中からランダムで1つを選択し表示されるブラウザ上だけで動くアプリケーションです。グループ内で適当に決めたい時など度々あり、自作でツール作るかと思いサクッと作りました。',
+    url: 'https://random-app.vercel.app/',
+    github: 'https://github.com/sekiyan372/random-app',
+    techs: ['TypeScript', 'React', 'Styled Components', 'Vercel'],
+  },
+  {
+    imagePath: '/images/calculator.jpg',
+    title: 'calculator',
+    desc: '基本的な計算機能を持ったブラウザ上だけで動く単純な電卓です。ボタンの操作だけでなく、キーボード入力でも可能なのがこだわりポイントです。Reactの入門をしたときに勉強用で制作しました。',
+    url: 'https://sekiyan372-calculator.netlify.app/',
+    github: 'https://github.com/sekiyan372/calculator',
+    techs: ['TypeScript', 'React', 'Styled Components', 'Netrify'],
+  },
+]
+
+const joins = [
+  {
+    url: 'https://tourism-project.com/',
+    title: 'Tourism Projectホームページ',
+  },
+  {
+    url: 'https://totteku.tourism-project.com/',
+    title: '撮っテク！',
+  },
+  {
+    url: 'https://www.cirkit.jp/',
+    title: 'CirKitコーポレートサイト',
+  },
+]
 
 export const Product = forwardRef<HTMLElement>((_, ref) => {
   return (
     <Section
       ref={ref}
       id="product"
-      className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-200"
+      className="flex justify-center items-center flex-col bg-gray-200"
     >
-      <Heading>Product</Heading>
-      <Link href="/product" passHref>
-        <div className="relative flex justify-center items-center md:w-160 w-72 h-40 md:h-90 cursor-pointer hover:opacity-80">
-          <div className="absolute md:w-160 w-72 md:h-90 md:my-12 my-6 bg-black inline-block">
-            <Image
-              src="/images/product-page.jpg"
-              alt="product page"
-              width={640}
-              height={360}
-              className="block opacity-40"
-            />
+      <Heading className="text-gray-800">Product</Heading>
+      <div className="flex flex-wrap justify-center">
+        {products.map((product) => (
+          <>
+            <ProductCard key={product.title} product={product} />
+          </>
+        ))}
+      </div>
+
+      <SubHeading className="text-gray-800 pt-2">Join</SubHeading>
+      <div className="flex flex-wrap justify-center">
+        {joins.map((join) => (
+          <div
+            key={join.title}
+            className="inline-block border-b border-jade m-2 text-xs text-jade sm:text-base cursor-pointer hover:opacity-60"
+          >
+            <a href={join.url}>{join.title}</a>
           </div>
-          <p className="absolute md:text-3xl text-xl text-white">
-            Please click to move the page.
-          </p>
-        </div>
-      </Link>
+        ))}
+      </div>
       <DownButton href="#hobby" />
     </Section>
   )
