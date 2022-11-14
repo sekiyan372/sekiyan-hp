@@ -3,7 +3,14 @@ import { useInView } from 'react-intersection-observer'
 
 import { Head } from '~/components/Layout'
 import { NavLink } from '~/components/Link'
-import { Career, Contact, Hobby, Product, Profile, Top } from '~/sections'
+import {
+  Career,
+  Contact,
+  Hobby,
+  Product,
+  Profile,
+  Top,
+} from '~/sections/topPage'
 
 const Home: NextPage = () => {
   const [topRef, inTopView] = useInView({
