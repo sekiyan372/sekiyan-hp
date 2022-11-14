@@ -37,7 +37,7 @@ const liveLog = [
 export const LiveLog: FC = () => {
   return (
     <section className="bg-hinata text-white">
-      <Heading className="text-4xl py-8">ライブ参戦履歴</Heading>
+      <Heading className="text-4xl pt-8 md:pt-16 pb-8">ライブ参戦履歴</Heading>
       <div className="p-4 sm:p-10">
         {liveLog.map((live, index) =>
           index % 2 !== 0 ? (

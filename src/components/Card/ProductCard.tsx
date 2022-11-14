@@ -15,7 +15,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
   return (
     <>
       <div
-        className="p-1 sm:p-2 text-center text-gray-800 w-36 md:w-60 xl:w-80"
+        className="p-1 sm:p-2 text-center text-gray-800 w-36 md:w-60 xl:w-80 cursor-pointer hover:translate-y-1"
         onClick={onOpen}
       >
         <Image
