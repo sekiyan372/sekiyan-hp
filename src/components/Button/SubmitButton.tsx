@@ -9,7 +9,7 @@ type Props = {
 export const SubmitButton: FC<Props> = ({ disabled, confirm, children }) => {
   return (
     <button
-      className="rounded px-4 pt-2 pb-1 bg-green-500 text-white text-xl hover:opacity-70"
+      className="rounded px-4 pt-2 pb-1 bg-green-500 text-white text-xl cursor-pointer hover:opacity-70"
       disabled={disabled}
       onClick={() => window.confirm(confirm)}
     >
