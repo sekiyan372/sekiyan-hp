@@ -10,7 +10,7 @@ const talks: string[] = ['#naotalk', '#hinatalk', '#mikutalk']
 export const OhisamaProfile: FC = () => {
   return (
     <section className="text-gray-800">
-      <Heading className="text-4xl py-8">おひさまProfile</Heading>
+      <Heading className="text-4xl p-8 md:p-16">おひさまProfile</Heading>
       <div className="flex justify-center items-center flex-col sm:flex-row">
         <Image
           src="/images/ohisama/ohisama.webp"

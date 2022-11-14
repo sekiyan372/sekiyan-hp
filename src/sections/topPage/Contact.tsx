@@ -50,7 +50,7 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
       className="flex flex-col justify-between bg-gray-200"
     >
       <div className="h-full flex justify-center items-center flex-col">
-        <Heading className="mt-12 text-gray-800">Contact</Heading>
+        <Heading className="text-gray-800 md:p-4">Contact</Heading>
         <p className="mx-5 text-xs sm:text-base">
           お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
         </p>

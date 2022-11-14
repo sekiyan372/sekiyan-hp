@@ -71,7 +71,7 @@ export const Product = forwardRef<HTMLElement>((_, ref) => {
       id="product"
       className="flex justify-center items-center flex-col bg-gray-200"
     >
-      <Heading className="text-gray-800">Product</Heading>
+      <Heading className="text-gray-800 md:p-4">Product</Heading>
       <div className="flex flex-wrap justify-center">
         {products.map((product) => (
           <>
