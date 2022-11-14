@@ -1,12 +1,12 @@
 import { forwardRef, useMemo } from 'react'
 
 import { DownButton, LinkIcon } from '~/components/Button'
-import { Header, Section } from '~/components/Layout'
-import { links } from '~/components/Link'
+import { Section } from '~/components/Layout'
+import { externalLinks } from '~/components/Link'
 
 export const Top = forwardRef<HTMLElement>((_, ref) => {
-  const externalLinks = useMemo(
-    () => links('w-8 md:w-12 h-8 md:h-12 text-neutral-600'),
+  const exLinks = useMemo(
+    () => externalLinks('w-8 md:w-12 h-8 md:h-12 text-neutral-600'),
     []
   )
 
@@ -16,8 +16,7 @@ export const Top = forwardRef<HTMLElement>((_, ref) => {
       id="top"
       className="bg-me bg-cover bg-no-repeat bg-center bg-blend-lighten bg-white/[.2]"
     >
-      <Header />
-      <div className="h-full flex justify-center items-center flex-col pt-12 text-white">
+      <div className="h-full flex justify-center items-center flex-col text-gray-200">
         <h1 className="m-2 sm:m-4">Welcome to</h1>
         <h1 className="m-2 sm:m-4">Sekiyan&#039;s website.</h1>
         <div className="m-2 text-center">
@@ -25,7 +24,7 @@ export const Top = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         <div className="sm:m-5 flex flex-wrap justify-center">
-          {externalLinks.map((link) => (
+          {exLinks.map((link) => (
             <LinkIcon key={link.name} url={link.url}>
               {link.icon}
             </LinkIcon>

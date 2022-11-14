@@ -23,7 +23,7 @@ export const Profile = forwardRef<HTMLElement>((_, ref) => {
       id="profile"
       className="flex justify-center items-center flex-col bg-gray-200"
     >
-      <Heading className="mt-12">Profile</Heading>
+      <Heading className="text-gray-800 sm:mb-10">Profile</Heading>
       <div className="flex items-center flex-col sm:flex-row text-center">
         <Image
           src="/images/my-icon.jpg"

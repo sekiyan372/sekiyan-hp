@@ -56,7 +56,7 @@ export const Career = forwardRef<HTMLElement>((_, ref) => {
     <Section
       ref={ref}
       id="career"
-      className="w-full h-screen snap-start flex justify-center items-center flex-col bg-gray-800"
+      className="flex justify-center items-center flex-col bg-gray-800"
     >
       <Heading className="text-white">Career</Heading>
       <table className="m-2 text-white">

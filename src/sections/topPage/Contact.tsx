@@ -47,10 +47,10 @@ export const Contact = forwardRef<HTMLElement>((_, ref) => {
     <Section
       ref={ref}
       id="contact"
-      className="flex flex-col justify-between w-full h-screen snap-start bg-gray-200"
+      className="flex flex-col justify-between bg-gray-200"
     >
       <div className="h-full flex justify-center items-center flex-col">
-        <Heading className="mt-12">Contact</Heading>
+        <Heading className="mt-12 text-gray-800">Contact</Heading>
         <p className="mx-5 text-xs sm:text-base">
           お問い合わせは以下のフォームまたはSNSのダイレクトメッセージから受け付けております。
         </p>

@@ -1,2 +1,2 @@
 export { NavLink } from './NavLink'
-export { links } from './Contents'
+export { externalLinks } from './Contents'

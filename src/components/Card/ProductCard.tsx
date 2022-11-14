@@ -13,30 +13,18 @@ type Props = {
   technologies?: string[]
 }
 
-export const ProductCard: FC<Props> = ({
-  url,
-  imagePath,
-  alt,
-  title,
-  organization,
-  desc,
-  technologies,
-}) => {
+export const ProductCard: FC<Props> = ({ url, imagePath, alt, title }) => {
   return (
-    <div className="md:w-104 m-3 border-4 rounded-lg p-3 hover:opacity-80 text-center">
+    <div className="p-1 sm:p-2 text-center text-gray-800 w-36 sm:w-52 hover:opacity-80">
       <a href={url} target="blank">
         <Image
           src={imagePath}
           alt={alt}
-          width="320"
-          height="180"
+          width="240"
+          height="135"
           className="mx-auto"
         />
-        <div className="text-2xl">{title}</div>
-        {organization && <div>({organization})</div>}
-        <div className="my-3">{desc}</div>
-        {technologies &&
-          technologies.map((tech) => <TechTag key={tech}>{tech}</TechTag>)}
+        <div className="text-xs sm:text-base pt-2">{title}</div>
       </a>
     </div>
   )
