@@ -34,7 +34,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
 
           <div className="fixed z-40 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
             <div className="flex justify-between p-2">
-              <Link href="/" passHref>
+              <Link href="/#top" passHref>
                 <Image
                   src="/images/icon/sekiyan372.png"
                   alt="トップアイコン"
