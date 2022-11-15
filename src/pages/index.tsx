@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { useInView } from 'react-intersection-observer'
 
 import { Head, Header } from '~/components/Layout'
@@ -11,8 +11,14 @@ import {
   Profile,
   Top,
 } from '~/sections/topPage'
+import type { YouTubeResponse } from '~/types'
+import { baseUrl, params } from '~/utils/youtube'
 
-const Home: NextPage = () => {
+type Props = {
+  videoIds: string[]
+}
+
+const Home: NextPage<Props> = ({ videoIds }) => {
   const [topRef, inTopView] = useInView({
     rootMargin: '-50% 0px',
     threshold: 0,
@@ -54,7 +60,7 @@ const Home: NextPage = () => {
         <Profile ref={profileRef} />
         <Career ref={careerRef} />
         <Product ref={productRef} />
-        <Hobby ref={hobbyRef} />
+        <Hobby ref={hobbyRef} videoIds={videoIds} />
         <Contact ref={contactRef} />
       </div>
 
@@ -74,3 +80,21 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const queryParams = new URLSearchParams(params)
+
+  try {
+    const response = await fetch(baseUrl + queryParams)
+    const data: YouTubeResponse = await response.json()
+    const videoIds = data.items.map((item) => item.id.videoId)
+    return {
+      props: { videoIds: videoIds },
+    }
+  } catch (err) {
+    if (err instanceof Error) {
+      console.log(err.message)
+    }
+    return { props: { videoIds: [] } }
+  }
+}

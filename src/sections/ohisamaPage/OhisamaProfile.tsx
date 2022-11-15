@@ -2,12 +2,18 @@ import dayjs from 'dayjs'
 import Image from 'next/image'
 import type { FC } from 'react'
 
+import { MoreViewYouTube } from '~/components/Button'
 import { SubscribedTalk } from '~/components/Label'
-import { Heading } from '~/components/Text'
+import { YouTubeSideScroll } from '~/components/Scroll'
+import { Heading, SubHeading } from '~/components/Text'
 
 const talks: string[] = ['#naotalk', '#hinatalk', '#mikutalk']
 
-export const OhisamaProfile: FC = () => {
+type Props = {
+  videoIds: string[]
+}
+
+export const OhisamaProfile: FC<Props> = ({ videoIds }) => {
   return (
     <section className="text-gray-800">
       <Heading className="text-4xl p-8 md:p-16">おひさまProfile</Heading>
@@ -56,6 +62,19 @@ export const OhisamaProfile: FC = () => {
           </tr>
         </tbody>
       </table>
+
+      {videoIds.length !== 0 && (
+        <div className="pt-4 pb-12 text-center">
+          <SubHeading className="sm:pt-4 sm:text-2xl">
+            日向坂46ベース弾いてみた
+          </SubHeading>
+          <p className="pb-2">
+            日向坂46の曲をベースで弾いてみた動画をYouTubeに公開してるのでぜひご覧ください！
+          </p>
+          <YouTubeSideScroll videoIds={videoIds} />
+          <MoreViewYouTube className="bg-hinata text-white" />
+        </div>
+      )}
     </section>
   )
 }
