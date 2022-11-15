@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import { useInView } from 'react-intersection-observer'
 
 import { Head, Header } from '~/components/Layout'
@@ -6,13 +6,19 @@ import { NavLink } from '~/components/Link'
 import {
   Career,
   Contact,
-  // Hobby,
+  Hobby,
   Product,
   Profile,
   Top,
 } from '~/sections/topPage'
+import type { YouTubeResponse } from '~/types'
+import { baseUrl, params } from '~/utils/youtube'
 
-const Home: NextPage = () => {
+type Props = {
+  videoIds: string[]
+}
+
+const Home: NextPage<Props> = ({ videoIds }) => {
   const [topRef, inTopView] = useInView({
     rootMargin: '-50% 0px',
     threshold: 0,
@@ -33,10 +39,10 @@ const Home: NextPage = () => {
     threshold: 0,
   })
 
-  // const [hobbyRef, inHobbyView] = useInView({
-  //   rootMargin: '-50% 0px',
-  //   threshold: 0,
-  // })
+  const [hobbyRef, inHobbyView] = useInView({
+    rootMargin: '-50% 0px',
+    threshold: 0,
+  })
 
   const [contactRef, inContactView] = useInView({
     rootMargin: '-50% 0px',
@@ -54,7 +60,7 @@ const Home: NextPage = () => {
         <Profile ref={profileRef} />
         <Career ref={careerRef} />
         <Product ref={productRef} />
-        {/* <Hobby ref={hobbyRef} /> */}
+        <Hobby ref={hobbyRef} videoIds={videoIds} />
         <Contact ref={contactRef} />
       </div>
 
@@ -66,7 +72,7 @@ const Home: NextPage = () => {
         <NavLink inView={inProfileView} href="#profile" />
         <NavLink inView={inCareerView} href="#career" />
         <NavLink inView={inProductView} href="#product" />
-        {/* <NavLink inView={inHobbyView} href="#hobby" /> */}
+        <NavLink inView={inHobbyView} href="#hobby" />
         <NavLink inView={inContactView} href="#contact" />
       </nav>
     </>
@@ -74,3 +80,21 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const queryParams = new URLSearchParams(params)
+
+  try {
+    const response = await fetch(baseUrl + queryParams)
+    const data: YouTubeResponse = await response.json()
+    const videoIds = data.items.map((item) => item.id.videoId)
+    return {
+      props: { videoIds: videoIds },
+    }
+  } catch (err) {
+    if (err instanceof Error) {
+      console.log(err.message)
+    }
+    return { props: { videoIds: [] } }
+  }
+}
