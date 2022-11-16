@@ -15,7 +15,7 @@ export const BlogCard: FC<Props> = ({ blog }) => {
         <BlogTag key={category}>{category}</BlogTag>
       ))}
       <a href={blog.url} target="_blank" rel="noreferrer" className="">
-        <div className="flex items-center justify-center w-32 sm:w-64 h-20 sm:h-36 my-2 p-2 rounded-sm text-center text-gray-800 bg-white text-xs sm:text-2xl font-bold">
+        <div className="flex items-center justify-center w-32 sm:w-72 h-20 sm:h-40 my-2 p-2 rounded-sm text-center text-gray-800 bg-white text-xs sm:text-2xl font-bold">
           {blog.title}
         </div>
       </a>
