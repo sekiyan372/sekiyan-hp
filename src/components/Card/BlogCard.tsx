@@ -20,7 +20,7 @@ export const BlogCard: FC<Props> = ({ blog }) => {
         </div>
       </a>
       <p className="text-xs sm:text-base text-stone-500">
-        {dayjs(blog.writeAt ?? blog.createdAt).format('YYYY/MM/DD HH:mm')}
+        {dayjs(blog.writeAt ?? blog.createdAt).format('YYYY/MM/DD')}
       </p>
     </div>
   )
