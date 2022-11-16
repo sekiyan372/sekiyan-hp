@@ -6,7 +6,7 @@ import { SubmitButton } from '~/components/Button'
 import { Input, Label, Textarea } from '~/components/Input'
 import { Footer, Section } from '~/components/Layout'
 import { Heading } from '~/components/Text/Heading'
-import { emailjsConfig } from '~/utils/Emailjs'
+import { emailjsConfig } from '~/libs/emailjs'
 
 export const Contact = forwardRef<HTMLElement>((_, ref) => {
   const [name, setName] = useState<string>('')

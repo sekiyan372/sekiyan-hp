@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 
 import { Footer, Head, Header } from '~/components/Layout'
-import { Heading } from '~/components/Text'
+import { Heading, SubHeading } from '~/components/Text'
 
 const Product: NextPage = () => {
   return (
@@ -9,7 +9,9 @@ const Product: NextPage = () => {
       <Head title="Blog" />
 
       <Header />
-      <Heading>Blog Index</Heading>
+      <Heading>せきやんのブログ 記事一覧</Heading>
+      <SubHeading>特にみてほしい渾身の記事</SubHeading>
+
       <Footer />
     </>
   )
