@@ -71,7 +71,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
               ))}
             </div>
 
-            <div>
+            <div className="px-4">
               {exLinks.map((link) => (
                 <LinkIcon key={link.name} url={link.url}>
                   <div className="flex">
