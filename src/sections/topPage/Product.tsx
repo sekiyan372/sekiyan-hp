@@ -87,7 +87,9 @@ export const Product = forwardRef<HTMLElement>((_, ref) => {
             key={join.title}
             className="inline-block border-b border-jade m-2 text-xs text-jade sm:text-base cursor-pointer hover:opacity-60"
           >
-            <a href={join.url}>{join.title}</a>
+            <a href={join.url} target="_blank" rel="noreferrer">
+              {join.title}
+            </a>
           </div>
         ))}
       </div>
