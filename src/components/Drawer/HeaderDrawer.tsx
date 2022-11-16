@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 
 import { CloseCross, LinkIcon } from '~/components/Button'
 import { externalLinks } from '~/components/Link'
-import { useDisclosure } from '~/hooks/useDisclosure'
+import { useDisclosure } from '~/hooks'
 
 type Props = {
   links: {
@@ -21,7 +21,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
 
   return (
     <>
-      <button className="md:hidden" onClick={onOpen}>
+      <button className="lg:hidden" onClick={onOpen}>
         <GiHamburgerMenu className="w-8 h-8 text-jade hover:opacity-50" />
       </button>
 
