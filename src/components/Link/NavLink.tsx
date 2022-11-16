@@ -1,7 +1,7 @@
 import ClassNames from 'classnames'
 import type { FC } from 'react'
 
-import { smoothScroll } from '~/utils/Scroll'
+import { smoothScroll } from '~/utils/scroll'
 
 type Props = {
   inView: boolean

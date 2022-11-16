@@ -2,7 +2,7 @@ import Image from 'next/image'
 import type { FC } from 'react'
 
 import { ProductModal } from '~/components/Modal'
-import { useDisclosure } from '~/hooks/useDisclosure'
+import { useDisclosure } from '~/hooks'
 import type { Product } from '~/types'
 
 type Props = {

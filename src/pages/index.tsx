@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 
 import { Head, Header } from '~/components/Layout'
 import { NavLink } from '~/components/Link'
+import { baseUrl, params } from '~/libs/youtube'
 import {
   Career,
   Contact,
@@ -12,7 +13,6 @@ import {
   Top,
 } from '~/sections/topPage'
 import type { YouTubeResponse } from '~/types'
-import { baseUrl, params } from '~/utils/youtube'
 
 type Props = {
   videoIds: string[]

@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next'
 
 import { Footer, Head, Header } from '~/components/Layout'
+import { baseUrl, params } from '~/libs/youtube'
 import { LiveLog, OhisamaProfile, QAndA } from '~/sections/ohisamaPage'
 import type { YouTubeResponse } from '~/types'
-import { baseUrl, params } from '~/utils/youtube'
 
 type Props = {
   videoIds: string[]

@@ -2,7 +2,7 @@ import ClassNames from 'classnames'
 import type { FC, HTMLAttributes } from 'react'
 import { FaAngleDown } from 'react-icons/fa'
 
-import { smoothScroll } from '~/utils/Scroll'
+import { smoothScroll } from '~/utils/scroll'
 
 type Props = {
   href: string

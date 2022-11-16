@@ -12,6 +12,9 @@
   h3 {
     @apply md:text-3xl sm:text-2xl text-xl;
   }
+  h4 {
+    @apply md:text-xl sm:text-lg text-base;
+  }
 }
 
 @layer utilities {

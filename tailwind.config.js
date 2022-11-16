@@ -1,10 +1,10 @@
 module.exports = {
-  purge: [
+  content: [
     './src/components/**/*.tsx',
     './src/pages/**/*.tsx',
     './src/sections/**/*.tsx',
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
     extend: {
       spacing: {

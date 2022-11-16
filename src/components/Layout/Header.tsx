@@ -25,6 +25,10 @@ const links = [
     href: '/#contact',
     title: '連絡先',
   },
+  {
+    href: '/blog',
+    title: 'ブログ記事一覧',
+  },
 ]
 
 export const Header: FC = () => {
@@ -40,10 +44,10 @@ export const Header: FC = () => {
         />
       </Link>
 
-      <div className="hidden md:flex text-jade">
+      <div className="hidden lg:flex text-jade">
         {links.map((link) => (
           <Link key={link.title} href={link.href} passHref className="my-auto">
-            <div className="mx-4 cursor-pointer hover:opacity-50">
+            <div className="mx-6 cursor-pointer hover:opacity-50">
               {link.title}
             </div>
           </Link>

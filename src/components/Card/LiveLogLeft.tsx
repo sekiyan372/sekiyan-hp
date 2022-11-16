@@ -21,7 +21,6 @@ export const LiveLogLeft: FC<Props> = ({ imgSrc, name, day, date, venue }) => {
         alt={name}
         width="160"
         height="160"
-        objectFit="cover"
         className="rounded-full"
       />
       <div className="py-4 sm:py-0 sm:pl-10 text-center sm:text-left">
