@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useMemo } from 'react'
+import { FC, useCallback, useMemo, useRef } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 
 import { CloseCross, LinkIcon } from '~/components/Button'
@@ -15,9 +15,18 @@ type Props = {
 }
 
 export const HeaderDrawer: FC<Props> = ({ links }) => {
+  const ref = useRef(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
-
   const exLinks = useMemo(() => externalLinks('w-6 h-6 text-neutral-600'), [])
+
+  const onCloseWithAnima = useCallback(() => {
+    if (ref.current !== null) {
+      const element = ref.current as HTMLDivElement
+      element.classList.remove('animate-slide-left')
+      element.classList.add('animate-slide-right')
+    }
+    setTimeout(() => onClose(), 500)
+  }, [onClose])
 
   return (
     <>
@@ -28,12 +37,18 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
       {isOpen && (
         <>
           <div
+            onClick={onCloseWithAnima}
             className="fixed w-full h-screen z-40 bg-gray-800 top-0 left-0 opacity-50"
-            onClick={onClose}
           />
 
-          <div className="fixed z-50 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
-            <div className="flex justify-between p-2">
+          <div
+            ref={ref}
+            className="fixed z-50 bg-white top-0 right-0 w-3/4 sm:w-1/3 h-screen animate-slide-left"
+          >
+            <div
+              onClick={onCloseWithAnima}
+              className="flex justify-between p-2"
+            >
               <Link href="/#top" passHref>
                 <Image
                   src="/images/icon/sekiyan372.png"
@@ -43,10 +58,10 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
                   className="cursor-pointer"
                 />
               </Link>
-              <CloseCross onClick={onClose} />
+              <CloseCross onClick={onCloseWithAnima} />
             </div>
 
-            <div className="pt-4 text-xl text-jade" onClick={onClose}>
+            <div onClick={onClose} className="pt-4 text-xl text-jade">
               {links.map((link) => (
                 <Link key={link.title} href={link.href} passHref>
                   <div className="mx-8 py-2 cursor-pointer hover:opacity-50">
