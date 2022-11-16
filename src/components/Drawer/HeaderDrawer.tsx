@@ -28,11 +28,11 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
       {isOpen && (
         <>
           <div
-            className="fixed w-full h-screen z-30 bg-gray-800 top-0 left-0 opacity-50"
+            className="fixed w-full h-screen z-40 bg-gray-800 top-0 left-0 opacity-50"
             onClick={onClose}
           />
 
-          <div className="fixed z-40 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
+          <div className="fixed z-50 bg-white top-0 right-0 w-9/12 sm:w-1/3 h-screen">
             <div className="flex justify-between p-2">
               <Link href="/#top" passHref>
                 <Image

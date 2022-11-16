@@ -29,7 +29,7 @@ const links = [
 
 export const Header: FC = () => {
   return (
-    <header className="fixed w-full h-12 top-0 p-2 md:px-10 flex justify-between flex-wrap bg-white drop-shadow bg-white/[.7]">
+    <header className="fixed w-full z-30 h-12 top-0 p-2 md:px-10 flex justify-between flex-wrap bg-white drop-shadow bg-white/[.7]">
       <Link href="/#top" passHref>
         <Image
           src="/images/icon/sekiyan372.png"
