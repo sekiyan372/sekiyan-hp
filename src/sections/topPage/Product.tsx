@@ -74,9 +74,7 @@ export const Product = forwardRef<HTMLElement>((_, ref) => {
       <Heading className="text-gray-800 md:p-4">Product</Heading>
       <div className="flex flex-wrap justify-center">
         {products.map((product) => (
-          <>
-            <ProductCard key={product.title} product={product} />
-          </>
+          <ProductCard key={product.title} product={product} />
         ))}
       </div>
 

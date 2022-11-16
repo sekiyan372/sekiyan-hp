@@ -21,7 +21,6 @@ export const LiveLogRight: FC<Props> = ({ imgSrc, name, day, date, venue }) => {
         alt={name}
         width="160"
         height="160"
-        objectFit="cover"
         className="rounded-full block sm:hidden"
       />
 
@@ -39,7 +38,6 @@ export const LiveLogRight: FC<Props> = ({ imgSrc, name, day, date, venue }) => {
         alt={name}
         width="160"
         height="160"
-        objectFit="cover"
         className="rounded-full hidden sm:block"
       />
     </div>

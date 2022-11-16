@@ -23,8 +23,8 @@ export const OhisamaProfile: FC<Props> = ({ videoIds }) => {
           alt="オタクをするせきやん"
           width="200"
           height="200"
-          objectFit="cover"
-          style={{ borderRadius: '50%' }}
+          priority
+          className="rounded-full"
         />
         <div className="sm:pl-10">
           <div className="py-4 text-center">
