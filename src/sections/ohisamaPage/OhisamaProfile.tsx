@@ -3,8 +3,8 @@ import Image from 'next/image'
 import type { FC } from 'react'
 
 import { MoreViewYouTube } from '~/components/Button'
-import { SubscribedTalk } from '~/components/Label'
 import { YouTubeSideScroll } from '~/components/Scroll'
+import { SubscribedTalk } from '~/components/Tag'
 import { Heading, SubHeading } from '~/components/Text'
 
 const talks: string[] = ['#naotalk', '#hinatalk', '#mikutalk']
