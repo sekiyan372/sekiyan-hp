@@ -21,14 +21,14 @@ const Product: NextPage<Props> = ({ blogData }) => {
       <Header />
 
       <div className="py-12 bg-gray-200">
-        <Heading className="p-8 md:p-16 text-4xl text-gray-800">
+        <Heading className="p-8 md:p-16 sm:text-4xl text-gray-800">
           せきやんのブログ 記事一覧
         </Heading>
 
         <h4 className="py-2 text-center text-jade font-bold border-b-2">
           特に読んでほしい渾身の記事
         </h4>
-        <div className="flex flex-wrap px-2 sm:px-16">
+        <div className="flex flex-wrap justify-center px-2 sm:px-16">
           {recommends.map((recommend) => (
             <BlogCard key={recommend.id} blog={recommend} />
           ))}
@@ -37,7 +37,7 @@ const Product: NextPage<Props> = ({ blogData }) => {
         <h4 className="pb-2 pt-8 text-center text-jade font-bold">
           こっちも読んでね
         </h4>
-        <div className="flex flex-wrap px-2 sm:px-16">
+        <div className="flex flex-wrap justify-center px-2 sm:px-16">
           {data.map((recommend) => (
             <BlogCard key={recommend.id} blog={recommend} />
           ))}
