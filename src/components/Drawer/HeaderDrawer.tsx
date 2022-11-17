@@ -61,7 +61,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
               <CloseCross onClick={onCloseWithAnima} />
             </div>
 
-            <div onClick={onClose} className="pt-4 text-xl text-jade">
+            <div onClick={onClose} className="text-xl text-jade">
               {links.map((link) => (
                 <Link key={link.title} href={link.href} passHref>
                   <div className="mx-8 py-2 cursor-pointer hover:opacity-50">
