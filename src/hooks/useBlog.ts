@@ -1,23 +1,23 @@
 import { useMemo, useState } from 'react'
 
-import type { BlogContent } from '~/types'
+import type { Blog } from '~/types'
 
 type UseBlogReturn = {
-  data: BlogContent[]
-  recommends: BlogContent[]
+  data: Blog[]
+  recommends: Blog[]
   count: number
   viewMore: () => void
 }
 
 const GET_COUNT = 12
 
-export const useBlog = (contents: BlogContent[]): UseBlogReturn => {
+export const useBlog = (contents: Blog[]): UseBlogReturn => {
   const [count, setCount] = useState<number>(GET_COUNT - 1)
-  const [data, setData] = useState<BlogContent[]>(
+  const [data, setData] = useState<Blog[]>(
     contents.slice(0, count).filter((content) => !content.isRecommend)
   )
 
-  const recommends = useMemo<BlogContent[]>(
+  const recommends = useMemo<Blog[]>(
     () => contents.filter((content) => content.isRecommend),
     [contents]
   )

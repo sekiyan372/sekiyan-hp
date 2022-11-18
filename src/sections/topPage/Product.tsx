@@ -45,7 +45,7 @@ const products: ProductType[] = [
     desc: '基本的な計算機能を持ったブラウザ上だけで動く単純な電卓です。ボタンの操作だけでなく、キーボード入力でも可能なのがこだわりポイントです。Reactの入門をしたときに勉強用で制作しました。',
     url: 'https://sekiyan372-calculator.netlify.app/',
     github: 'https://github.com/sekiyan372/calculator',
-    techs: ['TypeScript', 'React', 'Styled Components', 'Netrify'],
+    techs: ['TypeScript', 'React', 'Styled Components', 'Netlify'],
   },
 ]
 

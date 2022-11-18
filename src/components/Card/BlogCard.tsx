@@ -2,10 +2,10 @@ import dayjs from 'dayjs'
 import type { FC } from 'react'
 
 import { BlogTag } from '~/components/Tag'
-import type { BlogContent } from '~/types'
+import type { Blog } from '~/types'
 
 type Props = {
-  blog: BlogContent
+  blog: Blog
 }
 
 export const BlogCard: FC<Props> = ({ blog }) => {

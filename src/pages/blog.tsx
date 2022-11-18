@@ -5,13 +5,13 @@ import { Footer, Head, Header } from '~/components/Layout'
 import { Heading } from '~/components/Text'
 import { useBlog } from '~/hooks/useBlog'
 import { microcmsClient } from '~/libs/microcms'
-import type { Blog } from '~/types'
+import type { Blog, MicrocmsResponse } from '~/types'
 
 type Props = {
-  blogData: Blog
+  blogData: MicrocmsResponse<Blog>
 }
 
-const Product: NextPage<Props> = ({ blogData }) => {
+const ProductPage: NextPage<Props> = ({ blogData }) => {
   const { data, recommends, count, viewMore } = useBlog(blogData.contents)
 
   return (
@@ -60,10 +60,10 @@ const Product: NextPage<Props> = ({ blogData }) => {
   )
 }
 
-export default Product
+export default ProductPage
 
 export const getStaticProps = async () => {
-  const response: Blog = await microcmsClient.get({
+  const response: MicrocmsResponse<Blog> = await microcmsClient.get({
     endpoint: process.env.MICROCMS_END_POINT ?? '',
     queries: {
       orders: '-createdAt',
