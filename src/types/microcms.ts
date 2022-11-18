@@ -25,7 +25,7 @@ export type Live = {
   id: string
   name: string
   day: number
-  date: Date
+  dateAt: Date
   venue: string
   image: MicrocmsImage
 }
