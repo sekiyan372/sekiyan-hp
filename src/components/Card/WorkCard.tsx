@@ -3,13 +3,13 @@ import type { FC } from 'react'
 
 import { ProductModal } from '~/components/Modal'
 import { useDisclosure } from '~/hooks'
-import type { Product } from '~/types'
+import type { Work } from '~/types'
 
 type Props = {
-  product: Product
+  work: Work
 }
 
-export const ProductCard: FC<Props> = ({ product }) => {
+export const WorkCard: FC<Props> = ({ work }) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -19,16 +19,16 @@ export const ProductCard: FC<Props> = ({ product }) => {
         onClick={onOpen}
       >
         <Image
-          src={product.imagePath}
+          src={work.image.url}
           alt="product image"
           width="240"
           height="135"
           className="mx-auto drop-shadow-lg"
         />
-        <div className="text-xs sm:text-base pt-2">{product.title}</div>
+        <div className="text-xs sm:text-base pt-2">{work.title}</div>
       </div>
 
-      <ProductModal product={product} isOpen={isOpen} onClose={onClose} />
+      <ProductModal work={work} isOpen={isOpen} onClose={onClose} />
     </>
   )
 }

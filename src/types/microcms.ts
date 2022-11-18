@@ -5,21 +5,29 @@ export type MicrocmsResponse<T> = {
   limit: number
 }
 
-export type Product = {
+export type MicrocmsImage = {
+  url: string
+  height: number
+  width: number
+}
+
+export type Work = {
+  id: string
   title: string
   desc: string
   url: string
   github: string
   techs: string[]
-  imagePath: string
+  image: MicrocmsImage
 }
 
 export type Live = {
+  id: string
   name: string
   day: number
   date: Date
   venue: string
-  imgSrc: string
+  image: MicrocmsImage
 }
 
 export type Blog = {

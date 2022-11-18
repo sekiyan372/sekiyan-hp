@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 
 import { Head, Header } from '~/components/Layout'
 import { NavLink } from '~/components/Link'
+import { microcmsClient } from '~/libs/microcms'
 import { baseUrl, params } from '~/libs/youtube'
 import {
   Career,
@@ -12,13 +13,15 @@ import {
   Profile,
   Top,
 } from '~/sections/topPage'
-import type { YouTubeResponse } from '~/types'
+import type { MicrocmsResponse, Work, YouTubeResponse } from '~/types'
+import { microcmsEndPoints } from '~/utils/constant'
 
 type Props = {
+  works: Work[]
   videoIds: string[]
 }
 
-const Home: NextPage<Props> = ({ videoIds }) => {
+const Home: NextPage<Props> = ({ works, videoIds }) => {
   const [topRef, inTopView] = useInView({
     rootMargin: '-50% 0px',
     threshold: 0,
@@ -59,7 +62,7 @@ const Home: NextPage<Props> = ({ videoIds }) => {
         <Top ref={topRef} />
         <Profile ref={profileRef} />
         <Career ref={careerRef} />
-        <Product ref={productRef} />
+        <Product ref={productRef} works={works} />
         <Hobby ref={hobbyRef} videoIds={videoIds} />
         <Contact ref={contactRef} />
       </div>
@@ -85,16 +88,25 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const queryParams = new URLSearchParams(params)
 
   try {
+    const productResponse: MicrocmsResponse<Work> = await microcmsClient.get({
+      endpoint: microcmsEndPoints.WORK,
+      queries: {
+        orders: 'createdAt',
+        fields: ['id', 'title', 'desc', 'url', 'github', 'techs', 'image'],
+      },
+    })
+
     const response = await fetch(baseUrl + queryParams)
     const data: YouTubeResponse = await response.json()
     const videoIds = data.items.map((item) => item.id.videoId)
+
     return {
-      props: { videoIds: videoIds },
+      props: { works: productResponse.contents, videoIds: videoIds },
     }
   } catch (err) {
     if (err instanceof Error) {
       console.log(err.message)
     }
-    return { props: { videoIds: [] } }
+    return { props: { works: [], videoIds: [] } }
   }
 }
