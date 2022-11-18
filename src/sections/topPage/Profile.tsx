@@ -26,7 +26,7 @@ export const Profile = forwardRef<HTMLElement>((_, ref) => {
       <Heading className="text-gray-800 sm:mb-10">Profile</Heading>
       <div className="flex items-center flex-col sm:flex-row text-center">
         <Image
-          src="/images/icon/my_icon.jpg"
+          src="/images/icon/my_icon.webp"
           alt="my icon"
           width="160"
           height="160"

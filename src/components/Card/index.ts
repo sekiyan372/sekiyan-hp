@@ -1,4 +1,4 @@
-export { ProductCard } from './ProductCard'
+export { WorkCard } from './WorkCard'
 export { LiveLogLeft } from './LiveLogLeft'
 export { LiveLogRight } from './LiveLogRight'
 export { SelfQAndA } from './SelfQAndA'

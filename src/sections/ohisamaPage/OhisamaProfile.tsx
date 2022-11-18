@@ -19,7 +19,7 @@ export const OhisamaProfile: FC<Props> = ({ videoIds }) => {
       <Heading className="text-4xl p-8 md:p-16">おひさまProfile</Heading>
       <div className="flex justify-center items-center flex-col sm:flex-row">
         <Image
-          src="/images/ohisama/ohisama.webp"
+          src="/images/me/ohisama.webp"
           alt="オタクをするせきやん"
           width="200"
           height="200"

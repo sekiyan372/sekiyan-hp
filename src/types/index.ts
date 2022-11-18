@@ -1,3 +1,2 @@
-export type { Product } from './product'
 export type { YouTubeItem, YouTubeResponse } from './youtube'
-export type { Blog, BlogContent } from './microcms'
+export type { MicrocmsResponse, Work, Live, Blog } from './microcms'

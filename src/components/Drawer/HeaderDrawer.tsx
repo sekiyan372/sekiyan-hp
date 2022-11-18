@@ -51,7 +51,7 @@ export const HeaderDrawer: FC<Props> = ({ links }) => {
             >
               <Link href="/#top" passHref>
                 <Image
-                  src="/images/icon/sekiyan372.png"
+                  src="/images/icon/sekiyan372.webp"
                   alt="トップアイコン"
                   width="150"
                   height="36"
