@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 
 import { BlogCard } from '~/components/Card'
 import { Footer, Head, Header } from '~/components/Layout'
@@ -8,11 +8,13 @@ import { microcmsClient } from '~/libs/microcms'
 import type { Blog, MicrocmsResponse } from '~/types'
 
 type Props = {
-  blogData: MicrocmsResponse<Blog>
+  blogData?: MicrocmsResponse<Blog>
 }
 
 const ProductPage: NextPage<Props> = ({ blogData }) => {
-  const { data, recommends, count, viewMore } = useBlog(blogData.contents)
+  const { data, recommends, count, viewMore } = useBlog(
+    blogData?.contents ?? []
+  )
 
   return (
     <>
@@ -43,7 +45,7 @@ const ProductPage: NextPage<Props> = ({ blogData }) => {
           ))}
         </div>
 
-        {count < blogData.totalCount && (
+        {blogData && count < blogData.totalCount && (
           <div className="text-center">
             <button
               onClick={viewMore}
@@ -62,24 +64,31 @@ const ProductPage: NextPage<Props> = ({ blogData }) => {
 
 export default ProductPage
 
-export const getStaticProps = async () => {
-  const response: MicrocmsResponse<Blog> = await microcmsClient.get({
-    endpoint: process.env.MICROCMS_END_POINT ?? '',
-    queries: {
-      orders: '-createdAt',
-      fields: [
-        'id',
-        'createdAt',
-        'title',
-        'url',
-        'isRecommend',
-        'writeAt',
-        'categories',
-      ],
-    },
-  })
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  try {
+    const response: MicrocmsResponse<Blog> = await microcmsClient.get({
+      endpoint: process.env.MICROCMS_END_POINT ?? '',
+      queries: {
+        orders: '-createdAt',
+        fields: [
+          'id',
+          'createdAt',
+          'title',
+          'url',
+          'isRecommend',
+          'writeAt',
+          'categories',
+        ],
+      },
+    })
 
-  return {
-    props: { blogData: response },
+    return {
+      props: { blogData: response },
+    }
+  } catch (err) {
+    if (err instanceof Error) {
+      console.log(err.message)
+    }
+    return { props: {} }
   }
 }
