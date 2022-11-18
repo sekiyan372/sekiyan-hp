@@ -36,7 +36,7 @@ export const Header: FC = () => {
     <header className="fixed w-full z-30 h-12 top-0 p-2 md:px-10 flex justify-between flex-wrap bg-white drop-shadow bg-white/[.7]">
       <Link href="/#top" passHref>
         <Image
-          src="/images/icon/sekiyan372.png"
+          src="/images/icon/sekiyan372.webp"
           alt="トップアイコン"
           width="150"
           height="36"
