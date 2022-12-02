@@ -46,7 +46,7 @@ export const Profile = forwardRef<HTMLElement>((_, ref) => {
         </div>
       </div>
       <div className="px-10 pt-4 text-sm md:text-base sm:w-5/6 md:w-3/4 xl:w-1/2">
-        高校からバンドをやっていた影響で卒業後楽器業界の道に進むも、いろいろな厳しさを感じ大学進学へ進学し情報工学を学ぶ。Webのフロントエンドを中心にWeb系の開発が好き。趣味は楽器を弾くことと日向坂46のオタ活をすること。
+        高校からバンドをやっていた影響で卒業後楽器業界の道に進むも、いろいろな厳しさを感じ大学進学し情報工学を学ぶ。Webのフロントエンドを中心にWeb系の開発が好き。趣味は楽器を弾くことと日向坂46のオタ活をすること。
       </div>
       <DownButton href="#career" className="m-1" />
     </Section>
