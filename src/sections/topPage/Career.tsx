@@ -46,8 +46,17 @@ const careers = [
   },
   {
     year: '',
-    line: <></>,
+    line: <VerticalLine />,
     desc: 'CirKit、Tourismなどのプロジェクト活動やインターンに参加し、Web開発を行う',
+  },
+  {
+    year: '2023',
+    icon: (
+      <Circle>
+        <FaBuilding className="text-black w-3/4 h-3/4" />
+      </Circle>
+    ),
+    desc: 'Web系企業 入社予定',
   },
 ]
 
