@@ -1,13 +1,36 @@
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import type { FC } from 'react'
+import { Fragment } from 'react'
 
 import { MoreViewYouTube } from '~/components/Button'
+import { ExternalLink } from '~/components/Link'
 import { YouTubeSideScroll } from '~/components/Scroll'
 import { SubscribedTalk } from '~/components/Tag'
 import { Heading, SubHeading } from '~/components/Text'
 
-const talks: string[] = ['#naotalk', '#hinatalk', '#mikutalk']
+const talks: string[] = ['naotalk', 'hinatalk', 'mikutalk']
+
+const favorites = [
+  {
+    label: '最推し',
+    members: [{ name: '小坂 菜緒', key: 14 }],
+  },
+  {
+    label: '推し',
+    members: [
+      { name: '金村 美玖', key: 12 },
+      { name: '河田 陽菜', key: 13 },
+    ],
+  },
+  {
+    label: '気になる',
+    members: [
+      { name: '森本 茉莉', key: 23 },
+      { name: '宮地すみれ', key: 34 },
+    ],
+  },
+]
 
 type Props = {
   videoIds: string[]
@@ -39,7 +62,7 @@ export const OhisamaProfile: FC<Props> = ({ videoIds }) => {
           <div className="p-2">
             <span>購読中：</span>
             {talks.map((talk) => (
-              <SubscribedTalk key={talk}>{talk}</SubscribedTalk>
+              <SubscribedTalk key={talk}>#{talk}</SubscribedTalk>
             ))}
           </div>
           <div className="p-2">プレイ中：ひなこい</div>
@@ -48,18 +71,23 @@ export const OhisamaProfile: FC<Props> = ({ videoIds }) => {
 
       <table className="text-left sm:text-2xl mx-auto my-4 sm:my-10">
         <tbody>
-          <tr className="border-y-2">
-            <th className="w-24 sm:w-32 p-2">最推し</th>
-            <th className="p-2">小坂 菜緒</th>
-          </tr>
-          <tr className="border-y-2">
-            <th className="w-24 sm:w-32 p-2">推し</th>
-            <th className="p-2">河田 陽菜・金村 美玖・森本 茉莉</th>
-          </tr>
-          <tr className="border-y-2">
-            <th className="w-24 sm:w-32 p-2">気になる</th>
-            <th className="p-2">岸 帆夏・竹内 希来里・渡辺 莉奈</th>
-          </tr>
+          {favorites.map((favorite) => (
+            <tr key={favorite.label} className="border-y-2">
+              <td className="w-24 sm:w-32 p-2">{favorite.label}</td>
+              <td className="p-2">
+                {favorite.members.map((member, index) => (
+                  <Fragment key={member.key}>
+                    <ExternalLink
+                      href={`https://www.hinatazaka46.com/s/official/artist/${member.key}?ima=0000`}
+                    >
+                      {member.name}
+                    </ExternalLink>
+                    {favorite.members.length - 1 > index && '・'}
+                  </Fragment>
+                ))}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
 
