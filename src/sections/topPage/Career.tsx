@@ -56,7 +56,7 @@ const careers = [
         <FaBuilding className="text-black w-3/4 h-3/4" />
       </Circle>
     ),
-    desc: 'Web系企業 入社予定',
+    desc: 'DeNA 入社',
   },
 ]
 
