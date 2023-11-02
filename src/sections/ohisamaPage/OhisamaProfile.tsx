@@ -13,8 +13,8 @@ const talks: string[] = [
   'naotalk',
   'mikutalk',
   'hinanotalk',
-  '#riotalk',
-  '#yokotalk',
+  'riotalk',
+  'yokotalk',
 ]
 
 const favorites = [
