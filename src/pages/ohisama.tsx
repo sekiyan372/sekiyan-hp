@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       queries: {
         orders: 'dateAt',
         fields: ['id', 'name', 'day', 'dateAt', 'venue', 'image'],
+        limit: 100,
       },
     })
 
