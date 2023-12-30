@@ -9,13 +9,7 @@ import { YouTubeSideScroll } from '~/components/Scroll'
 import { SubscribedTalk } from '~/components/Tag'
 import { Heading, SubHeading } from '~/components/Text'
 
-const talks: string[] = [
-  'naotalk',
-  'mikutalk',
-  'hinanotalk',
-  'riotalk',
-  'yokotalk',
-]
+const talks: string[] = ['naotalk']
 
 const favorites = [
   {
@@ -24,16 +18,14 @@ const favorites = [
   },
   {
     label: '推し',
-    members: [
-      { name: '金村 美玖', key: 12 },
-      { name: '上村 ひなの', key: 21 },
-    ],
+    members: [{ name: '金村 美玖', key: 12 }],
   },
   {
     label: '気になる',
     members: [
       { name: '河田 陽菜', key: 13 },
-      { name: '正源司 陽子', key: 29 },
+      { name: '上村 ひなの', key: 21 },
+      { name: '清水 理央', key: 28 },
     ],
   },
 ]
